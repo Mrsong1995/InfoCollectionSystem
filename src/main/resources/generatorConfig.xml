@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+
+<generatorConfiguration>
+    <classPathEntry
+            location="/Users/jesse/.m2/repository/mysql/mysql-connector-java/8.0.19/mysql-connector-java-8.0.19.jar"/>
+
+    <!--
+    context:生成一组对象的环境
+    - id:必选，上下文id，用于在生成错误时提示
+        Mysql
+    - defaultModelType:指定生成对象的样式
+        1，conditional：类似hierarchical；
+        2，flat：所有内容（主键，blob）等全部生成在一个对象中；
+        3，hierarchical：主键生成一个XXKey对象(key class)，Blob等单独生成一个对象，其他简单属性在一个对象中(record class)
+    - targetRuntime:
+        1，MyBatis3：默认的值，生成基于MyBatis3.x以上版本的内容，包括XXXBySample；
+        2，MyBatis3Simple：类似MyBatis3，只是不生成XXXBySample；
+
+    - introspectedColumnImpl：类全限定名，用于扩展MBG
+    -->
+    <context id="default"
+             targetRuntime="MyBatis3"
+             defaultModelType="flat">
+
+        <!-- 自动识别数据库关键字，默认false，如果设置为true，根据SqlReservedWords中定义的关键字列表；
+       一般保留默认值，遇到数据库关键字（Java关键字），使用columnOverride覆盖
+    -->
+        <property name="autoDelimitKeywords" value="false"/>
+
+        <!-- 生成的Java文件的编码-->
+        <property name="javaFileEncoding" value="UTF-8"/>
+
+        <!-- 格式化java代码-->
+        <property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter"/>
+
+
+        <!-- 格式化XML代码-->
+        <property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>
+
+        <!-- 针对mysql数据库 -->
+        <property name="useInformationSchema" value="true"/>
+
+        <!--实现序列化接口-->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+
+        <commentGenerator>
+            <!-- 是否生成注释代时间戳-->
+            <property name="suppressDate" value="true"/>
+            <!-- 是否取消注释 -->
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+
+        <!--<jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"-->
+        <!--connectionURL="jdbc:sqlserver://192.168.3.112:1433;databaseName=Trunk.Back;"-->
+        <!--userId="sa"-->
+        <!--password="L00easy.db.pro.sa"/>-->
+
+<!--jdbc:mysql://localhost:3306/dwsurvey?useUnicode=true&characterEncoding=utf8-->
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/dwsurvey"
+                        userId="root"
+                        password="wtx12345">
+        </jdbcConnection>
+
+        <!-- 对于生成的pojo所在包 -->
+        <javaModelGenerator targetPackage="com.key.dwsurvey.pojo"
+                            targetProject="/Users/jesse/springboot/dwsurvey/src/main/java"
+        />
+
+        <!-- 对于生成的mapper所在目录 -->
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject="/Users/jesse/springboot/dwsurvey/src/main/resources"
+        />
+
+        <!-- 配置mapper对应的java映射 -->
+        <javaClientGenerator
+                targetPackage="com.key.dwsurvey.mapper"
+                targetProject="/Users/jesse/springboot/dwsurvey/src/main/java"
+                type="XMLMAPPER"
+        />
+
+        <table tableName="t_an_answer"
+               domainObjectName="AnAnswer"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_an_checkbox"
+               domainObjectName="AnCheckbox"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_an_chen_checkbox"
+               domainObjectName="AnChenCheckbox"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_an_chen_fbk"
+               domainObjectName="AnChenFbk"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_an_chen_radio"
+               domainObjectName="AnChenRadio"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_an_chen_score"
+               domainObjectName="AnChenScore"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_an_comp_chen_radio"
+               domainObjectName="AnCompChenRadio"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_an_dfillblank"
+               domainObjectName="AnDFillblank"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_an_enumqu"
+               domainObjectName="AnEnumqu"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_an_fillblank"
+               domainObjectName="AnFillblank"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_an_order"
+               domainObjectName="AnOrder"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_an_radio"
+               domainObjectName="AnRadio"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_an_score"
+               domainObjectName="AnScore"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_an_yesno"
+               domainObjectName="AnYesno"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+
+        <table tableName="t_import_error"
+               domainObjectName="ImportError"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_mail_invite_inbox"
+               domainObjectName="MailInviteInbox"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_qu_checkbox"
+               domainObjectName="QuCheckbox"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_qu_chen_column"
+               domainObjectName="QuChenColumn"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_qu_chen_option"
+               domainObjectName="QuChenOption"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_qu_chen_row"
+               domainObjectName="QuChenRow"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_qu_multi_fillblank"
+               domainObjectName="QuMultiFillblank"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_qu_orderby"
+               domainObjectName="QuOrderby"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_qu_radio"
+               domainObjectName="QuRadio"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_qu_score"
+               domainObjectName="QuScore"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_question"
+               domainObjectName="Question"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_question_bank"
+               domainObjectName="QuestionBank"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_question_logic"
+               domainObjectName="QuestionLogic"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_survey_answer"
+               domainObjectName="SurveyAnswer"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_survey_detail"
+               domainObjectName="SurveyDetail"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_survey_mail_invite"
+               domainObjectName="SurveyMailInvite"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_survey_req_url"
+               domainObjectName="SurveyReqUrl"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_survey_stats"
+               domainObjectName="SurveyStats"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_survey_style"
+               domainObjectName="SurveyStyle"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_sys_db_backup"
+               domainObjectName="SysDbBackup"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_sys_email"
+               domainObjectName="SysEmail"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="t_user"
+               domainObjectName="User"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+        <table tableName="tracker"
+               domainObjectName="Tracker"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="mysql" identity="false"/>
+        </table>
+
+    </context>
+</generatorConfiguration>
