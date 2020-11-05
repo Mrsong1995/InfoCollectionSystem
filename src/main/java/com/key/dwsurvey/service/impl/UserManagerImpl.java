@@ -136,6 +136,15 @@ public class UserManagerImpl  implements UserManager {
 //		save(user);
 	}
 
+	/**
+	 * 删除账号
+	 */
+	@Transactional
+	@Override
+	public int deleteUser(String id) {
+		return userMapper.deleteByPrimaryKey(id);
+	}
+
 	@Override
 	public User findNameUn(String id, String loginName) {
 		Map<String,String> map = new HashMap<>();

@@ -41,6 +41,12 @@ public class LoginController extends ActionSupport {
 	private FormAuthenticationWithLockFilter formAuthFilter;
 	@Autowired
 	protected AccountManager accountManager;
+
+	@RequestMapping("/")
+	public String home(){
+		return "forward:login.jsp";
+	}
+
 	@RequestMapping("/hello")
 	public String hello(){
 		return "forward:/WEB-INF/wjHtml/2020/07/08/40288005732c11b401732c28a8580000.html";
