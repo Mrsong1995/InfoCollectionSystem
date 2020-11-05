@@ -90,13 +90,28 @@ public class UserAdminController<ID extends Serializable>{// extends CrudActionS
 	/**
 	 * 账号禁用
 	 */
-	@RequestMapping("/delete")
-	public String delete(HttpServletResponse response,String id) throws Exception {
-//		HttpServletResponse response= Struts2Utils.getResponse();
+	@RequestMapping("/disable")
+	public String disable(HttpServletResponse response,String id) throws Exception {
 		String result="false";
 		this.id = id;
 		try{
 			userManager.disUser( id);
+			result="true";
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		response.getWriter().write(result);
+		return null;
+	}
+
+	/**
+	 * 账号删除
+	 */
+	@RequestMapping("/delete")
+	public String delete(HttpServletResponse response,String id) throws Exception {
+		String result="false";
+		try{
+			userManager.deleteUser(id);
 			result="true";
 		}catch (Exception e) {
 			// TODO: handle exception

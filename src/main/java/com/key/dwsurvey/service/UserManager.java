@@ -18,6 +18,8 @@ public interface UserManager{//extends BaseService<User, String> {
 
 	public void disUser(String id);
 
+	int deleteUser(String id);
+
 	public User findNameUn(String id, String loginName);
 
 	public User findEmailUn(String id, String email);
