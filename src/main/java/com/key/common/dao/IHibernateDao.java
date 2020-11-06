@@ -13,12 +13,12 @@ import java.util.Map;
 
 public interface IHibernateDao<T, ID extends Serializable> extends ISimpleHibernateDao<T, ID> {
 
-	public static final String DEFAULT_ALIAS = "x";
+	String DEFAULT_ALIAS = "x";
 
 	/**
 	 * 分页获取全部对象.
 	 */
-	public abstract Page<T> getAll(final PageRequest pageRequest);
+	Page<T> getAll(final PageRequest pageRequest);
 
 	/**
 	 * 按HQL分页查询.
@@ -29,7 +29,7 @@ public interface IHibernateDao<T, ID extends Serializable> extends ISimpleHibern
 	 * 
 	 * @return 分页查询结果, 附带结果列表及所有查询输入参数.
 	 */
-	public abstract Page<T> findPage(final PageRequest pageRequest, String hql,
+	Page<T> findPage(final PageRequest pageRequest, String hql,
                                      final Object... values);
 
 	/**
@@ -40,7 +40,7 @@ public interface IHibernateDao<T, ID extends Serializable> extends ISimpleHibern
 	 *
 	 * @return 分页查询结果, 附带结果列表及所有查询输入参数.
 	 */
-	public abstract Page<T> findPage(final PageRequest pageRequest, String hql);
+	Page<T> findPage(final PageRequest pageRequest, String hql);
 
 	/**
 	 * 按HQL分页查询.
@@ -51,7 +51,7 @@ public interface IHibernateDao<T, ID extends Serializable> extends ISimpleHibern
 	 *
 	 * @return 分页查询结果, 附带结果列表及所有查询输入参数.
 	 */
-	public abstract Page<T> findPage(final PageRequest pageRequest, String hql,
+	 Page<T> findPage(final PageRequest pageRequest, String hql,
                                      final Map<String, ?> values);
 
 	/**
@@ -62,30 +62,30 @@ public interface IHibernateDao<T, ID extends Serializable> extends ISimpleHibern
 	 *
 	 * @return 分页查询结果.附带结果列表及所有查询输入参数.
 	 */
-	public abstract Page<T> findPage(final PageRequest pageRequest,
+	Page<T> findPage(final PageRequest pageRequest,
                                      final Criterion... criterions);
 
-	public abstract Page<T> findPageList(final PageRequest pageRequest,
+	Page<T> findPageList(final PageRequest pageRequest,
                                          final List<Criterion> criterions);
 
-	public Page<T> findPageCriteria(PageRequest pageRequest, Criteria c);
+	Page<T> findPageCriteria(PageRequest pageRequest, Criteria c);
 	/**
 	 * 按属性查找对象列表,支持多种匹配方式.
 	 *
 	 * @param matchType 匹配方式,目前支持的取值见PropertyFilter的MatcheType enum.
 	 */
-	public abstract List<T> findBy(final String propertyName,
+	List<T> findBy(final String propertyName,
                                    final Object value, final MatchType matchType);
 
 	/**
 	 * 按属性过滤条件列表查找对象列表.
 	 */
-	public abstract List<T> find(List<PropertyFilter> filters);
+	List<T> find(List<PropertyFilter> filters);
 
 	/**
 	 * 按属性过滤条件列表分页查找对象.
 	 */
-	public abstract Page<T> findPage(final PageRequest pageRequest,
+	Page<T> findPage(final PageRequest pageRequest,
                                      final List<PropertyFilter> filters);
 
 	/**
@@ -94,7 +94,7 @@ public interface IHibernateDao<T, ID extends Serializable> extends ISimpleHibern
 	 * @param filters
 	 * @return
 	 */
-	public abstract List<T> findAll(final PageRequest pageRequest,
+	List<T> findAll(final PageRequest pageRequest,
                                     final List<PropertyFilter> filters);
 
 	/**
@@ -102,26 +102,26 @@ public interface IHibernateDao<T, ID extends Serializable> extends ISimpleHibern
 	 * @param id
 	 * @return
 	 */
-	public T getModel(ID id);
+	T getModel(ID id);
 
 	/**
 	 * 排序--取出一列数据
 	 */
-	public  List<T>  find(String orderByProperty, boolean isAsc, Criterion... criterions);
+	List<T>  find(String orderByProperty, boolean isAsc, Criterion... criterions);
 
 	/**
 	 * 取出第一条
 	 */
-	public  T  findFirst(Criterion... criterions);
-	public  T  findFirst(List<Criterion> criterions);
-	public  T  findFirst(String orderByProperty, boolean isAsc, Criterion... criterions);
-	public  T  findFirst(String orderByProperty, boolean isAsc, List<Criterion> criterions);
+	T  findFirst(Criterion... criterions);
+	T  findFirst(List<Criterion> criterions);
+	T  findFirst(String orderByProperty, boolean isAsc, Criterion... criterions);
+	T  findFirst(String orderByProperty, boolean isAsc, List<Criterion> criterions);
 
 	/**
 	 * 执行一条hql返回 一个object[]
 	 *
 	 */
-	public Object findUniObjs(String hql, Object... values);
+	Object findUniObjs(String hql, Object... values);
 
 	/**
 	 * 返回list<Object[]>
@@ -129,8 +129,8 @@ public interface IHibernateDao<T, ID extends Serializable> extends ISimpleHibern
 	 * @param values
 	 * @return
 	 */
-	public List<Object[]> findList(String hql, Object... values);
+	List<Object[]> findList(String hql, Object... values);
 
-	public Page<T> findPageByCri(Page<T> page, List<Criterion> criterions);
+	Page<T> findPageByCri(Page<T> page, List<Criterion> criterions);
 	
 }

@@ -51,10 +51,6 @@ public class User extends IdEntity {
 	//加点盐
 	private String salt;
 
-//	private Date tokenTime;
-
-
-
 	public String getRoleId() {
 		return roleId;
 	}
@@ -138,15 +134,6 @@ public class User extends IdEntity {
 	public void setCellphone(String cellphone) {
 		this.cellphone = cellphone;
 	}
-
-	
-	/*public Long getOrganId() {
-		return organId;
-	}
-
-	public void setOrganId(Long organId) {
-		this.organId = organId;
-	}*/
 
 	public Date getBirthday() {
 		return birthday;
@@ -245,8 +232,5 @@ public class User extends IdEntity {
 	public void setFindPwdUrl(String findPwdUrl) {
 		this.findPwdUrl = findPwdUrl;
 	}
-	
-	
-	
 
 }

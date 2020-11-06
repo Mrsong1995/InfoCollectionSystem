@@ -31,13 +31,7 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/design/qu-fillblank")
-//@Namespaces({@Namespace("/design")})
-//@InterceptorRefs({ @InterceptorRef("paramsPrepareParamsStack") })
-//@Results({
-//		@Result(name="answers",location="/WEB-INF/page/content/diaowen-da/fillblank.jsp",type= Struts2Utils.DISPATCHER)
-//})
-//@AllowedMethods({"ajaxSave","answers"})
-public class QuFillblankController {// extends ActionSupport{
+public class QuFillblankController {
 	@Autowired
 	private QuestionManager questionManager;
 	@Autowired
@@ -45,8 +39,6 @@ public class QuFillblankController {// extends ActionSupport{
 
 	@RequestMapping("/ajaxSave")
 	public String ajaxSave(HttpServletRequest request,HttpServletResponse response) throws Exception {
-//		HttpServletRequest request= Struts2Utils.getRequest();
-//		HttpServletResponse response= Struts2Utils.getResponse();
 		try{
 			Question entity=ajaxBuildSaveOption(request);
 			questionManager.save(entity);
@@ -81,9 +73,6 @@ public class QuFillblankController {// extends ActionSupport{
 		if (null != quId){
 			entity = questionManager.getQuestion(quId);
 		}
-		//begin delete  by jesse at 2020-07-15  for 优化
-		//Question entity=questionManager.getModel(quId);
-		//end delete by jesse at 2020-07-15
 
 		entity.setBelongId(belongId);
 		if(quTitle!=null){
@@ -157,14 +146,12 @@ public class QuFillblankController {// extends ActionSupport{
 	private Page<AnFillblank> anPage = new Page<AnFillblank>();
 	@RequestMapping("/answers")
 	public String answers(HttpServletRequest request,Map<String,Object> map) throws Exception {
-//		HttpServletRequest request = Struts2Utils.getRequest();
 		String quId = request.getParameter("quId");
 		String surveyId = request.getParameter("surveyId");
 		anPage.setPageSize(1000);
 		anPage = anFillblankManager.findPage(anPage, quId);
 		map.put("anPage", anPage);
 		request.setAttribute("surveyId",surveyId);
-//		return "answers";
 		return "/content/diaowen-da/fillblank";
 	}
 

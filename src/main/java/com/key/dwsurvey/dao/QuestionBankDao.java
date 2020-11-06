@@ -13,5 +13,4 @@ import com.key.dwsurvey.entity.QuestionBank;
  *
  */
 public interface QuestionBankDao extends BaseDao<QuestionBank, String> {
-
 }

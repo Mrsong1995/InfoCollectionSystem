@@ -18,11 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Controller
 @RequestMapping("/design/question")
-//@Namespaces({@Namespace("/design")})
-//@InterceptorRefs({ @InterceptorRef("paramsPrepareParamsStack") })
-//@Results({})
-//@AllowedMethods({"ajaxDelete"})
-public class QuestionController {// extends ActionSupport{
+public class QuestionController {
 	@Autowired
 	private QuestionManager questionManager;
 	/**
@@ -32,9 +28,6 @@ public class QuestionController {// extends ActionSupport{
 	 */
 	@RequestMapping("/ajaxDelete")
 	public String ajaxDelete(HttpServletRequest request,HttpServletResponse response) throws Exception {
-		
-//		HttpServletRequest request= Struts2Utils.getRequest();
-//		HttpServletResponse response= Struts2Utils.getResponse();
 		String responseStr="";
 		try{
 			String delQuId=request.getParameter("quId");

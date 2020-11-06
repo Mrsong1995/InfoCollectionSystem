@@ -29,31 +29,24 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/da/my-survey-answer")
-//@Namespace("/da")
-//@InterceptorRefs({ @InterceptorRef("paramsPrepareParamsStack")})
-//@Results({
-//	@Result(name= MySurveyAnswerAction.SUCCESS,location="/WEB-INF/page/content/diaowen-da/survey-answer-data.jsp",type= Struts2Utils.DISPATCHER),
-	//@Result(name = MySurveyAnswerAction.RESPONSE_ANSWER, location = "/WEB-INF/page/content/diaowen-answer/response-answer.jsp", type = Struts2Utils.DISPATCHER)
-//})
-//@AllowedMethods({"responseAnswer","exportXLS"})
-public class MySurveyAnswerController {// extends ActionSupport{
+public class MySurveyAnswerController {
 	@Autowired
 	private SurveyAnswerManager surveyAnswerManager;
+
 	@Autowired
 	private SurveyDirectoryManager directoryManager;
+
 	@Autowired
 	private AccountManager accountManager;
-	
-	protected final static String RESPONSE_ANSWER = "responseAnswer";
-	
-	private Page<SurveyAnswer> page=new Page<SurveyAnswer>();
+
+	private Page<SurveyAnswer> page=new Page<>();
+
 	private String surveyId;
 	
 	@RequestMapping("/execute")
 	public String execute(String surveyId, HttpServletRequest request, Map<String,Object> map) throws Exception {
 		this.surveyId = surveyId;
 		map.put("surveyId",surveyId);
-//		HttpServletRequest request= Struts2Utils.getRequest();
 		User user=accountManager.getCurUser();
     	if(user!=null){
     		SurveyDirectory survey=directoryManager.getSurveyByUser(surveyId, user.getId());
@@ -70,9 +63,8 @@ public class MySurveyAnswerController {// extends ActionSupport{
 
 	@RequestMapping("/responseAnswer")
 	public String responseAnswer(HttpServletRequest request) throws Exception {
-//		HttpServletRequest request= Struts2Utils.getRequest();
 		String answerId=request.getParameter("answerId");
-		List<Question> questions = new ArrayList<Question>();
+		List<Question> questions;
 		try {
 			SurveyDirectory directory=new SurveyDirectory();
 			if (answerId != null) {
@@ -92,12 +84,9 @@ public class MySurveyAnswerController {// extends ActionSupport{
 		}
 		return "/content/diaowen-answer/response-answer";
 	}
-	
 
 	@RequestMapping("/delete")
 	public String delete(HttpServletRequest request,HttpServletResponse response) throws Exception {
-//		HttpServletRequest request= Struts2Utils.getRequest();
-//		HttpServletResponse response= Struts2Utils.getResponse();
 		String result="error";
 		try{
 			String answerId=request.getParameter("answerId");
@@ -126,8 +115,6 @@ public class MySurveyAnswerController {// extends ActionSupport{
 
 	@RequestMapping("/exportXLS")
 	public String exportXLS(HttpServletRequest request,HttpServletResponse response){
-//		HttpServletRequest request= Struts2Utils.getRequest();
-//		HttpServletResponse response= Struts2Utils.getResponse();
 		try{
 			String savePath = request.getSession().getServletContext().getRealPath("/");
 			User user=accountManager.getCurUser();

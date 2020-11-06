@@ -30,19 +30,13 @@ import java.util.Map;
 @Controller
 @RequestMapping("/design/qu-paragraph")
 @Slf4j
-//@Namespaces({@Namespace("/design")})
-//@InterceptorRefs({ @InterceptorRef("paramsPrepareParamsStack") })
-//@Results({})
-//@AllowedMethods({"ajaxSave"})
-public class QuParagraphController {// extends ActionSupport{
+public class QuParagraphController {
 	@Autowired
 	private QuestionManager questionManager;
 	@Autowired
 	private QuestionMapper questionMapper;
 	@RequestMapping("/ajaxSave")
 	public String ajaxSave(HttpServletRequest request,HttpServletResponse response) throws Exception {
-//		HttpServletRequest request= Struts2Utils.getRequest();
-//		HttpServletResponse response= Struts2Utils.getResponse();
 		try{
 			Question entity=ajaxBuildSaveOption(request);
 			questionManager.save(entity);
@@ -74,9 +68,6 @@ public class QuParagraphController {// extends ActionSupport{
 		Question entity = new Question();
 		if (quId != null){
 			entity = questionMapper.selectByPrimaryKey(quId);
-			//begin delete  by jesse at 2020-07-15  for 优化
-//			entity=questionManager.getModel(quId);
-			//end delete by jesse at 2020-07-15
 
 		}
 

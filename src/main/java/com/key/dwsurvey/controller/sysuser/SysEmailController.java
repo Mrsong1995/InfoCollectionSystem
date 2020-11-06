@@ -22,14 +22,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping(value = {"/sy/system/sys-email","/sy/system/nosm/sys-email"})
-//@Namespaces({@Namespace("/sy/system"),@Namespace("/sy/system/nosm")})
-//@InterceptorRefs({ @InterceptorRef("paramsPrepareParamsStack") })
-//@Results({
-//	@Result(name= CrudActionSupport.SUCCESS,location="/WEB-INF/page/diaowen-system/email-list.jsp",type= Struts2Utils.DISPATCHER),
-//	@Result(name= CrudActionSupport.INPUT,location="/WEB-INF/page/diaowen-system/email-input.jsp",type= Struts2Utils.DISPATCHER),
-//	@Result(name= CrudActionSupport.RELOAD,location="/WEB-INF/page/ref-parent.jsp",type= Struts2Utils.DISPATCHER)
-//})
-public class SysEmailController<ID extends Serializable> {//extends CrudActionSupport<SysEmail, String> {
+public class SysEmailController<ID extends Serializable> {
 
 	@Autowired
 	private SysEmailManager sysEmailManager;
@@ -45,14 +38,12 @@ public class SysEmailController<ID extends Serializable> {//extends CrudActionSu
 	@RequestMapping("/input")
 	public String input() throws Exception {
 		return "page/diaowen-system/email-input";
-//		return super.input();
 	}
 	
 	@RequestMapping("/list")
 	public String list() throws Exception {
 		page=sysEmailManager.findPage(page, filters);
 		return "/diaowen-system/email-list";
-//		return super.list();
 	}
 	
 
@@ -64,7 +55,6 @@ public class SysEmailController<ID extends Serializable> {//extends CrudActionSu
 			e.printStackTrace();
 		}
 		return "/ref-parent";
-//		return super.save();
 	}
 	
 

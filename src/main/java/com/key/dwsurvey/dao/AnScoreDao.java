@@ -14,6 +14,6 @@ import com.key.dwsurvey.entity.Question;
  */
 public interface AnScoreDao extends BaseDao<AnScore, String> {
 
-	public void findGroupStats(Question question);
+	void findGroupStats(Question question);
 	
 }

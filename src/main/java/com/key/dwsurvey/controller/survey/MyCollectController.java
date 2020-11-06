@@ -21,18 +21,8 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/design/my-collect")
-//@Namespace("/design")
-//@InterceptorRefs({ @InterceptorRef("paramsPrepareParamsStack")})
-//@Results({
-//	@Result(name= MyCollectAction.COLLECT1,location="/WEB-INF/page/content/diaowen-collect/collect_1.jsp",type= Struts2Utils.DISPATCHER),
-//	@Result(name= MyCollectAction.IFRAME,location="/WEB-INF/page/content/diaowen-collect/collect_iframe.jsp",type= Struts2Utils.DISPATCHER),
-//	@Result(name= MyCollectAction.SITECOMP,location="/WEB-INF/page/content/diaowen-collect/collect_website.jsp",type= Struts2Utils.DISPATCHER),
-//	@Result(name= MyCollectAction.WEIXIN,location="/WEB-INF/page/content/diaowen-collect/collect_weixin.jsp",type= Struts2Utils.DISPATCHER),
-//	@Result(name= MyCollectAction.SHARE,location="/WEB-INF/page/content/diaowen-collect/collect_2.jsp",type= Struts2Utils.DISPATCHER)
-//})
-public class MyCollectController {//} extends ActionSupport{
+public class MyCollectController {
 	
-	protected final static String COLLECT1="collect1";
 	protected final static String IFRAME="iframe";
 	protected final static String SITECOMP="sitecomp";
 	protected final static String WEIXIN="weixin";
@@ -45,11 +35,9 @@ public class MyCollectController {//} extends ActionSupport{
 	private AccountManager accountManager;
 
 	
-//	@Override
 	@RequestMapping("/execute")
 	public String execute(String surveyId, HttpServletRequest request, Map<String,Object> map) throws Exception {
 		this.surveyId = surveyId;
-//		HttpServletRequest request= Struts2Utils.getRequest();
 		String tabId=request.getParameter("tabId");
 		map.put("surveyId",surveyId);
 		String baseUrl = "";

@@ -1,11 +1,8 @@
 package com.key.common.base.action;
 
 import com.key.common.utils.FileUtils;
-import com.opensymphony.xwork2.ActionSupport;
 import org.apache.commons.lang.StringUtils;
 import org.apache.struts2.convention.annotation.AllowedMethods;
-import org.apache.struts2.convention.annotation.Namespace;
-import org.apache.struts2.convention.annotation.Namespaces;
 import org.apache.struts2.dispatcher.multipart.MultiPartRequestWrapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,11 +13,8 @@ import java.io.File;
 
 @Controller
 @RequestMapping("/up")
-//@Namespaces(@Namespace("/up"))
 @AllowedMethods({"saveimage","saveFile","saveUpFile"})
-public class UploadController {// extends ActionSupport{
-	
-	private static final long serialVersionUID = -7990272086028152723L;
+public class UploadController {
 
 	private File[] files;
 	private String[] fileNames;
@@ -33,24 +27,14 @@ public class UploadController {// extends ActionSupport{
 	 */
 	@RequestMapping("/saveimage")
 	public String saveimage(HttpServletResponse response,HttpServletRequest request) throws Exception {
-//		System.out.println("saveimgage");
 		StringBuffer sb = new StringBuffer();
-//		HttpServletResponse response = Struts2Utils.getResponse();
-
-
 		try {
-//			HttpServletRequest request = Struts2Utils.getRequest();
-
 			String rootPath = request.getSession().getServletContext()
 					.getRealPath("/");
 			String savePath = "file" + File.separator + "images" + File.separator;
-
 			if (files != null && files.length > 0) {
-
 				String[] newNames = null;
-
 				newNames = FileUtils.transferFile2( rootPath+File.separator+savePath, files, fileNames);
-				
 				sb.append("{\"success\":\"true\"");
 				sb.append(",\"filename\":\"");
 				for (int i = 0; i < files.length; i++) {
@@ -67,7 +51,6 @@ public class UploadController {// extends ActionSupport{
 				}
 				sb.append("\"");
 			}
-			
 			sb.append("}");
 		} catch (Exception e) {
 			sb.append("{\"success\":\"false\",\"error\":\"上传失败\"}");
@@ -85,22 +68,14 @@ public class UploadController {// extends ActionSupport{
 	@RequestMapping("/saveFile")
 	public String saveFile(HttpServletResponse response,HttpServletRequest request) throws Exception {
 		StringBuffer sb = new StringBuffer();
-//		HttpServletResponse response = Struts2Utils.getResponse();
 		try {
-//			HttpServletRequest request = Struts2Utils.getRequest();
 			MultiPartRequestWrapper multipartRequest = (MultiPartRequestWrapper) request;
-
 			String basePath=request.getParameter("basepath");
 			String rootPath = request.getSession().getServletContext().getRealPath("/");
 			String savePath = "file" + File.separator + basePath + File.separator;
-
 			if (files != null && files.length > 0) {
-
-//				String[] newNames = FileUtils.transferFile2(savePath, files,fileNames);
-				String[] newNames = null;
-
+				String[] newNames;
 				newNames = FileUtils.transferFile2( rootPath+File.separator+savePath, files, fileNames);
-				
 				sb.append("{\"success\":\"true\"");
 				sb.append(",\"filename\":\"");
 				for (int i = 0; i < files.length; i++) {
@@ -128,7 +103,6 @@ public class UploadController {// extends ActionSupport{
 		return null;
 	}
 	
-	
 	/**
 	 * 上传文件数据，安全存储
 	 * /WebRoot/WEB-INF/upfile
@@ -136,20 +110,14 @@ public class UploadController {// extends ActionSupport{
 	@RequestMapping("/saveUpFile")
 	public String saveUpFile(HttpServletResponse response,HttpServletRequest request) throws Exception {
 		StringBuffer sb = new StringBuffer();
-//		HttpServletResponse response = Struts2Utils.getResponse();
 		try {
-//			HttpServletRequest request = Struts2Utils.getRequest();
 			MultiPartRequestWrapper multipartRequest = (MultiPartRequestWrapper) request;
 			String basePath=request.getParameter("basepath");
 			String rootPath = request.getSession().getServletContext().getRealPath("/");
 			String savePath = "WEB-INF"+File.separator+"upfile" + File.separator;
-
 			if (files != null && files.length > 0) {
-
-//				String[] newNames = FileUtils.transferFile2(savePath, files,fileNames);
-				String[] newNames = null;
+				String[] newNames;
 				newNames = FileUtils.transferFile2(rootPath+savePath, files, fileNames);
-				
 				sb.append("{\"success\":\"true\"");
 				sb.append(",\"filename\":\"");
 				for (int i = 0; i < files.length; i++) {
@@ -173,7 +141,6 @@ public class UploadController {// extends ActionSupport{
 		}
 		response.setHeader("Content-Type", "text/plain;charset=UTF-8");
 		response.getWriter().print(sb.toString());
-//		response.getWriter().close();
 		return null;
 	}
 
@@ -196,6 +163,6 @@ public class UploadController {// extends ActionSupport{
 	public void setUploadifyContentType(String[] uploadContentType) {
 		this.uploadContentTypes = uploadContentType;
 	}
-	
-	
+
+
 }

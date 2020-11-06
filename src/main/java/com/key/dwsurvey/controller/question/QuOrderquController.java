@@ -29,11 +29,7 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/design/qu-orderqu")
-//@Namespaces({@Namespace("/design")})
-//@InterceptorRefs({ @InterceptorRef("paramsPrepareParamsStack") })
-//@Results({})
-//@AllowedMethods({"ajaxSave","ajaxDelete"})
-public class QuOrderquController {// extends ActionSupport{
+public class QuOrderquController {
 	@Autowired
 	private QuestionManager questionManager;
 	@Autowired
@@ -41,8 +37,6 @@ public class QuOrderquController {// extends ActionSupport{
 
 	@RequestMapping("/ajaxSave")
 	public String ajaxSave(HttpServletRequest request,HttpServletResponse response) throws Exception {
-//		HttpServletRequest request= Struts2Utils.getRequest();
-//		HttpServletResponse response= Struts2Utils.getResponse();
 		try{
 			Question entity=ajaxBuildSaveOption(request);
 			questionManager.save(entity);
@@ -76,10 +70,6 @@ public class QuOrderquController {// extends ActionSupport{
 		if (null != quId){
 			entity = questionManager.getQuestion(quId);
 		}
-		//begin delete  by jesse at 2020-07-15  for 优化
-		//Question entity=questionManager.getModel(quId);
-		//end delete by jesse at 2020-07-15
-
 		entity.setBelongId(belongId);
 		if(quTitle!=null){
 			quTitle=URLDecoder.decode(quTitle,"utf-8");
@@ -107,7 +97,6 @@ public class QuOrderquController {// extends ActionSupport{
 				optionId=null;
 			}
 			quOrderby.setId(optionId);
-//			quRadio.setOptionTitle(key);
 			optionNameValue=URLDecoder.decode(optionNameValue,"utf-8");
 			quOrderby.setOptionName(optionNameValue);
 			quOrderby.setOrderById(Integer.parseInt(key));
@@ -178,8 +167,6 @@ public class QuOrderquController {// extends ActionSupport{
 	 */
 	@RequestMapping("/ajaxDelete")
 	public String ajaxDelete(HttpServletRequest request,HttpServletResponse response) throws Exception {
-//		HttpServletRequest request= Struts2Utils.getRequest();
-//		HttpServletResponse response= Struts2Utils.getResponse();
 		try{
 			String quItemId=request.getParameter("quItemId");
 			quOrderbyManager.ajaxDelete(quItemId);
@@ -190,6 +177,5 @@ public class QuOrderquController {// extends ActionSupport{
 		}
 		return null;
 	}
-
 	
 }

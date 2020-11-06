@@ -14,6 +14,6 @@ import com.key.dwsurvey.entity.Question;
  */
 public interface AnChenCheckboxDao extends BaseDao<AnChenCheckbox, String> {
 
-	public void findGroupStats(Question question);
+	void findGroupStats(Question question);
 
 }

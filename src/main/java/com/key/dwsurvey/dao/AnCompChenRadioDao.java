@@ -12,5 +12,4 @@ import com.key.dwsurvey.entity.AnCompChenRadio;
  *
  */
 public interface AnCompChenRadioDao extends BaseDao<AnCompChenRadio, String> {
-	
 }

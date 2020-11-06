@@ -32,12 +32,8 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/design/qu-radio")
-//@Namespaces({@Namespace("/design")})
-//@InterceptorRefs({ @InterceptorRef("paramsPrepareParamsStack") })
-//@AllowedMethods({"ajaxSave","ajaxDelete"})
-//@Results({})
 @Slf4j
-public class QuRadioController {// extends ActionSupport{
+public class QuRadioController {
 	@Autowired
 	private QuestionManager questionManager;
 	@Autowired
@@ -46,8 +42,6 @@ public class QuRadioController {// extends ActionSupport{
 
 	@RequestMapping("/ajaxSave")
 	public String ajaxSave(HttpServletRequest request,HttpServletResponse response) throws Exception {
-//		HttpServletRequest request= Struts2Utils.getRequest();
-//		HttpServletResponse response= Struts2Utils.getResponse();
 		try{
 			Question entity=ajaxBuildSaveOption(request);
 			questionManager.save(entity);
@@ -77,14 +71,10 @@ public class QuRadioController {// extends ActionSupport{
 		if("".equals(quId)){
 			quId=null;
 		}
-//		log.info();
 		if (null != quId){
 			entity = questionManager.getQuestion(quId);
 		}
 
-		//begin delete  by jesse at 2020-07-15  for 优化
-//		Question entity=questionManager.getModel(quId);
-		//end delete by jesse at 2020-07-15
 
 		entity.setBelongId(belongId);
 		if(quTitle!=null){
@@ -120,7 +110,6 @@ public class QuRadioController {// extends ActionSupport{
 				optionId=null;
 			}
 			quRadio.setId(optionId);
-//			quRadio.setOptionTitle(key);
 			optionNameValue=URLDecoder.decode(optionNameValue,"utf-8");
 			quRadio.setOptionName(optionNameValue);
 			quRadio.setOrderById(Integer.parseInt(key));
@@ -199,8 +188,6 @@ public class QuRadioController {// extends ActionSupport{
 	 */
 	@RequestMapping("/ajaxDelete")
 	public String ajaxDelete(HttpServletRequest request,HttpServletResponse response) throws Exception {
-//		HttpServletRequest request= Struts2Utils.getRequest();
-//		HttpServletResponse response= Struts2Utils.getResponse();
 		try{
 			String quItemId=request.getParameter("quItemId");
 			quRadioManager.ajaxDelete(quItemId);

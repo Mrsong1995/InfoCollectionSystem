@@ -14,6 +14,6 @@ import com.key.dwsurvey.entity.Question;
  */
 public interface AnChenRadioDao extends BaseDao<AnChenRadio, String> {
 
-	public void findGroupStats(Question question);
+	void findGroupStats(Question question);
 
 }

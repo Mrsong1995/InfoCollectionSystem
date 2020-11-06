@@ -12,5 +12,4 @@ import com.key.dwsurvey.entity.QuChenRow;
  *
  */
 public interface QuChenRowDao extends BaseDao<QuChenRow, String> {
-
 }

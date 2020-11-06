@@ -8,8 +8,8 @@ import java.util.Map;
 
 public interface SurveyAnswerDao extends BaseDao<SurveyAnswer, String> {
 
-	public void saveAnswer(SurveyAnswer surveyAnswer,
+	void saveAnswer(SurveyAnswer surveyAnswer,
                            Map<String, Map<String, Object>> quMaps);
 
-	public SurveyStats surveyStatsData(SurveyStats surveyStats);
+	SurveyStats surveyStatsData(SurveyStats surveyStats);
 }

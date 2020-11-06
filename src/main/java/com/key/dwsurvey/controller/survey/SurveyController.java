@@ -33,16 +33,7 @@ import java.io.ByteArrayOutputStream;
  */
 @Controller
 @RequestMapping("/survey")
-//@Namespace("/")
-//@InterceptorRefs({ @InterceptorRef("paramsPrepareParamsStack")})
-//@Results({
-//	@Result(name= SurveyAction.INDEXJSP,location="/index.jsp",type= Struts2Utils.DISPATCHER),
-//	@Result(name= SurveyAction.ANSERSURVEY,location="/WEB-INF/page/content/diaowen-design/answer-survey-p.jsp",type= Struts2Utils.DISPATCHER),
-//	@Result(name= SurveyAction.ANSERSURVEY_MOBILE,location="/WEB-INF/page/content/diaowen-design/answer-survey-m.jsp",type= Struts2Utils.DISPATCHER)
-//})
-
-//@AllowedMethods({"answerSurvey","answerSurveryMobile","surveyModel","answerTD","ajaxCheckSurvey"})
-public class SurveyController {// extends ActionSupport{
+public class SurveyController {
 	
 	protected final static String INDEXJSP="indexJsp";
 	protected final static String ANSERSURVEY="answerSurvey";
@@ -63,14 +54,10 @@ public class SurveyController {// extends ActionSupport{
 	private SurveyAnswerManager surveyAnswerManager;
 
 	private String sid;
-//	private String surveyId;
 	//外部回答公共访问路径--静态访问
 	@RequestMapping("/execute")
 	public String execute(HttpServletRequest request,HttpServletResponse response) throws Exception {
-//		HttpServletRequest request= Struts2Utils.getRequest();
-//		HttpServletResponse response= Struts2Utils.getResponse();
 		String htmlPath="http://wj.diaowen.net/test";
-		//request.getRequestDispatcher(htmlPath).forward(request, response);
 		response.sendRedirect(htmlPath);
 		return CommonConstant.NONE;
 	}
@@ -78,7 +65,6 @@ public class SurveyController {// extends ActionSupport{
 	//问卷的动态访问方式
 	@RequestMapping("/answerSurvey")
 	public String answerSurvey(HttpServletRequest request) throws Exception {
-//		HttpServletRequest request = Struts2Utils.getRequest();
 		String surveyId = request.getParameter("surveyId");
 		SurveyDirectory survey=surveyDirectoryManager.getSurvey(surveyId);
 		buildSurvey(request,survey);
@@ -87,7 +73,6 @@ public class SurveyController {// extends ActionSupport{
 	//问卷动态访问-移动端
 	@RequestMapping("/answerSurveryMobile")
 	public String answerSurveryMobile(HttpServletRequest request) throws Exception {
-//		HttpServletRequest request = Struts2Utils.getRequest();
 		String surveyId = request.getParameter("surveyId");
 		SurveyDirectory survey=surveyDirectoryManager.getSurvey(surveyId);
 		buildSurvey(request,survey);
@@ -101,19 +86,14 @@ public class SurveyController {// extends ActionSupport{
 		}
 		survey.setQuestions(questionManager.findDetails(surveyId, "2"));
 		request.setAttribute("survey", survey);
-//		Struts2Utils.setReqAttribute("survey", survey);
 		SurveyStyle surveyStyle=surveyStyleManager.getBySurveyId(surveyId);
 		request.setAttribute("surveyStyle", surveyStyle);
-//		Struts2Utils.setReqAttribute("surveyStyle", surveyStyle);
 		request.setAttribute("prevHost", DiaowenProperty.STORAGE_URL_PREFIX);
-//		Struts2Utils.setReqAttribute("prevHost", DiaowenProperty.STORAGE_URL_PREFIX);
 	}
 
 	//回答问卷的二维码
 	@RequestMapping("/answerTD")
 	public String answerTD(HttpServletRequest request,HttpServletResponse response) throws Exception{
-//	    	HttpServletRequest request= Struts2Utils.getRequest();
-//	    	HttpServletResponse response= Struts2Utils.getResponse();
 		String surveyId = request.getParameter("surveyId");
 	    	String down=request.getParameter("down");
 
@@ -149,7 +129,6 @@ public class SurveyController {// extends ActionSupport{
 			}catch (Exception e){
 				e.printStackTrace();
 			}
-
 	        return null;
 	}
 

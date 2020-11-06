@@ -12,5 +12,4 @@ import com.key.dwsurvey.entity.QuCheckbox;
  *
  */
 public interface QuCheckboxDao extends BaseDao<QuCheckbox, String> {
-
 }

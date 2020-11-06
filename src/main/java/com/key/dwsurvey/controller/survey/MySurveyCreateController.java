@@ -23,11 +23,6 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/design/my-survey-create")
-//@Namespace("/design")
-//@InterceptorRefs({ @InterceptorRef("paramsPrepareParamsStack")})
-//@Results({
-//	@Result(name="design",location="/design/my-survey-design.controller?surveyId=${surveyId}",type= Struts2Utils.REDIRECT)
-//})
 public class MySurveyCreateController {// extends ActionSupport{
 	@Autowired
 	private SurveyDirectoryManager directoryManager;
@@ -57,10 +52,7 @@ public class MySurveyCreateController {// extends ActionSupport{
 	    }catch(Exception e){
 	    	e.printStackTrace();
 	    }
-//	    model.put("surveyId",surveyId);
-//		response.set
 	    return  "redirect:/design/my-survey-design/execute?surveyId="+surveyId;
-//	    return "redirect:/design/my-survey-design/execute";
 	}
 	
 	public String getSurveyId() {
