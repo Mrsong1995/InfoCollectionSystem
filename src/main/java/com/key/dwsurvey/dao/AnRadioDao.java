@@ -17,11 +17,11 @@ import java.util.List;
  */
 public interface AnRadioDao extends BaseDao<AnRadio, String> {
 
-	public void findGroupStats(Question question);
+	void findGroupStats(Question question);
 
-	public List<DataCross> findStatsDataCross(Question rowQuestion,
+	List<DataCross> findStatsDataCross(Question rowQuestion,
                                               Question colQuestion);
 
-	public List<DataCross> findStatsDataChart(Question question);
+	List<DataCross> findStatsDataChart(Question question);
 
 }

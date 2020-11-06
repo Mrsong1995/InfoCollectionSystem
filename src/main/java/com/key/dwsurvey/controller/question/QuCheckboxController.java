@@ -30,11 +30,6 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/design/qu-checkbox")
-//@Namespaces({@Namespace("/design")})
-//@InterceptorRefs({ @InterceptorRef("paramsPrepareParamsStack") })
-//@Results({
-//})
-//@AllowedMethods({"ajaxSave","ajaxDelete"})
 public class QuCheckboxController {// extends ActionSupport{
 	@Autowired
 	private QuestionManager questionManager;
@@ -43,8 +38,6 @@ public class QuCheckboxController {// extends ActionSupport{
 
 	@RequestMapping("/ajaxSave")
 	public String ajaxSave(HttpServletRequest request,HttpServletResponse response) throws Exception {
-//		HttpServletRequest request= Struts2Utils.getRequest();
-//		HttpServletResponse response= Struts2Utils.getResponse();
 		try{
 			Question entity=ajaxBuildSaveOption(request);
 			questionManager.save(entity);
@@ -76,9 +69,6 @@ public class QuCheckboxController {// extends ActionSupport{
 		if (null != quId){
 			entity = questionManager.getQuestion(quId);
 		}
-		//begin delete  by jesse at 2020-07-15  for 优化
-		//Question entity=questionManager.getModel(quId);
-		//end delete by jesse at 2020-07-15
 
 		entity.setBelongId(belongId);
 		if(quTitle!=null){
@@ -114,7 +104,6 @@ public class QuCheckboxController {// extends ActionSupport{
 				optionId=null;
 			}
 			quCheckbox.setId(optionId);
-//			quRadio.setOptionTitle(key);
 			optionNameValue=URLDecoder.decode(optionNameValue,"utf-8");
 			quCheckbox.setOptionName(optionNameValue);
 			quCheckbox.setOrderById(Integer.parseInt(key));
@@ -150,7 +139,6 @@ public class QuCheckboxController {// extends ActionSupport{
 	}
 	
 	public static String buildResultJson(Question entity){
-		//{id:'null',quItems:[{id:'null',title:'null'},{id:'null',title:'null'}]}
 		StringBuffer strBuf=new StringBuffer();
 		strBuf.append("{id:'").append(entity.getId());
 		strBuf.append("',orderById:");
@@ -189,8 +177,6 @@ public class QuCheckboxController {// extends ActionSupport{
 	 */
 	@RequestMapping("/ajaxDelete")
 	public String ajaxDelete(HttpServletRequest request,HttpServletResponse response) throws Exception {
-//		HttpServletRequest request= Struts2Utils.getRequest();
-//		HttpServletResponse response= Struts2Utils.getResponse();
 		try{
 			String quItemId=request.getParameter("quItemId");
 			quCheckboxManager.ajaxDelete(quItemId);

@@ -27,18 +27,12 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/design/qu-pagetag")
-//@Namespaces({@Namespace("/design")})
-//@InterceptorRefs({ @InterceptorRef("paramsPrepareParamsStack") })
-//@Results({})
-//@AllowedMethods({"ajaxSave"})
 public class QuPagetagController {// extends ActionSupport{
 	@Autowired
 	private QuestionManager questionManager;
 
 	@RequestMapping("/ajaxSave")
 	public String ajaxSave(HttpServletRequest request,HttpServletResponse response) throws Exception {
-//		HttpServletRequest request= Struts2Utils.getRequest();
-//		HttpServletResponse response= Struts2Utils.getResponse();
 		try{
 			Question entity=ajaxBuildSaveOption(request);
 			questionManager.save(entity);
@@ -72,10 +66,6 @@ public class QuPagetagController {// extends ActionSupport{
 		if (null != quId){
 			entity = questionManager.getQuestion(quId);
 		}
-		//begin delete  by jesse at 2020-07-15  for  优化
-//		Question entity=questionManager.getModel(quId);
-		//end delete by jesse at 2020-07-15
-
 		entity.setBelongId(belongId);
 		if(quTitle!=null){
 			quTitle=URLDecoder.decode(quTitle,"utf-8");

@@ -12,5 +12,4 @@ import com.key.dwsurvey.entity.ImportError;
  *
  */
 public interface ImportErrorDao extends BaseDao<ImportError, String> {
-    
 }

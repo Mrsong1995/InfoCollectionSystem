@@ -22,26 +22,17 @@ import java.util.Properties;
 @Controller
 @RequestMapping(value = {"/sy/system/sys-property","/sy/system/nosm/sys-property"})
 @Slf4j
-//@Namespaces({@Namespace("/sy/system"),@Namespace("/sy/system/nosm")})
-//@InterceptorRefs({ @InterceptorRef("paramsPrepareParamsStack") })
-//@Results({
-//	@Result(name= CrudActionSupport.INPUT,location="/WEB-INF/page/content/diaowen-system/property-input.jsp",type= Struts2Utils.DISPATCHER),
-//	@Result(name= CrudActionSupport.SUCCESS,location="/sy/system/sys-property!input.controller",type= Struts2Utils.REDIRECT)
-//})
-public class SysPropertyController {// extends ActionSupport{
+public class SysPropertyController {
 	
 	@RequestMapping("/input")
 	public String input(HttpServletRequest request) throws Exception {
-//		HttpServletRequest request = Struts2Utils.getRequest();
-		
+
 		String fileName="site.properties";
 		ServletContext sc = request.getSession().getServletContext();
 		String filePath = "/conf/site/".replace("/", File.separator);
-//		String fileRealPath = sc.getRealPath("/")+filePath+fileName;
 		String fileRealPath = filePath + fileName;
 		Resource resource = new ClassPathResource(fileRealPath);
 		File file =  resource.getFile();
-//		File file=new File(fileRealPath);
 		InputStreamReader fr = new InputStreamReader(new FileInputStream(file),"UTF-8");
 		
 		Properties p = new Properties();  
@@ -66,7 +57,6 @@ public class SysPropertyController {// extends ActionSupport{
 	        e1.printStackTrace();
 	    }
 	    return "/content/diaowen-system/property-input";
-//	    return INPUT;
 	}
 
 	@RequestMapping("/save")
@@ -119,7 +109,6 @@ public class SysPropertyController {// extends ActionSupport{
 		}
 
 		return "redirect:/sy/system/sys-property/input";
-//		return SUCCESS;
 	}
 	
 	
@@ -153,11 +142,8 @@ public class SysPropertyController {// extends ActionSupport{
 		OutputStreamWriter fw = null;
 		try {
 			ServletContext sc = request.getSession().getServletContext();
-//			String fileRealPath =  filePath;
 			Resource resource = new ClassPathResource(filePath);
 			File file =  resource.getFile();
-//			File file = ResourceUtils.getFile(filePath);
-//			File file = new File(fileRealPath);
 			if (file.getParentFile() != null &&!file.getParentFile().exists()){
 				file.getParentFile().mkdirs();
 			}

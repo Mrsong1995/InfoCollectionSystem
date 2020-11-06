@@ -29,11 +29,6 @@ import javax.servlet.http.HttpServletResponse;
  * http://dwsurvey.net
  */
 @Controller
-//@Namespace("/")
-//@Results({
-//	@Result(name = "login", location = "login.jsp", type = "redirect")
-//	})
-//@AllowedMethods({"login","logout"})
 public class LoginController extends ActionSupport {
 
 	private static final long serialVersionUID = 7392913081177740732L;
@@ -55,18 +50,13 @@ public class LoginController extends ActionSupport {
 	public String login(HttpServletRequest request,HttpServletResponse response) throws Exception {
 		
 		System.out.println("username1-1");
-//		HttpServletRequest request = Struts2Utils.getRequest();
-//		HttpServletResponse response = Struts2Utils.getResponse();
-		
 		Subject subject = SecurityUtils.getSubject();
 		boolean isAuth = subject.isAuthenticated();
-		// 返回成功与否
 		String error="";
 		Long resetnum=0L;
 		if (!isAuth) {
 			String username = request.getParameter("username");
 			String password = request.getParameter("password");
-//			System.out.println(username+" "+password);
 			UsernamePasswordToken token = new UsernamePasswordToken(username,
 					password);
 			if(!formAuthFilter.checkIfAccountLocked(request)){
@@ -84,13 +74,9 @@ public class LoginController extends ActionSupport {
 		            error="AuthenticationException";
 		        }
 			}else{
-				//ExcessiveAttemptsException超过登录次数
 				 error="ExcessiveAttemptsException";
 			}
 		}
-		//PrintWriter writer = response.getWriter();    
-		//writer.write(isAuth + ","+error);//此种方式，在$.getJson()进行仿问时会出现不执行回调函数
-//		System.out.println(isAuth+","+error);
 		response.setContentType("text/html; charset=UTF-8");// 1.设置返回响应的类型
 		//2. 01 一定要注意：要包括jsoncallback参数，不然回调函数不执行。
 		//2. 02 返回的数据一定要是严格符合json格式 ，不然回调函数不执行。
@@ -106,22 +92,18 @@ public class LoginController extends ActionSupport {
 			SecurityUtils.getSubject().logout();
 		}
 		request.getSession().invalidate();
-//		Struts2Utils.getSession().invalidate();
 		return "forward:login.jsp";
 	}
-	/* 给某个锁定的账号开锁,管理员使用 */
 
+	/* 给某个锁定的账号开锁,管理员使用 */
 	@RequestMapping("/lockout")
 	public String lockout(HttpServletRequest request, HttpServletResponse response) throws Exception {
-//		HttpServletRequest request=Struts2Utils.getRequest();
-//		HttpServletResponse response=Struts2Utils.getResponse();
 		String username=request.getParameter("username");
 		//确认有没账号
 		boolean isup=false;
 		String error="用户不存在";
 		
 		if(username!=null){
-//			User user=accountManager.findUserByLoginName(username);
 			User user = accountManager.findUserByLoginNameOrEmail(username);
 			if(user!=null){
 				formAuthFilter.resetAccountLock(username);
@@ -133,7 +115,6 @@ public class LoginController extends ActionSupport {
 	}
 	
 	public String register() throws Exception {
-		
 		return "";
 	}
 

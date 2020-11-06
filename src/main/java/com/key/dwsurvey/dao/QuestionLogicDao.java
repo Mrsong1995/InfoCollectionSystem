@@ -12,5 +12,4 @@ import com.key.dwsurvey.entity.QuestionLogic;
  *
  */
 public interface QuestionLogicDao extends BaseDao<QuestionLogic, String> {
-	
 }

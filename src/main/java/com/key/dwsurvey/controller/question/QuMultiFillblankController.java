@@ -32,13 +32,7 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/design/qu-multi-fillblank")
-//@Namespaces({@Namespace("/design")})
-//@InterceptorRefs({ @InterceptorRef("paramsPrepareParamsStack") })
-//@Results({
-//		@Result(name="answers",location="/WEB-INF/page/content/diaowen-da/dfillblank.jsp",type= Struts2Utils.DISPATCHER)
-//})
-//@AllowedMethods({"ajaxSave","ajaxDelete","answers"})
-public class QuMultiFillblankController {//} extends ActionSupport{
+public class QuMultiFillblankController {
 	@Autowired
 	private QuestionManager questionManager;
 	@Autowired
@@ -49,8 +43,6 @@ public class QuMultiFillblankController {//} extends ActionSupport{
 
 	@RequestMapping("/ajaxSave")
 	public String ajaxSave(HttpServletRequest request,HttpServletResponse response) throws Exception {
-//		HttpServletRequest request= Struts2Utils.getRequest();
-//		HttpServletResponse response= Struts2Utils.getResponse();
 		try{
 			Question entity=ajaxBuildSaveOption(request);
 			questionManager.save(entity);
@@ -84,9 +76,6 @@ public class QuMultiFillblankController {//} extends ActionSupport{
 		if (null != quId){
 			entity = questionManager.getQuestion(quId);
 		}
-		//begin delete  by jesse at 2020-07-15  for 优化
-		//Question entity=questionManager.getModel(quId);
-		//end delete by jesse at 2020-07-15
 
 		entity.setBelongId(belongId);
 		if(quTitle!=null){
@@ -119,7 +108,6 @@ public class QuMultiFillblankController {//} extends ActionSupport{
 				optionId=null;
 			}
 			quMultiFillblank.setId(optionId);
-//			quRadio.setOptionTitle(key);
 			optionNameValue=URLDecoder.decode(optionNameValue,"utf-8");
 			quMultiFillblank.setOptionName(optionNameValue);
 			quMultiFillblank.setOrderById(Integer.parseInt(key));
@@ -192,8 +180,6 @@ public class QuMultiFillblankController {//} extends ActionSupport{
 	 */
 	@RequestMapping("/ajaxDelete")
 	public String ajaxDelete(HttpServletRequest request,HttpServletResponse response) throws Exception {
-//		HttpServletRequest request= Struts2Utils.getRequest();
-//		HttpServletResponse response= Struts2Utils.getResponse();
 		try{
 			String quItemId=request.getParameter("quItemId");
 			quMultiFillblankManager.ajaxDelete(quItemId);
@@ -210,14 +196,12 @@ public class QuMultiFillblankController {//} extends ActionSupport{
 	//取上传题结果
 	@RequestMapping("/answers")
 	public String answers(HttpServletRequest request,Map<String,Object> map) throws Exception {
-//		HttpServletRequest request = Struts2Utils.getRequest();
 		String quItemId = request.getParameter("quItemId");
 		String surveyId = request.getParameter("surveyId");
 		anPage.setPageSize(1000);
 		anPage = anDFillblankManager.findPage(anPage, quItemId);
 		map.put("anPage", anPage);
 		request.setAttribute("surveyId",surveyId);
-//		return "answers";
 		return "/content/diaowen-da/dfillblank";
 	}
 

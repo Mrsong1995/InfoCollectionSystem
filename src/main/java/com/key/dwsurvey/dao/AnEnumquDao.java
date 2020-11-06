@@ -14,6 +14,6 @@ import com.key.dwsurvey.entity.Question;
  */
 public interface AnEnumquDao extends BaseDao<AnEnumqu, String> {
 
-	public void findGroupStats(Question question);
+	void findGroupStats(Question question);
 
 }

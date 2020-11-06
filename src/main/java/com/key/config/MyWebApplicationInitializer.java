@@ -3,7 +3,6 @@ package com.key.config;
 import org.apache.logging.log4j.web.Log4jServletContextListener;
 import org.springframework.boot.web.servlet.ServletContextInitializer;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.context.ContextLoaderListener;
 
 import javax.servlet.ServletContext;
 

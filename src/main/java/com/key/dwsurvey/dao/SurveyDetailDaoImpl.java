@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class SurveyDetailDaoImpl extends BaseDaoImpl<SurveyDetail, String> implements SurveyDetailDao {
-
 }

@@ -37,74 +37,26 @@ import java.util.Map;
 @Controller
 @RequestMapping("/dwsurvey/dws-answer")
 @Slf4j
-//@Namespaces({ @Namespace("/") })
-//@InterceptorRefs({ @InterceptorRef(value = "paramsPrepareParamsStack") })
-//@Results({
-//        @Result(name = DwsAnswerAction.RESULT_FREQUENCY, location = "/WEB-INF/page/surveydir/survey/stats/response-frequency.jsp", type = Struts2Utils.DISPATCHER),
-//        @Result(name = CrudActionSupport.INPUT, location = "/WEB-INF/page/surveydir/survey/response/response-survey.jsp", type = Struts2Utils.DISPATCHER),
-//        @Result(name = DwsAnswerAction.INPUT_IFRAME, location = "/WEB-INF/page/surveydir/survey/response/response-answer-iframe.jsp", type = Struts2Utils.DISPATCHER),
-//        @Result(name = DwsAnswerAction.ANSWER_SUCCESS, location = "/WEB-INF/page/content/diaowen-answer/response-success.jsp", type = Struts2Utils.DISPATCHER),
-//        @Result(name = DwsAnswerAction.ANSWER_FAILURE, location = "/WEB-INF/page/content/diaowen-answer/response-failure.jsp", type = Struts2Utils.DISPATCHER),
-//        @Result(name = DwsAnswerAction.ANSWER_SUCCESS_M, location = "/WEB-INF/page/content/diaowen-answer/response-success-m.jsp", type = Struts2Utils.DISPATCHER),
-////        @Result(name = DwsAnswerAction.ANSWER_INPUT_RULE, location = "/WEB-INF/page/content/diaowen-answer/response-input-rule.jsp", type = Struts2Utils.DISPATCHER),
-//        @Result(name = DwsAnswerAction.ANSWER_ERROR, location = "/WEB-INF/page/content/diaowen-answer/response-input-error.jsp", type = Struts2Utils.DISPATCHER),
-//        @Result(name = DwsAnswerAction.ANSWER_ERROR_M, location = "/WEB-INF/page/content/diaowen-answer/response-input-error-m.jsp", type = Struts2Utils.DISPATCHER),
-//        @Result(name = DwsAnswerAction.ANSWER_CODE_ERROR, location = "/dwsurvey/${sid}.html?errorcode=3", type = Struts2Utils.REDIRECT),
-//        @Result(name = DwsAnswerAction.ANSWER_CODE_ERROR_M, location = "/survey!answerSurveryMobile.controller?surveyId=${surveyId}&errorcode=3", type = Struts2Utils.REDIRECT),
-//        @Result(name = DwsAnswerAction.RELOAD_ANSWER_SUCCESS, location = "dws-answer!answerSuccess.controller?sid=${sid}", type = Struts2Utils.REDIRECT),
-//       // @Result(name = DwsAnswerAction.RELOAD_ANSWER_FAILURE, location = "dws-answer!answerFailure.controller?surveyId=${surveyId}", type = Struts2Utils.REDIRECT),
-//        @Result(name = DwsAnswerAction.RELOAD_ANSER_ERROR, location = "dws-answer!answerError.controller?surveyId=${surveyId}", type = Struts2Utils.REDIRECT),
-//        @Result(name = DwsAnswerAction.RELOAD_ANSER_ERROR_M, location = "dws-answer!answerErrorM.controller?surveyId=${surveyId}", type = Struts2Utils.REDIRECT),
-////        @Result(name = DwsAnswerAction.RESPONSE_MSG, location = "/WEB-INF/page/content/diaowen-answer/response-msg.jsp", type = Struts2Utils.DISPATCHER),
-//        @Result(name = DwsAnswerAction.RELOAD_ANSWER_SUCCESS_M, location = "dws-answer!answerSuccessM.controller?surveyId=${surveyId}", type = Struts2Utils.REDIRECT),
-////        @Result(name = DwsAnswerAction.RESPONSE_MOBILE, location = "dws-answer!answerMobile.controller?surveyId=${surveyId}", type = Struts2Utils.REDIRECT)
-//        })
-
-//@AllowedMethods({"saveMobile","answerSuccess","answerMobile","answerFailure","answerError","answerSuccessM","ajaxCheckSurvey"})
-public class DwsAnswerController {// extends ActionSupport {
-    private static final long serialVersionUID = -2289729314160067840L;
-
-    protected static final String RESULT_FREQUENCY = "resultFrequency";
-    protected final static String INPUT_IFRAME = "input_iframe";
-    protected final static String ANSWER_SUCCESS = "answerSuccess";
-    protected final static String ANSWER_FAILURE = "answerFailure";
-    protected final static String ANSWER_ERROR = "answerError";
-    protected final static String ANSWER_ERROR_M = "answerErrorM";
-    protected final static String ANSWER_SUCCESS_M = "answerSuccessM";
-    protected final static String RELOAD_ANSWER_SUCCESS = "reloadAnswerSuccess";
-    protected final static String RELOAD_ANSWER_FAILURE = "reloadAnswerFailure";
-    protected final static String RELOAD_ANSER_ERROR = "reloadAnserError";
-    protected final static String RELOAD_ANSER_ERROR_M = "reloadAnserErrorM";
-    protected final static String ANSWER_CODE_ERROR = "answerCodeError";
-    protected final static String ANSWER_CODE_ERROR_M = "answerCodeErrorM";
-    protected final static String ANSWER_INPUT_RULE = "answer_input_rule";
-    protected final static String RELOAD_ANSWER_SUCCESS_M = "reloadAnswerSuccessM";
-    protected final static String SURVEY_RESULT = "surveyResult";
-    protected final static String RESPONSE_MSG = "responseMsg";
-    protected final static String RESPONSE_MOBILE = "responseMobile";
-
-//    private String sid;
+public class DwsAnswerController {
     private String surveyId;
+
     @Autowired
     private SurveyAnswerManager surveyAnswerManager;
+
     @Autowired
     private SurveyDirectoryManager directoryManager;
+
     @Autowired
     private IPService ipService;
+
     @Autowired
     private AccountManager accountManager;
+
     @Autowired
     private ImageCaptchaService imageCaptchaService;
 
-
-
     @RequestMapping("/execute/{sid}.html")
-//    @ResponseBody
     public String execute(HttpServletRequest request,HttpServletResponse response,@PathVariable String sid,Map<String,Object> map) throws Exception {
-
-//        this.sid = sid;
-//        HttpServletRequest request = Struts2Utils.getRequest();
-//        HttpServletResponse response = Struts2Utils.getResponse();
         request.setAttribute("sid",sid);
         SurveyDirectory directory = directoryManager.getSurveyBySid(sid);
         if (directory != null) {
@@ -117,33 +69,13 @@ public class DwsAnswerController {// extends ActionSupport {
                 return "redirect:/dwsurvey/dws-answer/answerMobile?surveyId="+surveyId;
             } else {
                 String htmlPath = directory.getHtmlPath();
-//
-//                request.getRequestDispatcher("/" + htmlPath).include(request,
-//                        response);
-//                map.put("surveyId",surveyId);
-//                request.setCharacterEncoding("utf-8");
                 request.getRequestDispatcher("/" + htmlPath).forward(request,
                         response);
-//                return "/layouts/header";
-//                htmlPath = "/" + htmlPath;
-//                htmlPath =  htmlPath.substring(0,htmlPath.length()-5);
-//                htmlPath = htmlPath.substring(14);
-//                request.setAttribute("surveyId",surveyId);
-
-//                return "forward:"+ htmlPath;
-//                return "forward:" + htmlPath + "?surveyId="+surveyId;
-//                return  "redirect:/dwsurvey/dws-answer/toWjHtml?html="+htmlPath;
                 return null;
             }
         }
         return CommonConstant.NONE;
     }
-
-//    @RequestMapping("/toWjHtml")
-//    public String viewToHtml(String html){
-//        log.info("html="+html);
-//        return html;
-//    }
 
     private String filterStatus(SurveyDirectory directory, HttpServletRequest request){
         SurveyDetail surveyDetail = directory.getSurveyDetail();
@@ -169,7 +101,6 @@ public class DwsAnswerController {// extends ActionSupport {
             String ruleCode = request.getParameter("ruleCode");
             String surveyRuleCode = surveyDetail.getRuleCode();
             if (ruleCode == null || !ruleCode.equals(surveyRuleCode)) {
-//                return ANSWER_INPUT_RULE;
                 return "/content/diaowen-answer/response-input-rule";
             }
         }
@@ -177,8 +108,6 @@ public class DwsAnswerController {// extends ActionSupport {
     }
     @RequestMapping("/answerMobile")
     public String answerMobile( HttpServletRequest request,HttpServletResponse response) throws Exception {
-//        HttpServletRequest request = Struts2Utils.getRequest();
-//        HttpServletResponse response = Struts2Utils.getResponse();
         SurveyDirectory directory = directoryManager.getSurvey(surveyId);
         if (directory != null) {
             String filterStatus = filterStatus(directory,request);
@@ -196,8 +125,6 @@ public class DwsAnswerController {// extends ActionSupport {
 
     @RequestMapping("/save")
     public String save(String sid,HttpServletRequest request,HttpServletResponse response) throws Exception {
-//        HttpServletRequest request = Struts2Utils.getRequest();
-//        HttpServletResponse response = Struts2Utils.getResponse();
         String formFrom = request.getParameter("form-from");
         try {
             String ipAddr = ipService.getIp(request);
@@ -215,13 +142,11 @@ public class DwsAnswerController {// extends ActionSupport {
             Integer effectiveIp = surveyDetail.getEffectiveIp();
             Integer effective = surveyDetail.getEffective();
             if ((effective != null && effective > 1 && cookie != null) || (effectiveIp != null && effectiveIp == 1 && ipNum > 0)) {
-//                return RELOAD_ANSER_ERROR;
                 return "redirect:/dwsurvey/dws-answer/answerError?surveyId="+surveyId;
             }
             if (ipNum >= refreshNum) {
                 String code = request.getParameter("jcaptchaInput");
                 if (!imageCaptchaService.validateResponseForID(request.getSession().getId(), code)) {
-//                    return ANSWER_CODE_ERROR;
                     return "redirect:/dwsurvey/dws-answer/execute/"+sid+".html?errorcode=3";
                 }
             }
@@ -239,16 +164,12 @@ public class DwsAnswerController {// extends ActionSupport {
                     effe * 60, "/");
         } catch (Exception e) {
             e.printStackTrace();
-//            return RELOAD_ANSWER_FAILURE;
             return "redirect:/dwsurvey/dws-answer/answerFailure?surveyId="+surveyId;
         }
         return "redirect:/dwsurvey/dws-answer/answerSuccess?sid="+sid;
-//        return RELOAD_ANSWER_SUCCESS;
     }
     @RequestMapping("/saveMobile")
     public String saveMobile(HttpServletRequest request,HttpServletResponse response) throws Exception {
-//        HttpServletRequest request = Struts2Utils.getRequest();
-//        HttpServletResponse response = Struts2Utils.getResponse();
 
         try {
             String ipAddr = ipService.getIp(request);
@@ -267,14 +188,12 @@ public class DwsAnswerController {// extends ActionSupport {
             Integer effective = surveyDetail.getEffective();
             if ((effective != null && effective > 1 && cookie != null) || (effectiveIp != null && effectiveIp == 1 && ipNum > 0)) {
                 return "redirect:/dwsurvey/dws-answer/answerErrorM?surveyId="+surveyId;
-//                return RELOAD_ANSER_ERROR_M;
             }
             if (ipNum >= refreshNum) {
                 String code = request.getParameter("jcaptchaInput");
                 if (!imageCaptchaService.validateResponseForID(request
                         .getSession().getId(), code)) {
                     return "redirect:/survey/answerSurveryMobile?surveyId="+surveyId;
-//                    return ANSWER_CODE_ERROR_M;
                 }
             }
 
@@ -294,10 +213,8 @@ public class DwsAnswerController {// extends ActionSupport {
         } catch (Exception e) {
             e.printStackTrace();
             return "redirect:/dwsurvey/dws-answer/answerFailure?surveyId="+surveyId;
-//            return RELOAD_ANSWER_FAILURE;
         }
         return "redirect:/dwsurvey/dws-answer/answerSuccessM?surveyId="+surveyId;
-//        return RELOAD_ANSWER_SUCCESS_M;
     }
 
 
@@ -402,29 +319,24 @@ public class DwsAnswerController {// extends ActionSupport {
     }
     @RequestMapping("/answerSuccess")
     public String answerSuccess(String sid,HttpServletRequest request) throws Exception {
-//        HttpServletRequest request = Struts2Utils.getRequest();
         SurveyDirectory directory = directoryManager.getSurveyBySid(sid);
         request.setAttribute("surveyName", directory.getSurveyName());
         request.setAttribute("viewAnswer", directory.getViewAnswer());
         request.setAttribute("sid", directory.getSid());
         return "/content/diaowen-answer/response-success";
-//        return ANSWER_SUCCESS;
     }
 
     @RequestMapping("/answerFailure")
     public String answerFailure(HttpServletRequest request) throws Exception {
-//        HttpServletRequest request = Struts2Utils.getRequest();
         SurveyDirectory directory = directoryManager.get(surveyId);
         request.setAttribute("surveyName", directory.getSurveyName());
         request.setAttribute("sId", directory.getSid());
         return "/content/diaowen-answer/response-failure";
-//        return ANSWER_FAILURE;
     }
     @RequestMapping("/answerError")
     public String answerError(HttpServletRequest request) throws Exception {
         answerErrorC(request);
         return "/content/diaowen-answer/response-input-error";
-//        return ANSWER_ERROR;
     }
 
     private void answerErrorC(HttpServletRequest request) {
@@ -440,7 +352,6 @@ public class DwsAnswerController {// extends ActionSupport {
     public String answerErrorM(HttpServletRequest request) throws Exception {
         answerErrorC(request);
         return "/content/diaowen-answer/response-input-error-m";
-//        return ANSWER_ERROR_M;
     }
 
     @RequestMapping("/answerSuccessM")
@@ -448,15 +359,11 @@ public class DwsAnswerController {// extends ActionSupport {
 //        HttpServletRequest request = Struts2Utils.getRequest();
         SurveyDirectory directory = directoryManager.get(surveyId);
         request.setAttribute("directory", directory);
-//        return ANSWER_SUCCESS_M;
         return "/content/diaowen-answer/response-success-m";
     }
 
     @RequestMapping("/ajaxCheckSurvey")
     public String ajaxCheckSurvey(HttpServletRequest request,HttpServletResponse response) throws Exception {
-//        HttpServletRequest request = Struts2Utils.getRequest();
-//        HttpServletResponse response = Struts2Utils.getResponse();
-        // 0 1 2
         String ajaxResult = "0";
         try {
             SurveyDirectory directory = directoryManager.getSurvey(surveyId);
@@ -502,13 +409,6 @@ public class DwsAnswerController {// extends ActionSupport {
         return null;
     }
 
-//    public String getSid() {
-//        return sid;
-//    }
-//
-//    public void setSid(String sid) {
-//        this.sid = sid;
-//    }
 
     public String getSurveyId() {
         return surveyId;

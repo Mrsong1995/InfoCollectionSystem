@@ -5,5 +5,4 @@ import com.key.dwsurvey.entity.SysDbBackup;
 
 
 public interface SysDbBackupDao extends BaseDao<SysDbBackup, String> {
-
 }

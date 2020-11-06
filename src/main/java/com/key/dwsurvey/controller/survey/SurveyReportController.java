@@ -27,14 +27,6 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/da/survey-report")
-//@Namespace("/da")
-//@InterceptorRefs({ @InterceptorRef("paramsPrepareParamsStack")})
-//@Results({
-//	@Result(name= SurveyReportAction.DEFAULT_REPORT,location="/WEB-INF/page/content/diaowen-da/default-report.jsp",type= Struts2Utils.DISPATCHER),
-//	@Result(name= SurveyReportAction.LINE_CHART,location="/WEB-INF/page/content/diaowen-da/line-chart.jsp",type= Struts2Utils.DISPATCHER),
-//	@Result(name= SurveyReportAction.PIE_CHART,location="/WEB-INF/page/content/diaowen-da/pie-chart.jsp",type= Struts2Utils.DISPATCHER),
-//})
-//@AllowedMethods({"defaultReport","lineChart","pieChart","chartData"})
 public class SurveyReportController extends ActionSupport{
 	
 	protected final static String DEFAULT_REPORT="default_report";
@@ -69,8 +61,6 @@ public class SurveyReportController extends ActionSupport{
 			}
 		}
 		return "/content/diaowen-da/default-report";
-//		return DEFAULT_REPORT;
-//		return "/content/diaowen-da/default-report";
 	}
 
 	@RequestMapping("/lineChart")
@@ -84,7 +74,6 @@ public class SurveyReportController extends ActionSupport{
 				surveyStats.setQuestions(questions);
 			}
 		}
-//		return LINE_CHART;
 		return "/content/diaowen-da/line-chart";
 	}
 
@@ -98,14 +87,11 @@ public class SurveyReportController extends ActionSupport{
 				surveyStats.setQuestions(questions);
 			}
 		}
-//		return PIE_CHART;
 		return "/content/diaowen-da/pie-chart";
 	}
 	
-	//取得某一题的统计数据
 	@RequestMapping("/chartData")
 	public String chartData(HttpServletRequest request,HttpServletResponse response) throws Exception {
-//		HttpServletResponse response= Struts2Utils.getResponse();
 		//取柱状图数据
 		User user = accountManager.getCurUser();
 		if(user!=null){

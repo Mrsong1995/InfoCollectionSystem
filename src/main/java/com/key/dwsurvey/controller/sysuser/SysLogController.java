@@ -13,27 +13,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping(value = {"/sy/system/sys-log","/sy/system/nosm/sys-log"})
-//@Namespaces({@Namespace("/sy/system"),@Namespace("/sy/system/nosm")})
-//@InterceptorRefs({ @InterceptorRef("paramsPrepareParamsStack") })
-//@Results({
-//	@Result(name= CrudActionSupport.SUCCESS,location="/WEB-INF/page/diaowen-system/log-list.jsp",type= Struts2Utils.DISPATCHER),
-//	@Result(name= CrudActionSupport.INPUT,location="/WEB-INF/page/diaowen-system/log-list.jsp",type= Struts2Utils.DISPATCHER),
-//	@Result(name= CrudActionSupport.RELOAD,location="/WEB-INF/page/ref-parent.jsp",type= Struts2Utils.DISPATCHER)
-//})
-public class SysLogController {// extends CrudActionSupport<SysLog, String> {
+public class SysLogController {
 
 	@RequestMapping("/input")
 	public String input() throws Exception {
 		// TODO Auto-generated method stub
 		return "/diaowen-system/log-list";
-//		return super.input();
 	}
 	
 	@RequestMapping("/list")
 	public String list() throws Exception {
 		// TODO Auto-generated method stub
 		return "/diaowen-system/log-list";
-//		return super.list();
 	}
 	
 }

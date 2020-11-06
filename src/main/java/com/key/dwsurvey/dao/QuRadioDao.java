@@ -5,6 +5,6 @@ import com.key.dwsurvey.entity.QuRadio;
 
 public interface QuRadioDao extends BaseDao<QuRadio, String> {
 	
-	public void quOrderByIdDel1(String quId, Integer orderById);
+	void quOrderByIdDel1(String quId, Integer orderById);
 	
 }

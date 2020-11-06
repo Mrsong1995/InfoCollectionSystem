@@ -14,14 +14,12 @@ import javax.persistence.MappedSuperclass;
  * 子类可重载getId()函数重定义id的列名映射和生成策略.
  * 
  */
-//JPA Entity基类的标识
 @MappedSuperclass
-public abstract class IdEntity {//implements Serializable
+public abstract class IdEntity {
 
 	protected String id;
 
 	@Id
-//	@GeneratedValue(strategy = GenerationType.AUTO)
 	@GeneratedValue(generator = "system-uuid")
 	@GenericGenerator(name = "system-uuid", strategy = "uuid")
     @Column(length = 55)

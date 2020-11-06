@@ -44,16 +44,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/design/my-survey-design")
-//@Namespace("/design")
-//@InterceptorRefs({ @InterceptorRef("paramsPrepareParamsStack")})
-//@Results({
-	//@Result(name=ActionSupport.SUCCESS,location="/WEB-INF/page/content/diaowen-design/design-survey.jsp",type= Struts2Utils.DISPATCHER),
-//	@Result(name= MySurveyDesignAction.PREVIEWDEV,location="/WEB-INF/page/content/diaowen-design/survey_preview_dev.jsp",type= Struts2Utils.DISPATCHER),
-	//@Result(name= MySurveyDesignAction.COLLECTSURVEY,location="my-collect.controller?surveyId=${surveyId}",type= Struts2Utils.REDIRECT),
-//	@Result(name= MySurveyDesignAction.RELOADDESIGN,location="/design/my-survey-design.controller?surveyId=${surveyId}",type= Struts2Utils.REDIRECT)
-//})
-//@AllowedMethods({"previewDev","devSurvey","ajaxSave","copySurvey"})
-public class MySurveyDesignController {// extends ActionSupport{
+public class MySurveyDesignController {
 	//发布设置
 	protected final static String PREVIEWDEV="previewDev";
 	protected final static String COLLECTSURVEY="collectSurvey";
@@ -108,9 +99,6 @@ public class MySurveyDesignController {// extends ActionSupport{
 			List<Question> questions=questionManager.find(surveyId, "2");
 			survey.setSurveyQuNum(questions.size());
 			survey.setSurveyState(1);
-			//begin add  by jesse at 2020-07-08  for  更改html数据库的地址
-
-			//end add by jesse at 2020-07-08
 			surveyDirectoryManager.insertOrUpdate(survey);
 		}catch (Exception e) {
 			e.printStackTrace();
@@ -126,37 +114,25 @@ public class MySurveyDesignController {// extends ActionSupport{
 			SurveyDirectory surveyDirectory=surveyDirectoryManager.getSurveyByUser(surveyId, userId);
 			if(surveyDirectory!=null){
 				surveyDirectoryManager.getSurveyDetail(surveyId, surveyDirectory);
-//				SurveyDirectory survey=surveyDirectoryManager.getSurvey(surveyId);
 				List<Question> questions=questionManager.findDetails(surveyId, "2");
 				surveyDirectory.setQuestions(questions);
 				surveyDirectory.setSurveyQuNum(questions.size());
 				surveyDirectoryMapper.updateByPrimaryKeySelective(surveyDirectory);
-				//begin delete  by jesse at 2020-07-14  for 优化
-				//				surveyDirectoryManager.save(surveyDirectory);
-				//end delete by jesse at 2020-07-14
 
 				request.setAttribute("survey",surveyDirectory);
-//				Struts2Utils.setReqAttribute("survey", surveyDirectory);
 				SurveyStyle surveyStyle=surveyStyleManager.getBySurveyId(surveyId);
 				request.setAttribute("surveyStyle", surveyStyle);
-//				Struts2Utils.setReqAttribute("surveyStyle", surveyStyle);
 				request.setAttribute("prevHost", DiaowenProperty.STORAGE_URL_PREFIX);
-//				Struts2Utils.setReqAttribute("prevHost", DiaowenProperty.STORAGE_URL_PREFIX);
 			}else{
 				request.setAttribute("msg", "未登录或没有相应数据权限");
-//				Struts2Utils.setReqAttribute("msg", "未登录或没有相应数据权限");
 			}
 		}else{
 			request.setAttribute("msg", "未登录或没有相应数据权限");
-//			Struts2Utils.setReqAttribute("msg", "未登录或没有相应数据权限");
 		}
 	}
 
-
 	@RequestMapping("/ajaxSave")
 	public String ajaxSave(HttpServletRequest request,HttpServletResponse response) throws Exception {
-//		HttpServletRequest request= Struts2Utils.getRequest();
-//		HttpServletResponse response= Struts2Utils.getResponse();
 		String svyName=request.getParameter("svyName");
 		String svyNote=request.getParameter("svyNote");
 		//属性
@@ -172,15 +148,12 @@ public class MySurveyDesignController {// extends ActionSupport{
 		String endTime=request.getParameter("endTime");
 		String showShareSurvey=request.getParameter("showShareSurvey");
 		String showAnswerDa=request.getParameter("showAnswerDa");
-		
-		
 		SurveyDirectory survey=surveyDirectoryManager.getSurvey(surveyId);
 		SurveyDetail surveyDetail=survey.getSurveyDetail();
 		User user= accountManager.getCurUser();
 		if(user!=null && survey!=null){
 			String userId=user.getId();
 			if(userId.equals(survey.getUserId())){
-				
 				if( svyNote!=null){
 					svyNote=URLDecoder.decode(svyNote,"utf-8");
 					surveyDetail.setSurveyNote(svyNote);
@@ -189,7 +162,6 @@ public class MySurveyDesignController {// extends ActionSupport{
 					svyName=URLDecoder.decode(svyName,"utf-8");
 					survey.setSurveyName(svyName);
 				}
-
 				//保存属性
 				if(effective!=null && !"".equals(effective)){
 				    surveyDetail.setEffective(Integer.parseInt(effective));
@@ -216,7 +188,6 @@ public class MySurveyDesignController {// extends ActionSupport{
 				}
 				if(ynEndTime!=null && !"".equals(ynEndTime)){
 				    surveyDetail.setYnEndTime(Integer.parseInt(ynEndTime));
-//				    surveyDetail.setEndTime(endTime);
 				    surveyDetail.setEndTime(new Date());
 				}
 				if(showShareSurvey!=null && !"".equals(showShareSurvey)){
@@ -227,7 +198,6 @@ public class MySurveyDesignController {// extends ActionSupport{
 				    surveyDetail.setShowAnswerDa(Integer.parseInt(showAnswerDa));
 				    survey.setViewAnswer(Integer.parseInt(showAnswerDa));
 				}
-				
 				surveyDirectoryManager.insertOrUpdate(survey);
 
 				response.getWriter().write("true");
@@ -235,7 +205,6 @@ public class MySurveyDesignController {// extends ActionSupport{
 			}
 		}
 		return null;
-//		return CommonConstant.NONE;
 	}
 	
 	public String getSurveyId() {
@@ -249,8 +218,6 @@ public class MySurveyDesignController {// extends ActionSupport{
 	@RequestMapping("/copySurvey")
 	public String copySurvey(HttpServletRequest request) throws Exception {
 		//引用问卷
-//		id="402880e541d051000141d0f708ff0004";
-//		HttpServletRequest request= Struts2Utils.getRequest();
 		String fromBankId=request.getParameter("fromBankId");
 		String surveyName=request.getParameter("surveyName");
 		surveyName=URLDecoder.decode(surveyName,"utf-8");
@@ -262,24 +229,17 @@ public class MySurveyDesignController {// extends ActionSupport{
 	}
 	
 	private void buildSurveyHtml(HttpServletRequest request,HttpServletResponse response) throws Exception{
-//		HttpServletRequest request= Struts2Utils.getRequest();
-//		HttpServletResponse response= Struts2Utils.getResponse();
 		String url = "";
 		String name = "";
 		ServletContext sc = ServletActionContext.getServletContext();
-
 		String file_name = request.getParameter("file_name");
 		url = "/design/my-collect/execute?surveyId=402880ea4675ac62014675ac7b3a0000";
 		// 这是生成的html文件名,如index.htm.
 		name = "/survey.htm";
 		name = sc.getRealPath(name);
-		
 		RequestDispatcher rd = sc.getRequestDispatcher(url);
 		final ByteArrayOutputStream os = new ByteArrayOutputStream();
-
 		final ServletOutputStream stream = new ServletOutputStream() {
-
-
 			@Override
 			public boolean isReady() {
 				return false;
@@ -289,7 +249,6 @@ public class MySurveyDesignController {// extends ActionSupport{
 			public void setWriteListener(WriteListener writeListener) {
 
 			}
-
 			public void write(byte[] data, int offset, int length) {
 				os.write(data, offset, length);
 			}
@@ -298,9 +257,7 @@ public class MySurveyDesignController {// extends ActionSupport{
 				os.write(b);
 			}
 		};
-		
 		final PrintWriter pw = new PrintWriter(new OutputStreamWriter(os,"utf-8"));
-
 		HttpServletResponse rep = new HttpServletResponseWrapper(response) {
 			@Override
 			public ServletOutputStream getOutputStream() {
@@ -312,18 +269,14 @@ public class MySurveyDesignController {// extends ActionSupport{
 				return pw;
 			}
 		};
-
-//		rd.include(request, rep);
 		rd.forward(request,rep);
 		pw.flush();
-		
 		// 把jsp输出的内容写到xxx.htm
 		File file = new File(name);
 		if (!file.exists()) {
 			file.createNewFile();
 		}
 		FileOutputStream fos = new FileOutputStream(file);
-		
 		os.writeTo(fos);
 		fos.close();
 	}

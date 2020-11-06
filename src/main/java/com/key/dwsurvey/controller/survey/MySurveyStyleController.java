@@ -19,10 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/design/my-survey-style")
-//@Namespaces({@Namespace("/design")})
-//@InterceptorRefs({ @InterceptorRef("paramsPrepareParamsStack")})
-//@Results({})
-public class MySurveyStyleController {//extends CrudActionSupport<SurveyStyle, String> {
+public class MySurveyStyleController {
 	
 	private String surveyId;
 	@Autowired
@@ -35,7 +32,6 @@ public class MySurveyStyleController {//extends CrudActionSupport<SurveyStyle, S
 	@RequestMapping("/save")
 	public String save() throws Exception  {
 		return null;
-//		return CommonConstant.NONE;
 	}
 	
 	public String ajaxGetStyle() throws Exception {

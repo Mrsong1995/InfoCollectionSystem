@@ -23,14 +23,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping(value = {"/sy/system/nosm/sys-backup","/sy/system/sys-backup"})
-//@Namespaces({@Namespace("/sy/system"),@Namespace("/sy/system/nosm")})
-//@InterceptorRefs({ @InterceptorRef("paramsPrepareParamsStack") })
-//@Results({
-//	@Result(name= CrudActionSupport.SUCCESS,location="/WEB-INF/page/diaowen-system/backup-list.jsp",type= Struts2Utils.DISPATCHER),
-//	@Result(name= CrudActionSupport.INPUT,location="/WEB-INF/page/diaowen-system/backup-input.jsp",type= Struts2Utils.DISPATCHER),
-//	@Result(name= CrudActionSupport.RELOAD,location="/WEB-INF/page/ref-parent.jsp",type= Struts2Utils.DISPATCHER)
-//})
-public class SysBackupController<ID extends Serializable>{//} extends CrudActionSupport<SysDbBackup, String> {
+public class SysBackupController<ID extends Serializable>{
 	
 	@Autowired
 	private SysDbBackupManager sysDbBackupManager;
@@ -46,22 +39,18 @@ public class SysBackupController<ID extends Serializable>{//} extends CrudAction
 	@RequestMapping("/input")
 	public String input() throws Exception {
 		return "/diaowen-system/backup-input";
-//		return super.input();
 	}
 	
-//	@Override
 	@RequestMapping("/list")
 	public String list() throws Exception {
 		page=sysDbBackupManager.findPage(page, filters);
 		return "/diaowen-system/backup-list";
-//		return super.list();
 	}
 	
 	@RequestMapping("/save")
 	public String save() throws Exception {
 		sysDbBackupManager.save(entity);
 		return "/ref-parent";
-//		return super.save();
 	}
 	
 

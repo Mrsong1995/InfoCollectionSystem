@@ -18,9 +18,7 @@ import org.hibernate.metadata.ClassMetadata;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
 
-import javax.persistence.EntityManagerFactory;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
@@ -35,18 +33,9 @@ import java.util.Map;
  * @param <ID> 主键类型
  *
  */
-//@Configurable
 public class SimpleHibernateDao<T, ID extends Serializable> implements ISimpleHibernateDao<T, ID> {
 
 	protected Logger logger = LoggerFactory.getLogger(getClass());
-
-
-
-//	@Override
-//	public Session getSession() {
-//		return entityManagerFactory.unwrap(SessionFactory.class).openSession();
-//	}
-
 
 	@Autowired
 	protected SessionFactory sessionFactory;
@@ -66,35 +55,22 @@ public class SimpleHibernateDao<T, ID extends Serializable> implements ISimpleHi
 		this.entityClass = entityClass;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#getSessionFactory()
-	 */
 	@Override
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#setSessionFactory(org.hibernate.SessionFactory)
-	 */
 	@Override
 	@Autowired
 	public void setSessionFactory(final SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#getSession()
-	 */
 	@Override
 	public Session getSession() {
-//		SessionFactory sessionFactory = HibernateSessionFactory.getSessionFactory();
 		return sessionFactory.getCurrentSession();
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#save(T)
-	 */
 	@Override
 	public void save(final T entity) {
 		try {
@@ -106,9 +82,6 @@ public class SimpleHibernateDao<T, ID extends Serializable> implements ISimpleHi
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#delete(T)
-	 */
 	@Override
 	public void delete(final T entity) {
 		AssertUtils.notNull(entity, "entity不能为空");
@@ -116,9 +89,6 @@ public class SimpleHibernateDao<T, ID extends Serializable> implements ISimpleHi
 		logger.debug("delete entity: {}", entity);
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#delete(ID)
-	 */
 	@Override
 	public void delete(final ID id) {
 		AssertUtils.notNull(id, "id不能为空");
@@ -126,34 +96,22 @@ public class SimpleHibernateDao<T, ID extends Serializable> implements ISimpleHi
 		logger.debug("delete entity {},id is {}", entityClass.getSimpleName(), id);
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#get(ID)
-	 */
 	@Override
 	public T get(final ID id) {
 		AssertUtils.notNull(id, "id不能为空");
 		return (T) getSession().load(entityClass, id);
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#get(java.util.Collection)
-	 */
 	@Override
 	public List<T> get(final Collection<ID> ids) {
 		return find(Restrictions.in(getIdName(), ids));
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#getAll()
-	 */
 	@Override
 	public List<T> getAll() {
 		return find();
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#getAll(java.lang.String, boolean)
-	 */
 	@Override
 	public List<T> getAll(String orderByProperty, boolean isAsc) {
 		Criteria c = createCriteria();
@@ -165,9 +123,6 @@ public class SimpleHibernateDao<T, ID extends Serializable> implements ISimpleHi
 		return c.list();
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#findBy(java.lang.String, java.lang.Object)
-	 */
 	@Override
 	public List<T> findBy(final String propertyName, final Object value) {
 		AssertUtils.hasText(propertyName, "propertyName不能为空");
@@ -175,9 +130,6 @@ public class SimpleHibernateDao<T, ID extends Serializable> implements ISimpleHi
 		return find(criterion);
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#findUniqueBy(java.lang.String, java.lang.Object)
-	 */
 	@Override
 	public T findUniqueBy(final String propertyName, final Object value) {
 		AssertUtils.hasText(propertyName, "propertyName不能为空");
@@ -185,57 +137,36 @@ public class SimpleHibernateDao<T, ID extends Serializable> implements ISimpleHi
 		return (T) createCriteria(criterion).uniqueResult();
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#find(java.lang.String, java.lang.Object)
-	 */
 	@Override
 	public <X> List<X> find(final String hql, final Object... values) {
 		return createQuery(hql, values).list();
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#find(java.lang.String, java.util.Map)
-	 */
 	@Override
 	public <X> List<X> find(final String hql, final Map<String, ?> values) {
 		return createQuery(hql, values).list();
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#findUnique(java.lang.String, java.lang.Object)
-	 */
 	@Override
 	public <X> X findUnique(final String hql, final Object... values) {
 		return (X) createQuery(hql, values).uniqueResult();
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#findUnique(java.lang.String, java.util.Map)
-	 */
 	@Override
 	public <X> X findUnique(final String hql, final Map<String, ?> values) {
 		return (X) createQuery(hql, values).uniqueResult();
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#batchExecute(java.lang.String, java.lang.Object)
-	 */
 	@Override
 	public int batchExecute(final String hql, final Object... values) {
 		return createQuery(hql, values).executeUpdate();
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#batchExecute(java.lang.String, java.util.Map)
-	 */
 	@Override
 	public int batchExecute(final String hql, final Map<String, ?> values) {
 		return createQuery(hql, values).executeUpdate();
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#createQuery(java.lang.String, java.lang.Object)
-	 */
 	@Override
 	public Query createQuery(final String queryString, final Object... values) {
 		AssertUtils.hasText(queryString, "queryString不能为空");
@@ -248,9 +179,6 @@ public class SimpleHibernateDao<T, ID extends Serializable> implements ISimpleHi
 		return query;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#createQuery(java.lang.String, java.util.Map)
-	 */
 	@Override
 	public Query createQuery(final String queryString, final Map<String, ?> values) {
 		AssertUtils.hasText(queryString, "queryString不能为空");
@@ -261,25 +189,16 @@ public class SimpleHibernateDao<T, ID extends Serializable> implements ISimpleHi
 		return query;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#find(org.hibernate.criterion.Criterion)
-	 */
 	@Override
 	public List<T> find(final Criterion... criterions) {
 		return createCriteria(criterions).list();
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#findUnique(org.hibernate.criterion.Criterion)
-	 */
 	@Override
 	public T findUnique(final Criterion... criterions) {
 		return (T) createCriteria(criterions).uniqueResult();
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#createCriteria(org.hibernate.criterion.Criterion)
-	 */
 	@Override
 	public Criteria createCriteria(final Criterion... criterions) {
 		Criteria criteria = getSession().createCriteria(entityClass);
@@ -289,9 +208,6 @@ public class SimpleHibernateDao<T, ID extends Serializable> implements ISimpleHi
 		return criteria;
 	}
 	
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#createCriteria(org.hibernate.criterion.Criterion)
-	 */
 	@Override
 	public Criteria createCriteria(List<Criterion> criterions) {
 		Criteria criteria = getSession().createCriteria(entityClass);
@@ -301,52 +217,34 @@ public class SimpleHibernateDao<T, ID extends Serializable> implements ISimpleHi
 		return criteria;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#initProxyObject(java.lang.Object)
-	 */
 	@Override
 	public void initProxyObject(Object proxy) {
 		Hibernate.initialize(proxy);
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#flush()
-	 */
 	@Override
 	public void flush() {
 		getSession().flush();
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#distinct(org.hibernate.Query)
-	 */
 	@Override
 	public Query distinct(Query query) {
 		query.setResultTransformer(CriteriaSpecification.DISTINCT_ROOT_ENTITY);
 		return query;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#distinct(org.hibernate.Criteria)
-	 */
 	@Override
 	public Criteria distinct(Criteria criteria) {
 		criteria.setResultTransformer(CriteriaSpecification.DISTINCT_ROOT_ENTITY);
 		return criteria;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#getIdName()
-	 */
 	@Override
 	public String getIdName() {
 		ClassMetadata meta = getSessionFactory().getClassMetadata(entityClass);
 		return meta.getIdentifierPropertyName();
 	}
 
-	/* (non-Javadoc)
-	 * @see com.key.common.orm.hibernate.ISimpleHibernateDao#isPropertyUnique(java.lang.String, java.lang.Object, java.lang.Object)
-	 */
 	@Override
 	public boolean isPropertyUnique(final String propertyName, final Object newValue, final Object oldValue) {
 		if (newValue == null || newValue.equals(oldValue)) {

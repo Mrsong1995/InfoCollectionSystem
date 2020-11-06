@@ -14,6 +14,6 @@ import com.key.dwsurvey.entity.Question;
  */
 public interface AnOrderDao extends BaseDao<AnOrder, String> {
 
-	public void findGroupStats(Question question);
+	void findGroupStats(Question question);
 	
 }

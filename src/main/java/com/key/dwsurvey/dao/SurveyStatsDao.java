@@ -6,6 +6,6 @@ import com.key.dwsurvey.entity.SurveyStats;
 
 public interface SurveyStatsDao extends BaseDao<SurveyStats, String> {
 
-	public void findStatsDataCross(Question rowQuestion, Question colQuestion);
+	void findStatsDataCross(Question rowQuestion, Question colQuestion);
 
 }
