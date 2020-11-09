@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title><sitemesh:write property='title' />&nbsp;&nbsp;调问网</title>
+<title><sitemesh:write property='title' /></title>
 
 <link href="${ctx }/js/plugs/jquery-ui-1.10.3.custom/css/mycss/jquery-ui-1.10.3.custom.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="${ctx }/js/plugs/jquery-ui-1.10.3.custom/js/jquery-1.10.1.js"></script>
@@ -25,15 +25,8 @@
 	
 	<div class="dw_foot" style="padding-top:20px;">
 		<%@ include file="/WEB-INF/page/layouts/footer-1.jsp"%>
-
-		<!-- 必须保留声明 start -->
 		<div class="footer-copyright" style="color: gray;padding-top: 0px;font-size: 16px;padding-bottom: 16px;">
-			Powered by <a href="" style="text-decoration: none;color: gray;">RUANCHUANG</a>
-			&nbsp;&nbsp;&nbsp;Copyright © 2020
-<%--			<a href="http://www.diaowen.net" style="text-decoration: none;color: rgb(53, 117, 136);">调问网</a>--%>
-			<a href="" style="text-decoration: none;color: rgb(53, 117, 136);">调问网</a>
 		</div>
-		<!-- 必须保留声明 end -->
 	</div>
 	
 	

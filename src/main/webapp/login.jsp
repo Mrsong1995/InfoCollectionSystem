@@ -5,8 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>调问-专业且开源的问卷表单系统</title>
-<meta name="description" content="调问问卷表单－开源且专业的调研系统" />
+<title>信息收集系统</title>
+<meta name="description" content="信息收集系统" />
 
 <script type="text/javascript" src="${ctx }/js/plugs/jquery-ui-1.10.3.custom/js/jquery-1.10.1.js"></script>
 <script type="text/javascript" src="${ctx }/js/dw/responsive-width.js"></script>
@@ -78,10 +78,9 @@ label.error{
 	<div style="clear: both;"></div>
 	<div id="dwBody" >
 		<div id="dwBodyContent" class="bodyCenter" style="background: none;">
-				
+
 					<div class="dw_login_logo">
-						<h1 class="f1">DIAOWEN</h1>
-						<h2 class="f2" style="width: 460px;">调问专业<span class="f3">、</span>开源<span class="f3">、</span>实用的调研方式</h2>
+
 					</div>
 					
 					
@@ -195,18 +194,7 @@ label.error{
 			</shiro:user>
 		</div>
 	</div>
-	
-	<div class="dw_foot" style="padding-top:15px;">
-		<!-- 必须保留声明 start -->
-	<div class="footer-copyright" style="color: gray;padding-top: 0px;font-size: 16px;">
-		Powered by <a href="http://www.dwsurvey.net" style="text-decoration: none;color: gray;">RUANCHUANG</a>
-		&nbsp;&nbsp;&nbsp;Copyright © 2020
-<%--		<a href="http://www.diaowen.net" style="text-decoration: none;color: rgb(53, 117, 136);">调问网</a>--%>
-	</div>
-		<!-- 必须保留声明 end -->
-	</div>
-	
-	</div>
+
 <script type="text/javascript">
 resizeBodyWidth();
 $(".dlcTitleBg").animate({opacity:0.6},0);
