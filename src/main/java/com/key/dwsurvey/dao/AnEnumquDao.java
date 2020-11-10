@@ -6,11 +6,7 @@ import com.key.dwsurvey.entity.Question;
 
 /**
  * 枚举题 interface
- * @author KeYuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
- *
+
  */
 public interface AnEnumquDao extends BaseDao<AnEnumqu, String> {
 
