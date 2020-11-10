@@ -35,11 +35,6 @@ import java.util.List;
 
 /**
  * 设计问卷
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
- *
  */
 
 @Controller

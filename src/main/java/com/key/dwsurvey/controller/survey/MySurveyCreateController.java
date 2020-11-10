@@ -14,11 +14,6 @@ import java.util.Map;
 
 /**
  * 创建问卷
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
- *
  */
 
 @Controller

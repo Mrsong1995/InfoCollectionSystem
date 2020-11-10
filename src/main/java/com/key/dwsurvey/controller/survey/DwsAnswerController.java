@@ -28,11 +28,6 @@ import java.util.Map;
 
 /**
  * 问卷 controller
- * @author KeYuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://www.dwsurvey.net
- *
  */
 @Controller
 @RequestMapping("/dwsurvey/dws-answer")

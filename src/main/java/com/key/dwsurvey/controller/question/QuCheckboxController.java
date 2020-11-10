@@ -22,10 +22,6 @@ import java.util.Map;
 
 /**
  * 单选题 controller
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  *
  */
 @Controller

@@ -24,10 +24,6 @@ import java.util.Map;
 
 /**
  * 多项填空题 controller
- * @author KeYuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  *
  */
 @Controller
