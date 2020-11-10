@@ -17,6 +17,10 @@
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
+DROP DATABASE IF EXISTS `ics`;
+CREATE DATABASE `ics`;
+USE `ics`;
+
 -- ----------------------------
 -- Table structure for t_an_answer
 -- ----------------------------

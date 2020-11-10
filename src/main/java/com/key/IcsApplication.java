@@ -21,10 +21,10 @@ import org.springframework.orm.jpa.vendor.HibernateJpaSessionFactoryBean;
 @ServletComponentScan
 @MapperScan("com.key.dwsurvey.mapper")
 @Configuration
-public class DwsurveyApplication {
+public class IcsApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DwsurveyApplication.class, args);
+        SpringApplication.run(IcsApplication.class, args);
     }
 
 }
