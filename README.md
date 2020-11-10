@@ -3,5 +3,5 @@
 
 数据库文件地址
 ```java
-resources-->conf-->sql-->dwsurvey.sql
+resources-->conf-->sql-->ics.sql
 ```

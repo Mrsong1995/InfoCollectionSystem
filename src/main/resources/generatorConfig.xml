@@ -59,9 +59,9 @@
         <!--userId="sa"-->
         <!--password="L00easy.db.pro.sa"/>-->
 
-<!--jdbc:mysql://localhost:3306/dwsurvey?useUnicode=true&characterEncoding=utf8-->
+<!--jdbc:mysql://localhost:3306/ics?useUnicode=true&characterEncoding=utf8-->
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/dwsurvey"
+                        connectionURL="jdbc:mysql://localhost:3306/ics"
                         userId="root"
                         password="wtx12345">
         </jdbcConnection>

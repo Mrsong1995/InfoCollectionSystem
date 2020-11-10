@@ -5,7 +5,7 @@
  Source Server Type    : MySQL
  Source Server Version : 80019
  Source Host           : localhost:3306
- Source Schema         : dwsurvey
+ Source Schema         : ics
 
  Target Server Type    : MySQL
  Target Server Version : 80019
@@ -1167,7 +1167,7 @@ CREATE TABLE `t_user` (
 -- Records of t_user
 -- ----------------------------
 BEGIN;
-INSERT INTO `t_user` VALUES ('1', NULL, '2013-03-21 21:15:21', NULL, NULL, '2013-03-21 21:15:21', 1, 'service@diaowen.net', NULL, NULL, '2013-03-21 21:15:34', 'dwsurvey', 'jesse', NULL, 1, '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 1);
+INSERT INTO `t_user` VALUES ('1', NULL, '2013-03-21 21:15:21', NULL, NULL, '2013-03-21 21:15:21', 1, 'service@diaowen.net', NULL, NULL, '2013-03-21 21:15:34', 'ics', 'jesse', NULL, 1, '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 1);
 INSERT INTO `t_user` VALUES ('ff808081730df24101730e01ef680000', NULL, NULL, NULL, '', '2020-07-02 00:31:15', NULL, '1447907328@qq.com', NULL, NULL, NULL, 'jesse', 'jesse', NULL, NULL, '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 1);
 INSERT INTO `t_user` VALUES ('ff808081730df24101730e074dd40001', NULL, NULL, NULL, '', '2020-07-02 00:37:07', NULL, '12233233@qq.co', NULL, NULL, NULL, 'jessely6', 'jesse', NULL, NULL, '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 1);
 COMMIT;

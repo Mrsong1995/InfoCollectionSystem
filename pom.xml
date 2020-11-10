@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.key</groupId>
-    <artifactId>dwsurvey</artifactId>
+    <artifactId>ics</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>dwsurvey</name>
+    <name>ics</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
