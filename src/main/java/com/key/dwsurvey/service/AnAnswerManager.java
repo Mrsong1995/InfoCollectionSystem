@@ -6,10 +6,7 @@ import com.key.dwsurvey.entity.Question;
 
 /**
  * 答卷业务
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
+
  */
 
 public interface AnAnswerManager {//extends BaseService<AnAnswer, String> {

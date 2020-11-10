@@ -13,10 +13,7 @@ import java.util.Map;
 
 /**
  * 问卷回答
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
+
  */
 public interface SurveyAnswerManager extends BaseService<SurveyAnswer, String> {
 

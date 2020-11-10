@@ -7,10 +7,7 @@ import java.util.List;
 
 /**
  * 矩陈题选项
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
+
  */
 public interface QuChenOptionManager extends BaseService<QuChenOption, String> {
 	public List<QuChenOption> findByQuId(String quId);
