@@ -149,9 +149,7 @@ public class AccountManager {
                 //是邮箱账号
                 return userMapper.findUserByEmail(loginName);
             } else {
-                //begin delete  by jesse at 2020-07-15  for  优化
                 //return userDao.findUniqueBy("loginName", loginName);
-                //end delete by jesse at 2020-07-15
                 return userMapper.findUserByLoginName(loginName);
             }
         }
@@ -162,9 +160,7 @@ public class AccountManager {
     @Transactional(readOnly = true)
     public User findUserByEmail(String email) {
         List<User> users = userMapper.findUsersByEmail(email);
-        //begin delete  by jesse at 2020-07-15  for 优化
 //        List<User> users = userDao.findBy("email", email);
-        //end delete by jesse at 2020-07-15
 
         if (users != null && users.size() > 0) {
             return users.get(0);

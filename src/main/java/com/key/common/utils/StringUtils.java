@@ -1,8 +1,5 @@
 package com.key.common.utils;
 
-/**
- * Created by keyuan on 17/7/26.
- */
 public class StringUtils {
     /**
      * 字符串转换unicode

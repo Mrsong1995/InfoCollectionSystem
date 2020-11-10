@@ -11,8 +11,7 @@ import javax.jms.*;
  * JMS用户变更消息生产者.
  * 
  * 使用jmsTemplate将用户变更消息分别发送到queue与topic.
- * 
- * @author KeYuan
+ *
  */
 public class AdvancedNotifyMessageProducer {
 
