@@ -10,10 +10,6 @@ import javax.persistence.Transient;
 
 /**
  * 单选题选项
- * @author keyuan
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Entity
 @Table(name="t_qu_radio")

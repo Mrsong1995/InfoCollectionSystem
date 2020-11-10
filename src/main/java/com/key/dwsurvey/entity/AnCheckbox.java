@@ -8,11 +8,6 @@ import javax.persistence.Table;
 
 /**
  * 答卷  多选题保存表
- * @author keyuan(keyuan258@gmail.com)
- * @date 2012-10-21下午9:26:43
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  *
  */
 @Entity

@@ -8,10 +8,6 @@ import java.util.Date;
 
 /**
  * 系统邮件
- * @author keyuan
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Entity
 @Table(name="t_sys_email")

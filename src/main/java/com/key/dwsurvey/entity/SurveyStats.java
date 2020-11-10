@@ -12,11 +12,6 @@ import java.util.List;
 
 /**
  * 单个问卷的全局统计信息
- * @author KeYuan
- * @date 2013下午6:48:25
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Entity
 @Table(name="t_survey_stats")

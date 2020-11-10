@@ -8,12 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-/**
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
- *
- */
+
 @Entity
 @Table(name="t_qu_multi_fillblank")
 @TableName("t_qu_multi_fillblank")

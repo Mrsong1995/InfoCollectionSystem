@@ -6,14 +6,6 @@ import com.key.common.base.entity.IdEntity;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-/**
- * 
- * @author KeYuan
- * @date 2014下午8:41:44
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
- */
 @Entity
 @Table(name="t_survey_style")
 @TableName("t_survey_style")

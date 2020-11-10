@@ -6,10 +6,6 @@ import java.util.Date;
 
 /**
  * 系统邮件
- * @author keyuan
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 public class SysSendEmail extends IdEntity {
 	//收件用户

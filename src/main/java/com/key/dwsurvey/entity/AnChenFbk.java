@@ -9,11 +9,6 @@ import javax.persistence.Transient;
 
 /**
  * 矩阵填空题
- * @author KeYuan
- * @date 2013下午8:49:11
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Entity
 @Table(name="t_an_chen_fbk")

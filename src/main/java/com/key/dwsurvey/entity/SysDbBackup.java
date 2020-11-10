@@ -8,10 +8,6 @@ import java.util.Date;
 
 /**
  * 用作备分
- * @author keyuan
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Entity
 @Table(name="t_sys_db_backup")

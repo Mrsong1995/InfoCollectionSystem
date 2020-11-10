@@ -10,10 +10,6 @@ import javax.persistence.Transient;
 
 /**
  * 多选题 选项表
- * @author keyuan
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Entity
 @Table(name="t_qu_checkbox")

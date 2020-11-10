@@ -9,9 +9,6 @@ import javax.persistence.Transient;
 
 /**
  * 评分题 行选项
- * @author KeYuan
- * @date 2013下午12:14:26
- *
  */
 @Entity
 @Table(name="t_qu_orderby")
