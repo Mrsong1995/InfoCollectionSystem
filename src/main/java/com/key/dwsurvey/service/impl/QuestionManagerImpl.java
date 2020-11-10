@@ -494,10 +494,8 @@ public class QuestionManagerImpl extends BaseServiceImpl<Question, String> imple
 
     @Override
     public List<Question> findStatsColVarQus(SurveyDirectory survey) {
-        //begin delete  by jesse at 2020-07-16  for 优化
         //        Criterion criterion1 = Restrictions.eq("belongId", survey.getId());
         //        Criterion criterion2 = Restrictions.eq("tag", 2);
-        //end delete by jesse at 2020-07-16
 
 
 //		Criterion criterion31=Restrictions.ne("quType", QuType.FILLBLANK);

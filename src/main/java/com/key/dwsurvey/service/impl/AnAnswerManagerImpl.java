@@ -32,11 +32,9 @@ public class AnAnswerManagerImpl implements AnAnswerManager {// extends BaseServ
 		queryWrapper.eq("belong_answer_id", belongAnswerId);
 		queryWrapper.eq("qu_id", quId);
 		return anAnswerMapper.selectOne(queryWrapper);
-		//begin delete  by jesse at 2020-07-15  for 优化
 		//			Criterion criterion1=Restrictions.eq("belongAnswerId", belongAnswerId);
 		//			Criterion criterion2=Restrictions.eq("quId", quId);
 		//			return anAnswerDao.findUnique(criterion1,criterion2);
-		//end delete by jesse at 2020-07-15
 
 	}
 

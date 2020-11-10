@@ -38,11 +38,9 @@ public class AnOrderManagerImpl extends BaseServiceImpl<AnOrder, String> impleme
 		queryWrapper.eq("belong_answer_id", belongAnswerId);
 		queryWrapper.eq("qu_id", quId);
 		return anOrderMapper.selectList(queryWrapper);
-		//begin delete  by jesse at 2020-07-15  for 优化
 		//		Criterion criterion1=Restrictions.eq("belongAnswerId", belongAnswerId);
 		//		Criterion criterion2=Restrictions.eq("quId", quId);
 		//		return anOrderDao.find(criterion1,criterion2);
-		//end delete by jesse at 2020-07-15
 
 	}
 

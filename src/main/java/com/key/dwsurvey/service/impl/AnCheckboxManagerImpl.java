@@ -42,11 +42,9 @@ public class AnCheckboxManagerImpl implements AnCheckboxManager {//extends BaseS
 			queryWrapper.eq("belong_answer_id", belongAnswerId);
 			queryWrapper.eq("qu_id", quId);
 			return anCheckboxMapper.selectList(queryWrapper);
-			//begin delete  by jesse at 2020-07-15  for
 			//			Criterion criterion1=Restrictions.eq("belongAnswerId", belongAnswerId);
 			//			Criterion criterion2=Restrictions.eq("quId", quId);
 			//			return anCheckboxDao.find(criterion1,criterion2);
-			//end delete by jesse at 2020-07-15
 
 		}
 
