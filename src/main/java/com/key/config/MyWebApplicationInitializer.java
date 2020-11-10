@@ -6,12 +6,6 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.servlet.ServletContext;
 
-/**
- * @author jesse
- * @Date 2020-07-04 23:15
- * @Version 1.0
- */
-
 @Configuration
 public class MyWebApplicationInitializer implements ServletContextInitializer {
 

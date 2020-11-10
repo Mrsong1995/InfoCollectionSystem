@@ -1,14 +1,4 @@
-/**
- *
- * DWSurvey 3.0
- *
- * @desc: 收集问卷设置
- * @author: keyuan（@keyuan, keyuan258@gmail.com）
- * @github: https://github.com/wkeyuan/DWSurvey
- *
- * Copyright 2012, 2017 调问问卷(DWSurvey,http://dwsurvey.net)
- *
- */
+
 $(document).ready(function () {
     var ctx = $("input[name='ctx']").val();
     //检查问卷状态－－－如果是设计状态，则提醒先发布，再收集

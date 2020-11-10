@@ -11,13 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * 业务基类
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://www.dwsurvey.net
- */
+
 @Transactional
 @Slf4j
 public abstract class BaseServiceImpl<T extends IdEntity, ID extends Serializable>

@@ -19,11 +19,7 @@ import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author jesse
- * @Date 2020-07-03 10:26
- * @Version 1.0
- */
+
 
 @Configuration
 @ComponentScan({"com.key.common.service", "com.key.dwsurvey.service","com.key.common.base.service"})

@@ -8,12 +8,6 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 import java.util.Date;
 
-/**
- * 
- * @author KeYuan
- * @date 2013下午10:02:00
- *
- */
 @Entity
 @Table(name = "T_USER")
 @TableName("t_user")

@@ -19,10 +19,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * @author KeYuan
- * @date 2013下午10:22:04
- */
 @Service
 public class AccountManager {
     private static Logger logger = LoggerFactory.getLogger(AccountManager.class);

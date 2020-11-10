@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.key</groupId>
-    <artifactId>ics</artifactId>
+    <artifactId>InfoCollectionSystem</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ics</name>
+    <name>InfoCollectionSystem</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

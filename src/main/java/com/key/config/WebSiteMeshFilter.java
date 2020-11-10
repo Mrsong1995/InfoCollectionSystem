@@ -3,11 +3,7 @@ package com.key.config;
 import org.sitemesh.builder.SiteMeshFilterBuilder;
 import org.sitemesh.config.ConfigurableSiteMeshFilter;
 
-/**
- * @author jesse
- * @Date 2020-07-07 18:30
- * @Version 1.0
- */
+
 
 public class WebSiteMeshFilter extends ConfigurableSiteMeshFilter {
     @Override

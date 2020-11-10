@@ -5,12 +5,6 @@ import com.key.common.dao.BaseDaoImpl;
 import org.springframework.stereotype.Repository;
 
 
-/**
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
- */
 
 @Repository
 public class UserDaoImpl extends BaseDaoImpl<User, String> implements UserDao {

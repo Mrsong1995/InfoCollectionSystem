@@ -8,13 +8,7 @@ import org.hibernate.criterion.Criterion;
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * 业务基类接口
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
- */
+
 public interface BaseService<T extends IdEntity,ID extends Serializable> {
 	
 	void setBaseDao();
