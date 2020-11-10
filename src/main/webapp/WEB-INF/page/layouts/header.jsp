@@ -5,11 +5,6 @@
 <div id="header" >
 		<div id="headerCenter"  class="bodyCenter">
 			<div class="header_Item header_logo">
-			<%-- 
-			<a href="${ctx }/">
-				<img alt="调问网" src="${ctx }/images/logo/LOGO.png" >
-			</a> 
-			--%>
 			<%@ include file="logo-img.jsp"%>
 			</div>
 			<shiro:guest>
