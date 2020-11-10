@@ -41,11 +41,6 @@ import com.key.dwsurvey.service.SurveyDetailManager;
 
 /**
  * 问卷
- *
- * @author keyuan(keyuan258 @ gmail.com)
- * <p>
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Slf4j
 @Service("surveyDirectoryManager")

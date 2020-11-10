@@ -19,11 +19,6 @@ import java.util.List;
 
 /**
  * 排序题
- *
- * @author keyuan(keyuan258 @ gmail.com)
- * <p>
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Service
 public class QuOrderbyManagerImpl extends BaseServiceImpl<QuOrderby, String> implements QuOrderbyManager {
@@ -110,15 +105,11 @@ public class QuOrderbyManagerImpl extends BaseServiceImpl<QuOrderby, String> imp
     @Transactional
     public void ajaxDelete(String quItemId) {
         QuOrderby quOrderby = quOrderbyMapper.selectByPrimaryKey(quItemId);
-        //begin delete  by jesse at 2020-07-15  for  优化
         //        QuOrderby quOrderby = get(quItemId);
-        //end delete by jesse at 2020-07-15
 
         quOrderby.setVisibility(0);
         quOrderbyMapper.updateByPrimaryKey(quOrderby);
-        //begin delete  by jesse at 2020-07-15  for 优化
         //        quOrderbyDao.save(quOrderby);
-        //end delete by jesse at 2020-07-15
 
     }
 
@@ -127,10 +118,8 @@ public class QuOrderbyManagerImpl extends BaseServiceImpl<QuOrderby, String> imp
     public void saveAttr(String quItemId) {
         QuOrderby quOrderby = quOrderbyMapper.selectByPrimaryKey(quItemId);
         quOrderbyMapper.updateByPrimaryKey(quOrderby);
-        //begin delete  by jesse at 2020-07-15  for 优化
         //        QuOrderby quOrderby = get(quItemId);
         //        quOrderbyDao.save(quOrderby);
-        //end delete by jesse at 2020-07-15
 
     }
 }

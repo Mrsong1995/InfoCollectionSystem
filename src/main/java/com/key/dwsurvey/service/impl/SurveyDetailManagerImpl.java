@@ -18,10 +18,6 @@ import java.util.List;
 
 /**
  * 问卷详情
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Service
 public class SurveyDetailManagerImpl extends BaseServiceImpl<SurveyDetail, String> implements SurveyDetailManager{
@@ -50,9 +46,7 @@ public class SurveyDetailManagerImpl extends BaseServiceImpl<SurveyDetail, Strin
 		}else {
 			surveyDetailMapper.updateByPrimaryKey(surveyDetail);
 		}
-		//begin delete  by jesse at 2020-07-14  for 优化
 //		super.save(surveyDetail);
-		//end delete by jesse at 2020-07-14
 
 	}
 	
@@ -60,10 +54,8 @@ public class SurveyDetailManagerImpl extends BaseServiceImpl<SurveyDetail, Strin
 		QueryWrapper<SurveyDetail> queryWrapper = new QueryWrapper<>();
 		queryWrapper.eq("dir_id", dirId);
 		List<SurveyDetail> details = surveyDetailMapper.selectList(queryWrapper);
-		//begin delete  by jesse at 2020-07-14  for 优化
 //		Criterion criterion=Restrictions.eq("dirId", dirId);
 //		List<SurveyDetail> details=surveyDetailDao.find(criterion);
-		//end delete by jesse at 2020-07-14
 
 		 if(details!=null && details.size()>0){
 			 return details.get(0);

@@ -16,10 +16,6 @@ import java.util.Map;
 
 /**
  * 问卷样式
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Service
 public class SurveyStyleManagerImpl implements SurveyStyleManager {
@@ -40,10 +36,8 @@ public class SurveyStyleManagerImpl implements SurveyStyleManager {
 
 		Map<String,String> map = new HashMap<>();
 		map.put("surveyId",surveyId);
-		//begin delete  by jesse at 2020-07-14  for 优化
 //		Criterion cri1=Restrictions.eq("surveyId", surveyId);
 //		SurveyStyle surveyStyle1 = surveyStyleDao.findFirst(cri1);
-		//end delete by jesse at 2020-07-14
 
 		return surveyStyleMapper.findFirst(map);
 	}

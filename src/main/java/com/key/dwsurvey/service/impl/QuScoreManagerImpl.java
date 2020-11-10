@@ -19,11 +19,6 @@ import java.util.List;
 
 /**
  * 评分题
- *
- * @author keyuan(keyuan258 @ gmail.com)
- * <p>
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Service
 public class QuScoreManagerImpl extends BaseServiceImpl<QuScore, String> implements QuScoreManager {

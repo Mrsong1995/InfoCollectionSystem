@@ -14,11 +14,6 @@ import java.util.List;
 
 /**
  * 题逻辑
- *
- * @author keyuan(keyuan258 @ gmail.com)
- * <p>
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Service
 public class QuestionLogicManagerImpl implements QuestionLogicManager {

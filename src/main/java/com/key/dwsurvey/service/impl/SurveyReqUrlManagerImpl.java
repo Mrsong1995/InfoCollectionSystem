@@ -12,10 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 /**
  * 短链地址
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Service
 public class SurveyReqUrlManagerImpl  implements SurveyReqUrlManager {

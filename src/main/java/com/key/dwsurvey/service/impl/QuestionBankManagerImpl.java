@@ -26,10 +26,6 @@ import java.util.Map;
 
 /**
  * 题库
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Service
 public class QuestionBankManagerImpl extends BaseServiceImpl<QuestionBank, String> implements QuestionBankManager {
@@ -82,9 +78,7 @@ public class QuestionBankManagerImpl extends BaseServiceImpl<QuestionBank, Strin
 	@Override
 	public QuestionBank getBank(String id) {
 		QuestionBank questionBank = questionBankMapper.selectByPrimaryKey(id);
-		//begin delete  by jesse at 2020-07-16  for 优化
 		//		QuestionBank questionBank=get(id);
-		//end delete by jesse at 2020-07-16
 
 		return questionBank;
 	}
@@ -93,21 +87,17 @@ public class QuestionBankManagerImpl extends BaseServiceImpl<QuestionBank, Strin
 		Map<String,String> map = new HashMap<>();
 		map.put("bankName", bankName);
 		map.put("parentId", parentId);
-		//begin delete  by jesse at 2020-07-16  for 优化
 		//		List<Criterion> criterions=new ArrayList<Criterion>();
 		//		Criterion eqName=Restrictions.eq("bankName", bankName);
 		//		Criterion eqParentId=Restrictions.eq("parentId", parentId);
 		//		criterions.add(eqName);
 		//		criterions.add(eqParentId);
-		//end delete by jesse at 2020-07-16
 
 		
 		if(id!=null && !"".equals(id)){
 			map.put("id", id);
-			//begin delete  by jesse at 2020-07-16  for 优化
 			//			Criterion eqId=Restrictions.ne("id", id);
 			//			criterions.add(eqId);
-			//end delete by jesse at 2020-07-16
 		}
 		return questionBankMapper.findFirst(map);
 //		return questionBankDao.findFirst(criterions);
@@ -222,9 +212,7 @@ public class QuestionBankManagerImpl extends BaseServiceImpl<QuestionBank, Strin
 			questionBank.setQuNum(questions.size());
 		}
 		questionBankMapper.updateByPrimaryKey(questionBank);
-		//begin delete  by jesse at 2020-07-16  for 优化
 		//		super.save(questionBank);
-		//end delete by jesse at 2020-07-16
 
 	}
 	
@@ -234,9 +222,7 @@ public class QuestionBankManagerImpl extends BaseServiceImpl<QuestionBank, Strin
 		QuestionBank questionBank=getBank(id);
 		questionBank.setBankState(0);
 		questionBankMapper.updateByPrimaryKey(questionBank);
-		//begin delete  by jesse at 2020-07-16  for 优化
 		//		super.save(questionBank);
-		//end delete by jesse at 2020-07-16
 	}
 	
 	public List<QuestionBank> newQuestionBank() {
