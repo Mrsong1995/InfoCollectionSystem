@@ -18,10 +18,6 @@ import java.util.List;
 
 /**
  * 矩陈题列
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Service
 public class QuChenColumnManagerImpl extends BaseServiceImpl<QuChenColumn, String> implements QuChenColumnManager {
@@ -64,10 +60,8 @@ public class QuChenColumnManagerImpl extends BaseServiceImpl<QuChenColumn, Strin
 
 	public int getOrderById(String quId){
 		QuChenColumn quChenColumn = chenColumnMapper.findFirstByOrderByIdDesc(quId);
-		//begin delete  by jesse at 2020-07-16  for 优化
 		//		Criterion criterion=Restrictions.eq("quId", quId);
 		//		QuChenColumn quChenColumn=chenColumnDao.findFirst("orderById", false, criterion);
-		//end delete by jesse at 2020-07-16
 
 		if(quChenColumn!=null){
 			return quChenColumn.getOrderById();
@@ -80,15 +74,11 @@ public class QuChenColumnManagerImpl extends BaseServiceImpl<QuChenColumn, Strin
 	public QuChenColumn upOptionName(String quId,String quItemId, String optionName) {
 		if(quItemId!=null && !"".equals(quItemId)){
 			QuChenColumn quChenColumn = chenColumnMapper.selectByPrimaryKey(quItemId);
-			//begin delete  by jesse at 2020-07-16  for  优化
 			//			QuChenColumn quChenColumn=chenColumnDao.get(quItemId);
-			//end delete by jesse at 2020-07-16
 
 			quChenColumn.setOptionName(optionName);
 			chenColumnMapper.updateByPrimaryKeySelective(quChenColumn);
-			//begin delete  by jesse at 2020-07-16  for  优化
 			//			chenColumnDao.save(quChenColumn);
-			//end delete by jesse at 2020-07-16
 
 			return quChenColumn;
 		}else{
@@ -101,9 +91,7 @@ public class QuChenColumnManagerImpl extends BaseServiceImpl<QuChenColumn, Strin
 			//title
 			quChenColumn.setOrderById(++orderById);
 			chenColumnMapper.insertSelective(quChenColumn);
-			//begin delete  by jesse at 2020-07-16  for 优化
 			//chenColumnDao.save(quChenColumn);
-			//end delete by jesse at 2020-07-16
 
 			return quChenColumn;
 		}
@@ -114,15 +102,11 @@ public class QuChenColumnManagerImpl extends BaseServiceImpl<QuChenColumn, Strin
 	@Transactional
 	public void ajaxDelete(String quItemId) {
 		QuChenColumn quChenColumn = chenColumnMapper.selectByPrimaryKey(quItemId);
-		//begin delete  by jesse at 2020-07-16  for 优化
 		//QuChenColumn quChenColumn=get(quItemId);
-		//end delete by jesse at 2020-07-16
 
 		quChenColumn.setVisibility(0);
 		chenColumnMapper.updateByPrimaryKeySelective(quChenColumn);
-		//begin delete  by jesse at 2020-07-16  for 优化
 		//		chenColumnDao.save(quChenColumn);
-		//end delete by jesse at 2020-07-16
 
 	}
 	

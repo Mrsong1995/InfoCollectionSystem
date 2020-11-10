@@ -11,11 +11,6 @@ import com.key.dwsurvey.service.AnAnswerManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * @author keyuan
- * keyuan258@gmail.com
- *
- */
 
 @Service
 public class AnAnswerManagerImpl implements AnAnswerManager {// extends BaseServiceImpl<AnAnswer, String> implements AnAnswerManager {

@@ -18,10 +18,6 @@ import java.util.List;
 
 /**
  * 多选题
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Service("quCheckboxManager")
 public class QuCheckboxManagerImpl extends BaseServiceImpl<QuCheckbox, String> implements QuCheckboxManager {
@@ -50,10 +46,8 @@ public class QuCheckboxManagerImpl extends BaseServiceImpl<QuCheckbox, String> i
 	
 	
 	public int getOrderById(String quId){
-		//begin delete  by jesse at 2020-07-16  for 优化
 		//		Criterion criterion=Restrictions.eq("quId", quId);
 		//		QuCheckbox quCheckbox=quCheckboxDao.findFirst("orderById", false, criterion);
-		//end delete by jesse at 2020-07-16
 		QuCheckbox quCheckbox = quCheckboxMapper.findFirstByOrderByIdDesc(quId);
 		if(quCheckbox!=null){
 			return quCheckbox.getOrderById();
@@ -70,15 +64,11 @@ public class QuCheckboxManagerImpl extends BaseServiceImpl<QuCheckbox, String> i
 	public QuCheckbox upOptionName(String quId, String quItemId, String optionName) {
 		if(quItemId!=null && !"".equals(quItemId)){
 			QuCheckbox quCheckbox = quCheckboxMapper.selectByPrimaryKey(quItemId);
-			//begin delete  by jesse at 2020-07-16  for 优化
 			//			QuCheckbox quCheckbox=quCheckboxDao.get(quItemId);
-			//end delete by jesse at 2020-07-16
 
 			quCheckbox.setOptionName(optionName);
 			quCheckboxMapper.updateByPrimaryKeySelective(quCheckbox);
-			//begin delete  by jesse at 2020-07-16  for 优化
 			//			quCheckboxDao.save(quCheckbox);
-			//end delete by jesse at 2020-07-16
 
 			return quCheckbox;
 		}else{
@@ -92,9 +82,7 @@ public class QuCheckboxManagerImpl extends BaseServiceImpl<QuCheckbox, String> i
 			quCheckbox.setOrderById(++orderById);
 			quCheckbox.setOptionTitle(orderById+"");
 			quCheckboxMapper.insertSelective(quCheckbox);
-			//begin delete  by jesse at 2020-07-16  for 优化
 			//			quCheckboxDao.save(quCheckbox);
-			//end delete by jesse at 2020-07-16
 
 			return quCheckbox;
 		}
@@ -110,9 +98,7 @@ public class QuCheckboxManagerImpl extends BaseServiceImpl<QuCheckbox, String> i
 			quCheckbox.setOrderById(++orderById);
 			quCheckbox.setOptionTitle(orderById+"");
 			quCheckboxMapper.updateByPrimaryKeySelective(quCheckbox);
-			//begin delete  by jesse at 2020-07-16  for  优化
 			//			quCheckboxDao.save(quCheckbox);
-			//end delete by jesse at 2020-07-16
 		}
 		return quCheckboxs;
 	}
@@ -121,24 +107,18 @@ public class QuCheckboxManagerImpl extends BaseServiceImpl<QuCheckbox, String> i
 	@Transactional
 	public void ajaxDelete(String quItemId) {
 		QuCheckbox quCheckbox = quCheckboxMapper.selectByPrimaryKey(quItemId);
-		//begin delete  by jesse at 2020-07-15  for  优化
 		//QuCheckbox quCheckbox=get(quItemId);
-		//end delete by jesse at 2020-07-15
 
 		quCheckbox.setVisibility(0);
 		quCheckboxMapper.updateByPrimaryKeySelective(quCheckbox);
-		//begin delete  by jesse at 2020-07-15  for 优化
 		//quCheckboxDao.save(quCheckbox);
-		//end delete by jesse at 2020-07-15
 
 	}
 	
 	@Override
 	@Transactional
 	public void saveAttr(String quItemId, String isNote) {
-		//begin delete  by jesse at 2020-07-16  for 优化
 		//QuCheckbox quCheckbox=get(quItemId);
-		//end delete by jesse at 2020-07-16
 
 		QuCheckbox quCheckbox = quCheckboxMapper.selectByPrimaryKey(quItemId);
 		if(isNote!=null && "1".equals(isNote)){
@@ -147,9 +127,7 @@ public class QuCheckboxManagerImpl extends BaseServiceImpl<QuCheckbox, String> i
 			quCheckbox.setIsNote(0);
 		}
 		quCheckboxMapper.updateByPrimaryKeySelective(quCheckbox);
-		//begin delete  by jesse at 2020-07-16  for 优化
 		//quCheckboxDao.save(quCheckbox);
-		//end delete by jesse at 2020-07-16
 
 	}
 

@@ -18,10 +18,6 @@ import java.util.List;
 
 /**
  * 评分题
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Service
 public class AnScoreManagerImpl extends BaseServiceImpl<AnScore, String> implements AnScoreManager {

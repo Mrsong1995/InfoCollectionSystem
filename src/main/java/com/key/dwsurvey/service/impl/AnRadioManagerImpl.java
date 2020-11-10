@@ -21,10 +21,6 @@ import java.util.List;
 /**
  * 单选题
  *
- * @author keyuan(keyuan258 @ gmail.com)
- * <p>
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Service
 public class AnRadioManagerImpl extends BaseServiceImpl<AnRadio, String> implements AnRadioManager {
