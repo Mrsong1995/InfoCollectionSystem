@@ -13,10 +13,7 @@ import java.util.List;
 
 /**
  * 矩陈多选 dao
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
+
  */
 
 @Repository

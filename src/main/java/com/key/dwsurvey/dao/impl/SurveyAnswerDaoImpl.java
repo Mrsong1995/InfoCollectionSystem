@@ -14,11 +14,7 @@ import java.util.Map;
 
 /**
  * 问卷回答 dao
- *
- * @author keyuan(keyuan258 @ gmail.com)
- * <p>
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
+
  */
 
 @Repository

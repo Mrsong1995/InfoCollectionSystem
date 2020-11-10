@@ -8,10 +8,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * 矩陈列 dao
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
+
  */
 
 @Primary

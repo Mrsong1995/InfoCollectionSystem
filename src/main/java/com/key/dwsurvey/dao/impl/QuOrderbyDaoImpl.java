@@ -7,10 +7,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * 排序题 dao
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
+
  */
 
 @Repository
