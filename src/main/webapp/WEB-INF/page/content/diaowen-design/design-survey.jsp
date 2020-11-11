@@ -39,10 +39,11 @@
 <%-- <img alt="调问网" src="${ctx }/images/logo/logo.jpg" > --%>
 <!-- <div id="header_title">DIAOWEN-在线问卷编辑器</div> -->
 <div class="header_Item header_logo">
-		<a href="${ctx }/"><img alt="调问网" src="${ctx }/images/logo/LOGO.png" ></a>
+		<a href="${ctx }/"><img alt="" src="${ctx }/images/logo/LOGO.jpeg" align="middle" height="46" ></a>
+
 		<!-- <div style="font-family: '微软雅黑';font-size:26px;padding-left:10px;">DIAOWEN&nbsp;&nbsp; </div>-->
 		&nbsp;&nbsp;
-		<span style="font-family: '微软雅黑';font-size: 16px;line-height: 46px;" id="pageHeaderSpan">在线问卷编辑器</span>
+		<span style="font-family: '微软雅黑';font-size: 16px;line-height: 46px;" id="pageHeaderSpan">信息收集系统编辑器</span>
 </div>
 </div>
 <div id="header_right">

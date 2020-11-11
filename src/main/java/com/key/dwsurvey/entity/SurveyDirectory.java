@@ -23,6 +23,7 @@ public class SurveyDirectory extends IdEntity {
 	//用于短链接的ID
 	private String sid;
 	private String parentId="";
+	//问卷名称
 	private String surveyName;
 	//创建者ID
 	private String userId;

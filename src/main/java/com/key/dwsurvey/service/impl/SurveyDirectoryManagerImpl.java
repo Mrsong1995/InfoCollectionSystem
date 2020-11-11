@@ -850,7 +850,7 @@ public class SurveyDirectoryManagerImpl extends BaseServiceImpl<SurveyDirectory,
         return surveyDirectory;
     }
 
-
+    //创建或者更新问卷
     @Override
     public boolean insertOrUpdate(SurveyDirectory surveyDirectory) {
         User user = accountManager.getCurUser();
