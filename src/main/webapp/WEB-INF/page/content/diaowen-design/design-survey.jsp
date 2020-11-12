@@ -43,7 +43,7 @@
 
 		<!-- <div style="font-family: '微软雅黑';font-size:26px;padding-left:10px;">DIAOWEN&nbsp;&nbsp; </div>-->
 		&nbsp;&nbsp;
-		<span style="font-family: '微软雅黑';font-size: 16px;line-height: 46px;" id="pageHeaderSpan">信息收集系统编辑器</span>
+		<span style="font-family: '微软雅黑';font-size: 16px;line-height: 46px;" id="pageHeaderSpan">在线信息收集模板编辑器</span>
 </div>
 </div>
 <div id="header_right">
@@ -66,17 +66,24 @@
 	</div>
 </div>
 
+
+
 <div class="tools_contents">
 
 	<div id="tools_tab1" class="tools_tab_div" style="display: inline;">
+
 	<div id="toolsBashQu" class="tools_item">
 		<div class="toolbars">
 			<ul class="dragQuUl" >
+
+
+            <%--单选--%>
 			<li id="radioQuModel">
 				<div class="dwToolbar_icon"></div>
 				<div class="dwQuTypeModel">
 						<div class="surveyQuItemBody quDragBody">
 							<div class="initLine"></div>
+
 							<div class="quInputCase" style="display: none;">
 								<input type="hidden" name="quType" value="RADIO">
 								<input type="hidden" name="quId" value="">
@@ -95,6 +102,7 @@
 								<input type="hidden" name="quLogicItemNum" value="0">
 								</div>
 							</div>
+
 							<div class="surveyQuItem">
 								<div class="surveyQuItemLeftTools">
 										<ul class="surveyQuItemLeftToolsUl">
@@ -149,6 +157,9 @@
 						</div>
 				</div>
 			</li>
+
+
+            <%--多选--%>
 			<li id="checkboxQuModel">
 				<div class="dwToolbar_icon"></div>
 				<div class="dwQuTypeModel">
@@ -236,6 +247,9 @@
 						</div>
 				</div>
 			</li>
+
+
+            <%--输入框    --%>
 			<li id="fillblankQuModel">
 				<div class="dwToolbar_icon"></div>
 				<div class="dwQuTypeModel">
@@ -300,6 +314,9 @@
 						</div>
 				</div>
 			</li>
+
+
+            <%--多项填空题    --%>
 			<li id="mfillblankQuModel">
 				<div class="dwToolbar_icon"></div>
 				<div class="dwQuTypeModel">
@@ -376,6 +393,8 @@
 						</div>
 				</div>
 			</li>
+
+                <%--排序题--%>
 				<li id="orderQuModel">
 					<div class="dwToolbar_icon"></div>
 					<div class="dwQuTypeModel">
@@ -1984,9 +2003,6 @@
 <div style="text-align: center;">
 <div class="dw_foot" style="padding-bottom: 30px;">
 	<div class="footer-copyright" style="color: gray;padding-top: 0px;font-size: 16px;">
-		Powered by <a href="http://www.dwsurvey.net" target="_blank" style="text-decoration: none;color: gray;">DWSurvey</a>&nbsp;&nbsp;&nbsp;
-		Copyright © 2012-2017
-		<a href="http://www.diaowen.net" target="_blank" style="text-decoration: none;color: rgb(53, 117, 136);">调问网</a>
 	</div>
 </div>
 </div>

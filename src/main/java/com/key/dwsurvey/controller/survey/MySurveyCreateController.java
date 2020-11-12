@@ -36,9 +36,9 @@ public class MySurveyCreateController {// extends ActionSupport{
 		SurveyDirectory survey = new SurveyDirectory();
 	    try{
 	    	survey.setDirType(2);
-	    	//如果没有输入问卷命，默认为"请输入问卷标题"
+	    	//如果没有输入问卷命，默认为"请输入模板标题"
 	    	if(surveyName==null || "".equals(surveyName.trim())){
-	    		surveyName="请输入问卷标题";
+	    		surveyName="请输入模板标题";
 	    	}else{
 	    		surveyName=URLDecoder.decode(surveyName,"utf-8");
 	    	}

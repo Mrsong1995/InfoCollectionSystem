@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="${ctx }/js/plugs/bootstrap-3.3.0-dist/dist/css/bootstrap.css">
 <script src="${ctx }/js/plugs/bootstrap-3.3.0-dist/dist/js/bootstrap.js"></script>
 <link href="${ctx }/js/plugs/font-awesome-4.2.0/css/font-awesome.css" rel="stylesheet">
-<title>我的问卷</title>
+<title>我的模板</title>
 <style type="text/css">
 .surveyLeftBtnGroup a{
 	color: #5A9ECD;
@@ -71,8 +71,8 @@ button {
 				<div class="surveyCollectMiddleContent">
 					<div style="padding: 25px 45px;overflow: auto;padding-top: 20px;">
 							<div style="padding: 5px;color: #666565;letter-spacing: 2px;">
-							所有问卷&nbsp;&nbsp;|&nbsp;&nbsp;
-								<a href="${ctx }/design/my-survey-create/save" id="surveyAdd-a" style="outline: none;text-decoration: none;" ><i class="fa fa-plus " aria-hidden="true"></i>&nbsp;新建问卷</a>
+							所有模板&nbsp;&nbsp;|&nbsp;&nbsp;
+								<a href="${ctx }/design/my-survey-create/save" id="surveyAdd-a" style="outline: none;text-decoration: none;" ><i class="fa fa-plus " aria-hidden="true"></i>&nbsp;新建模板</a>
 							</div>
 
 							<form action="${ctx}/design/my-survey/list" method="post" >
@@ -97,7 +97,7 @@ button {
 								<table class="contacts-table" width="100%" cellpadding="0" cellspacing="0">
 									<tr>
 										<th style="text-align: center;" width="30"><!-- <input type="checkbox">  --></th>
-										<th align="left" >问卷</th>
+										<th align="left" >模板</th>
 										<th align="left" width="100">创建者</th>
 										<th align="left" width="200">创建时间</th>
 										<th align="left" width="60">答卷</th>
@@ -126,7 +126,7 @@ button {
 											  <a class="btn btn-default" href="${ctx }/design/my-collect/execute?surveyId=${en.id}" title="收集答卷" data-toggle="tooltip" data-placement="top" ><i class="fa fa-comments-o"></i></a>
 											  <a class="btn btn-default" href="${ctx }/da/survey-report/defaultReport?surveyId=${en.id}" title="分析报告" data-toggle="tooltip" data-placement="top" ><i class="fa fa-line-chart"></i></a>
 											  <a class="btn btn-default copySurvey" href="#${en.id}" title="复制一份" data-toggle="tooltip" data-placement="top" ><i class="fa fa-files-o"></i></a>
-											  <a class="btn btn-default deleteSurvey" href="${ctx}/design/my-survey/delete?id=${en.id}" title="删除问卷" data-toggle="tooltip" data-placement="top" ><i class="fa fa-trash-o fa-fw"></i></a>
+											  <a class="btn btn-default deleteSurvey" href="${ctx}/design/my-survey/delete?id=${en.id}" title="删除模板" data-toggle="tooltip" data-placement="top" ><i class="fa fa-trash-o fa-fw"></i></a>
 											</div>&nbsp;
 											<div class="btn-group" style="display: none;">
 												<!-- <a class="btn btn-default" href="#"><i class="fa fa-eye"></i></a> -->
@@ -237,7 +237,7 @@ $(".copySurvey").click(function(){
 		autoOpen: true,
 		modal:true,
 		position:["center","center"],
-		title:"复制问卷、表单",
+		title:"复制模板、表单",
 		resizable:false,
 		draggable:false,
 		closeOnEscape:false,
@@ -283,7 +283,7 @@ $("#surveyAdd-a").click(function(){
 
 	
 	$("body").append("<div id=\"myDialogRoot\"><div class='dialogMessage' style='padding-top:40px;margin-left:20px;padding-bottom:0px;'>"+
-			"<div>问卷标题：<input id='surTitleTemp' type='text' style='padding:5px;width:320px;color:rgb(14, 136, 158);' value=''></div></div></div>");
+			"<div>模板标题：<input id='surTitleTemp' type='text' style='padding:5px;width:320px;color:rgb(14, 136, 158);' value=''></div></div></div>");
 
 	var myDialog=$( "#myDialogRoot" ).dialog({
 		width:500,
@@ -291,7 +291,7 @@ $("#surveyAdd-a").click(function(){
 		autoOpen: true,
 		modal:true,
 		position:["center","center"],
-		title:"新建问卷、表单",
+		title:"新建模板、表单",
 		resizable:false,
 		draggable:false,
 		closeOnEscape:false,
