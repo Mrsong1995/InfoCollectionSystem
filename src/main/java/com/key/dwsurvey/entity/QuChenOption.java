@@ -8,11 +8,6 @@ import javax.persistence.Table;
 
 /**
  * 矩陈题-题选项
- * @author KeYuan
- * @date 2013下午12:22:24
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Entity
 @Table(name="t_qu_chen_option")

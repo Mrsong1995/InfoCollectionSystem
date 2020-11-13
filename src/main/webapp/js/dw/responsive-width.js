@@ -1,14 +1,4 @@
-/**
- *
- * DWSurvey 3.0
- *
- * @desc: design survey
- * @author: keyuan（@keyuan, keyuan258@gmail.com）
- * @github: https://github.com/wkeyuan/DWSurvey
- *
- * Copyright 2012, 2017 调问问卷(DWSurvey,http://dwsurvey.net)
- *
- */
+
 
 $(document).ready(function(){
 //	$(".createSsUl li").unbind();

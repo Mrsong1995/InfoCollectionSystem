@@ -10,11 +10,7 @@ import java.util.Date;
 
 /**
  * 题目逻辑设置
- * @author KeYuan
- * @date 2014下午9:23:21
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
+
  */
 @Entity
 @Table(name="t_question_logic")

@@ -13,11 +13,6 @@ import java.util.Properties;
 
 /**
  * 系统配置
- * @author KeYuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
- *
  */
 @Controller
 @RequestMapping(value = {"/sy/system/sys-property","/sy/system/nosm/sys-property"})

@@ -23,10 +23,6 @@ import java.util.Map;
 
 /**
  * 填空题 controller
- * @author KeYuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  *
  */
 @Controller

@@ -10,10 +10,6 @@ import org.springframework.stereotype.Service;
 
 /**
  * 问卷备份
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Service
 public class SysDbBackupManagerImpl extends BaseServiceImpl<SysDbBackup, String> implements SysDbBackupManager {

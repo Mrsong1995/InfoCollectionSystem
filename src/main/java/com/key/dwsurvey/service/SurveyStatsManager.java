@@ -10,10 +10,7 @@ import java.util.List;
 
 /**
  * 统计报表
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
+
  */
 public interface SurveyStatsManager extends BaseService<SurveyStats, String> {
 

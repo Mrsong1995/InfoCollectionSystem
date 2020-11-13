@@ -29,12 +29,11 @@
 				<div class="header_Item header_menu">
 					<ul>
 					<%-- <li><a href="${ctx }/" >首页</a></li> --%>
-					<li><a href="${ctx }/design/my-survey/list" id="mysurvey">问卷</a></li>
+					<li><a href="${ctx }/design/my-survey/list" id="mysurvey">模板</a></li>
 						<shiro:hasRole name="admin" >
 					<li><a href="${ctx }/sy/user/user-admin/list" id="usermanager">用户</a></li>
 					<li><a href="${ctx }/sy/system/sys-property/input" id="systemset">设置</a></li>
 						</shiro:hasRole>
-					<li><a href="">帮助</a></li>
 					<%--http://www.diaowen.net/--%>
 					</ul>
 				</div>
@@ -50,7 +49,6 @@
 		                	<div class="selc">
 		                    	<div class="selcc tbtag">
 		                            <div class="seli"><a class="nx-1" href="${ctx }/ic/user/myaccount">修改密码</a></div>
-		                            <div class="seli"><a class="nx-7" href="http://www.diaowen.net/">帮助及反馈</a></div>
 		                            <div class="seli"><a class="nx-8" href="${ctx }/logout">退出</a></div>
 		                        </div>
 		                    </div>

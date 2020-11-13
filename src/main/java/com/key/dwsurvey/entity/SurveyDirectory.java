@@ -13,10 +13,6 @@ import java.util.List;
 
 /**
  * 问卷目录及问卷
- * @author keyuan
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Entity
 @Table(name = "t_survey_directory")
@@ -27,6 +23,7 @@ public class SurveyDirectory extends IdEntity {
 	//用于短链接的ID
 	private String sid;
 	private String parentId="";
+	//问卷名称
 	private String surveyName;
 	//创建者ID
 	private String userId;

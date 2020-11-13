@@ -7,10 +7,7 @@ import java.util.List;
 
 /**
  * 矩陈题行
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
+
  */
 public interface QuChenRowManager extends BaseService<QuChenRow, String> {
 	public List<QuChenRow> findByQuId(String quId);

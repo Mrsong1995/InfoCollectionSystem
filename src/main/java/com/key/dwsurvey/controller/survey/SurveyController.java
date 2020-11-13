@@ -25,11 +25,6 @@ import java.io.ByteArrayOutputStream;
 
 /**
  * 问卷 controller
- * @author KeYuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://www.dwsurvey.net
- *
  */
 @Controller
 @RequestMapping("/survey")

@@ -9,11 +9,6 @@ import javax.persistence.Transient;
 
 /**
  * 矩陈题-列选项
- * @author KeYuan
- * @date 2013下午12:23:26
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Entity
 @Table(name="t_qu_chen_column")

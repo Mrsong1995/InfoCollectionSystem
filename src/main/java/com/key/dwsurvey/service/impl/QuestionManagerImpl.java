@@ -24,11 +24,6 @@ import java.util.List;
 
 /**
  * 基础题
- *
- * @author keyuan(keyuan258 @ gmail.com)
- * <p>
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Service("questionManager")
 public class QuestionManagerImpl extends BaseServiceImpl<Question, String> implements QuestionManager {
@@ -247,15 +242,11 @@ public class QuestionManagerImpl extends BaseServiceImpl<Question, String> imple
                 String belongId = question.getBelongId();
                 int orderById = question.getOrderById();
                 questionMapper.deleteByPrimaryKey(question.getId());
-                //begin delete  by jesse at 2020-07-15  for 优化
                 ////                questionDao.delete(question);
-                //end delete by jesse at 2020-07-15
 
                 //更新ID
                 questionMapper.quOrderByIdDel1(belongId, orderById);
-                //begin delete  by jesse at 2020-07-15  for 优化
                 //                questionDao.quOrderByIdDel1(belongId, orderById);
-                //end delete by jesse at 2020-07-15
 
             }
         }
@@ -503,10 +494,8 @@ public class QuestionManagerImpl extends BaseServiceImpl<Question, String> imple
 
     @Override
     public List<Question> findStatsColVarQus(SurveyDirectory survey) {
-        //begin delete  by jesse at 2020-07-16  for 优化
         //        Criterion criterion1 = Restrictions.eq("belongId", survey.getId());
         //        Criterion criterion2 = Restrictions.eq("tag", 2);
-        //end delete by jesse at 2020-07-16
 
 
 //		Criterion criterion31=Restrictions.ne("quType", QuType.FILLBLANK);
@@ -527,7 +516,6 @@ public class QuestionManagerImpl extends BaseServiceImpl<Question, String> imple
         list.add(QuType.ORDERQU.getIndex());
         list.add(QuType.SCORE.getIndex());
         return questionMapper.findByBelongIdAndTagNotInQuType(survey.getId(),2,list);
-        //begin delete  by jesse at 2020-07-16  for  优化
         //        Criterion criterion31 = Restrictions.ne("quType", QuType.FILLBLANK);
         //        Criterion criterion32 = Restrictions.ne("quType", QuType.MULTIFILLBLANK);
         //        Criterion criterion33 = Restrictions.ne("quType", QuType.ANSWER);
@@ -539,7 +527,6 @@ public class QuestionManagerImpl extends BaseServiceImpl<Question, String> imple
         //        Criterion criterion39 = Restrictions.ne("quType", QuType.SCORE);
         //
         //        return questionDao.find(criterion1, criterion2, criterion31, criterion32, criterion33, criterion34, criterion35, criterion36, criterion37, criterion38, criterion39);
-        //end delete by jesse at 2020-07-16
     }
 
 

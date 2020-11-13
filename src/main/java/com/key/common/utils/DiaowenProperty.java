@@ -7,11 +7,7 @@ import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 
 import java.util.Properties;
 
-/**
- * 
- * @author keyuan
- *
- */
+
 public class DiaowenProperty extends
         PropertyPlaceholderConfigurer {
 

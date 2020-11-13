@@ -19,11 +19,6 @@ import java.util.List;
 
 /**
  * 多项填空题
- *
- * @author keyuan(keyuan258 @ gmail.com)
- * <p>
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Service("quMultiFillblankManager")
 public class QuMultiFillblankManagerImpl extends BaseServiceImpl<QuMultiFillblank, String> implements QuMultiFillblankManager {

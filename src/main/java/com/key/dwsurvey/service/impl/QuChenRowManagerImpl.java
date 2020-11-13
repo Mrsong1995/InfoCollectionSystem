@@ -19,10 +19,6 @@ import java.util.List;
 
 /**
  * 矩陈题行
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Service
 public class QuChenRowManagerImpl extends BaseServiceImpl<QuChenRow, String> implements QuChenRowManager {
@@ -65,10 +61,8 @@ public class QuChenRowManagerImpl extends BaseServiceImpl<QuChenRow, String> imp
 	
 	public int getOrderById(String quId){
 		QuChenRow quChenRow = quChenRowMapper.findFirstByOrderByIdDesc(quId);
-		//begin delete  by jesse at 2020-07-16  for 优化
 		//		Criterion criterion=Restrictions.eq("quId", quId);
 		//		QuChenRow quChenRow=quChenRowDao.findFirst("orderById", false, criterion);
-		//end delete by jesse at 2020-07-16
 
 		if(quChenRow!=null){
 			return quChenRow.getOrderById();
@@ -79,14 +73,10 @@ public class QuChenRowManagerImpl extends BaseServiceImpl<QuChenRow, String> imp
 	public QuChenRow upOptionName(String quId, String quItemId, String optionName){
 		if(quItemId!=null && !"".equals(quItemId)){
 			QuChenRow quChenRow = quChenRowMapper.selectByPrimaryKey(quItemId);
-			//begin delete  by jesse at 2020-07-16  for  优化
 			//			QuChenRow quChenRow=quChenRowDao.get(quItemId);
-			//end delete by jesse at 2020-07-16
 			quChenRow.setOptionName(optionName);
 			quChenRowMapper.updateByPrimaryKeySelective(quChenRow);
-			//begin delete  by jesse at 2020-07-16  for 优化
 			//quChenRowDao.save(quChenRow);
-			//end delete by jesse at 2020-07-16
 			return quChenRow;
 		}else{
 			//取orderById
@@ -98,9 +88,7 @@ public class QuChenRowManagerImpl extends BaseServiceImpl<QuChenRow, String> imp
 			//title
 			quChenRow.setOrderById(++orderById);
 			quChenRowMapper.insertSelective(quChenRow);
-			//begin delete  by jesse at 2020-07-16  for 优化
 			//			quChenRowDao.save(quChenRow);
-			//end delete by jesse at 2020-07-16
 			return quChenRow;
 		}
 	}
@@ -111,9 +99,7 @@ public class QuChenRowManagerImpl extends BaseServiceImpl<QuChenRow, String> imp
 		QuChenRow quChenRow =get(quItemId);
 		quChenRow.setVisibility(0);
 		quChenRowMapper.updateByPrimaryKeySelective(quChenRow);
-		//begin delete  by jesse at 2020-07-16  for 优化
 		//		quChenRowDao.save(quChenRow);
-		//end delete by jesse at 2020-07-16
 
 	}
 	

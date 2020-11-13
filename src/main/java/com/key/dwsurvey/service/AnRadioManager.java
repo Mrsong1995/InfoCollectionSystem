@@ -9,10 +9,7 @@ import java.util.List;
 
 /**
  * 单选题
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
+
  */
 public interface AnRadioManager extends BaseService<AnRadio, String> {
 	public AnRadio findAnswer(String belongAnswerId, String quId);

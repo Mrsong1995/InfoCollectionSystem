@@ -18,10 +18,6 @@ import java.util.List;
 
 /**
  * 评分题
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Service
 public class AnScoreManagerImpl extends BaseServiceImpl<AnScore, String> implements AnScoreManager {
@@ -42,11 +38,9 @@ public class AnScoreManagerImpl extends BaseServiceImpl<AnScore, String> impleme
 		queryWrapper.eq("belong_answer_id", belongAnswerId);
 		queryWrapper.eq("qu_id", quId);
 		return anScoreMapper.selectList(queryWrapper);
-		//begin delete  by jesse at 2020-07-15  for 优化
 		//		Criterion criterion1=Restrictions.eq("belongAnswerId", belongAnswerId);
 		//		Criterion criterion2=Restrictions.eq("quId", quId);
 		//		return anScoreDao.find(criterion1,criterion2);
-		//end delete by jesse at 2020-07-15
 
 	}
 

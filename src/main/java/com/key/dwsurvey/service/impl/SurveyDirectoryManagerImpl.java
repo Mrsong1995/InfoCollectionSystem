@@ -41,11 +41,6 @@ import com.key.dwsurvey.service.SurveyDetailManager;
 
 /**
  * 问卷
- *
- * @author keyuan(keyuan258 @ gmail.com)
- * <p>
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Slf4j
 @Service("surveyDirectoryManager")
@@ -202,9 +197,7 @@ public class SurveyDirectoryManagerImpl extends BaseServiceImpl<SurveyDirectory,
         SurveyDetail surveyDetail = null;
         if (surveyDetailId != null) {
             surveyDetail = detailMapper.selectByPrimaryKey(surveyDetailId);
-            //begin delete  by jesse at 2020-07-13  for 优化
             //			surveyDetail=surveyDetailManager.get(surveyDetailId);
-            //end delete by jesse at 2020-07-13
 
         }
         if (surveyDetail == null) {
@@ -317,21 +310,17 @@ public class SurveyDirectoryManagerImpl extends BaseServiceImpl<SurveyDirectory,
         Map<String, String> map = new HashMap<>();
         map.put("surveyName", surveyName);
         map.put("parentId", parentId);
-        //begin delete  by jesse at 2020-07-14  for  优化
 //		List<Criterion> criterions=new ArrayList<Criterion>();
 //		Criterion eqName=Restrictions.eq("surveyName", surveyName);
 //		Criterion eqParentId=Restrictions.eq("parentId", parentId);
 //		criterions.add(eqName);
 //		criterions.add(eqParentId);
-        //end delete by jesse at 2020-07-14
 
 
         if (id != null && !"".equals(id)) {
             map.put("id", id);
-            //begin delete  by jesse at 2020-07-14  for
 //			Criterion eqId=Restrictions.ne("id", id);
 //			criterions.add(eqId);
-            //end delete by jesse at 2020-07-14
 
         }
 
@@ -572,7 +561,6 @@ public class SurveyDirectoryManagerImpl extends BaseServiceImpl<SurveyDirectory,
         User user = accountManager.getCurUser();
         if (user != null) {
             List<Criterion> criterions = new ArrayList<Criterion>();
-            //begin add  by jesse at 2020-07-10  for mybatis
             QueryWrapper<SurveyDirectory> queryWrapper = new QueryWrapper<>();
             Map<String, Object> map = new HashMap<>();
 
@@ -585,7 +573,6 @@ public class SurveyDirectoryManagerImpl extends BaseServiceImpl<SurveyDirectory,
             queryWrapper.eq("visibility", 1);
             queryWrapper.eq("dir_type", 2);
             queryWrapper.eq("survey_model", 1);
-            //end add by jesse at 2020-07-10
 
 
             criterions.add(Restrictions.eq("userId", user.getId()));
@@ -596,18 +583,14 @@ public class SurveyDirectoryManagerImpl extends BaseServiceImpl<SurveyDirectory,
             if (entity != null) {
                 Integer surveyState = entity.getSurveyState();
                 if (surveyState != null && !"".equals(surveyState)) {
-                    //begin add  by jesse at 2020-07-10  for  mybatis
                     map.put("surveyState", surveyState);
                     queryWrapper.eq("survey_state", surveyState);
-                    //end add by jesse at 2020-07-10
                     criterions.add(Restrictions.eq("surveyState", surveyState));
                 }
                 String surveyName = entity.getSurveyName();
                 if (surveyName != null && !"".equals(surveyName)) {
-                    //begin add  by jesse at 2020-07-10  for mybatis
                     queryWrapper.like("survey_name", surveyName);
                     map.put("surveyName", "%" + surveyName + "%");
-                    //end add by jesse at 2020-07-10
                     criterions.add(Restrictions.like("surveyName", "%" + surveyName + "%"));
                 }
             }
@@ -616,10 +599,8 @@ public class SurveyDirectoryManagerImpl extends BaseServiceImpl<SurveyDirectory,
             page.setOrderDir("desc");
             map.put("orderBy", "create_date");
             map.put("orderDir", "desc");
-            //begin add  by jesse at 2020-07-10  for
             surveyDirectoryIPageToPage.setOrderBy("createDate");
             surveyDirectoryIPageToPage.setOrderDir("desc");
-            //end add by jesse at 2020-07-10
 
 //			surveyDirectoryMapper
             com.baomidou.mybatisplus.extension.plugins.pagination.Page<SurveyDirectory> page1 =
@@ -653,7 +634,6 @@ public class SurveyDirectoryManagerImpl extends BaseServiceImpl<SurveyDirectory,
         surveyDirectoryIPageToPage.setSize(page.getPageSize());
         User user = accountManager.getCurUser();
         if (user != null) {
-            //begin add  by jesse at 2020-07-10  for mybatis
             QueryWrapper<SurveyDirectory> queryWrapper = new QueryWrapper<>();
             Map<String, Object> map = new HashMap<>();
             map.put("userId", user.getId());
@@ -665,21 +645,16 @@ public class SurveyDirectoryManagerImpl extends BaseServiceImpl<SurveyDirectory,
             queryWrapper.eq("visibility", 1);
             queryWrapper.eq("dir_type", 2);
             queryWrapper.eq("survey_model", 1);
-            //end add by jesse at 2020-07-10
             if (entity != null) {
                 Integer surveyState = entity.getSurveyState();
                 if (surveyState != null && !"".equals(surveyState)) {
-                    //begin add  by jesse at 2020-07-10  for  mybatis
                     map.put("surveyState", surveyState);
                     queryWrapper.eq("survey_state", surveyState);
-                    //end add by jesse at 2020-07-10
                 }
                 String surveyName = entity.getSurveyName();
                 if (surveyName != null && !"".equals(surveyName)) {
-                    //begin add  by jesse at 2020-07-10  for mybatis
                     queryWrapper.like("survey_name", surveyName);
                     map.put("surveyName", surveyName);
-                    //end add by jesse at 2020-07-10
                 }
             }
 
@@ -687,10 +662,8 @@ public class SurveyDirectoryManagerImpl extends BaseServiceImpl<SurveyDirectory,
             page.setOrderDir("desc");
             map.put("orderBy", "create_date");
             map.put("orderDir", "desc");
-            //begin add  by jesse at 2020-07-10  for
             surveyDirectoryIPageToPage.setOrderBy("createDate");
             surveyDirectoryIPageToPage.setOrderDir("desc");
-            //end add by jesse at 2020-07-10
 
 //			surveyDirectoryMapper
             com.baomidou.mybatisplus.extension.plugins.pagination.Page<SurveyDirectory> page1 =
@@ -877,7 +850,7 @@ public class SurveyDirectoryManagerImpl extends BaseServiceImpl<SurveyDirectory,
         return surveyDirectory;
     }
 
-
+    //创建或者更新问卷
     @Override
     public boolean insertOrUpdate(SurveyDirectory surveyDirectory) {
         User user = accountManager.getCurUser();

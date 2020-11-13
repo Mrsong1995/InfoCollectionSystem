@@ -4,11 +4,6 @@ import com.key.common.base.entity.IdEntity;
 
 /**
  * 系统smtp服务器
- * @author KeYuan
- * @date 2013下午10:35:52
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 public class SmtpServer extends IdEntity {
 	//SMTP服务器

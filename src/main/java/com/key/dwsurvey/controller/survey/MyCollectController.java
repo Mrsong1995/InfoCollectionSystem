@@ -13,11 +13,6 @@ import java.util.Map;
 
 /**
  * 收集入口 controller
- * @author KeYuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://www.dwsurvey.net
- *
  */
 @Controller
 @RequestMapping("/design/my-collect")

@@ -10,10 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 /**
  * 导入错误记录题
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Service
 public class ImportErrorManagerImpl implements ImportErrorManager {
@@ -28,9 +24,7 @@ public class ImportErrorManagerImpl implements ImportErrorManager {
         }else{
             importErrorMapper.updateByPrimaryKeySelective(entity);
         }
-        //begin delete  by jesse at 2020-07-15  for 优化
         //importErrorDao.save(entity);
-        //end delete by jesse at 2020-07-15
 
     }
     

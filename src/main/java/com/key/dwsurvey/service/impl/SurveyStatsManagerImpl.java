@@ -23,11 +23,6 @@ import java.util.regex.Pattern;
 
 /**
  * 问卷统计
- *
- * @author keyuan(keyuan258 @ gmail.com)
- * <p>
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Service
 public class SurveyStatsManagerImpl extends
@@ -82,12 +77,10 @@ public class SurveyStatsManagerImpl extends
         // return surveyStatsDao.findUniqueBy("surveyId", surveyId);
 
         SurveyStats surveyStats = surveyStatsMapper.selectFirst(surveyId);
-        //begin delete  by jesse at 2020-07-14  for   优化
 //		Criterion criterion = Restrictions.eq("surveyId", surveyId);
 //		SurveyStats surveyStats1 = surveyStatsDao.findFirst(criterion);
 //		return surveyStatsDao.findFirst(criterion);
         return surveyStats;
-        //end delete by jesse at 2020-07-14
 
     }
 

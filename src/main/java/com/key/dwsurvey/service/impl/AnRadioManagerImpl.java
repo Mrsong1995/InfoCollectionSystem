@@ -21,10 +21,6 @@ import java.util.List;
 /**
  * 单选题
  *
- * @author keyuan(keyuan258 @ gmail.com)
- * <p>
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Service
 public class AnRadioManagerImpl extends BaseServiceImpl<AnRadio, String> implements AnRadioManager {
@@ -46,11 +42,9 @@ public class AnRadioManagerImpl extends BaseServiceImpl<AnRadio, String> impleme
         queryWrapper.eq("belong_answer_id", belongAnswerId);
         queryWrapper.eq("qu_id", quId);
         return anRadioMapper.selectOne(queryWrapper);
-        //begin delete  by jesse at 2020-07-15  for 优化
         //		Criterion criterion1=Restrictions.eq("belongAnswerId", belongAnswerId);
         //		Criterion criterion2=Restrictions.eq("quId", quId);
         //		return anRadioDao.findUnique(criterion1,criterion2);
-        //end delete by jesse at 2020-07-15
 
     }
 

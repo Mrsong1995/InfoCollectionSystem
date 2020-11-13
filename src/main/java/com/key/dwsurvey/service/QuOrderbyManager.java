@@ -7,10 +7,7 @@ import java.util.List;
 
 /**
  * 排序题
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
+
  */
 public interface QuOrderbyManager extends BaseService<QuOrderby, String> {
 

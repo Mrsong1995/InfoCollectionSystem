@@ -19,10 +19,6 @@ import java.util.Map;
 
 /**
  * 填空题
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Service
 public class AnFillblankManagerImpl extends BaseServiceImpl<AnFillblank, String> implements AnFillblankManager {
@@ -44,11 +40,9 @@ public class AnFillblankManagerImpl extends BaseServiceImpl<AnFillblank, String>
 		queryWrapper.eq("belong_answer_id", belongAnswerId);
 		queryWrapper.eq("qu_id", quId);
 		return anFillblankMapper.selectOne(queryWrapper);
-		//begin delete  by jesse at 2020-07-15  for 优化
 		//		Criterion criterion1=Restrictions.eq("belongAnswerId", belongAnswerId);
 		//		Criterion criterion2=Restrictions.eq("quId", quId);
 		//		return anFillblankDao.findUnique(criterion1,criterion2);
-		//end delete by jesse at 2020-07-15
 	}
 
     @Override
@@ -76,11 +70,9 @@ public class AnFillblankManagerImpl extends BaseServiceImpl<AnFillblank, String>
 		page.setTotalItems(page1.getTotal());
 		return page;
 		//TODO 需要验证
-		//begin delete  by jesse at 2020-07-15  for 优化
 		//		Criterion cri1 = Restrictions.eq("quId",quId);
 		//		Criterion cri2 = Restrictions.eq("visibility",1);
 		//		return findPage(page,cri1,cri2);
-		//end delete by jesse at 2020-07-15
 
 	}
 }

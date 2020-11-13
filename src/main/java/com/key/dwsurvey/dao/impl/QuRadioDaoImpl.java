@@ -8,10 +8,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * 单选题 dao
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
+
  */
 
 //@Repository("quRadioDao")

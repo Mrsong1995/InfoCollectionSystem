@@ -10,11 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * 用户中心 controller
- * @author KeYuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
- *
  */
 @Controller
 @RequestMapping("/ic/user")

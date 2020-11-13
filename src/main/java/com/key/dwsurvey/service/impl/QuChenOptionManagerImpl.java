@@ -19,10 +19,6 @@ import java.util.List;
 
 /**
  * 矩陈题选项
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Service
 public class QuChenOptionManagerImpl extends BaseServiceImpl<QuChenOption, String> implements QuChenOptionManager {
@@ -63,10 +59,8 @@ public class QuChenOptionManagerImpl extends BaseServiceImpl<QuChenOption, Strin
 	
 	public int getOrderById(String quId){
 		QuChenOption quChenOption = quChenOptionMapper.findFirstByOrderByIdDesc(quId);
-		//begin delete  by jesse at 2020-07-16  for 优化
 		//	Criterion criterion=Restrictions.eq("quId", quId);
 		//		QuChenOption quChenOption=quChenOptionDao.findFirst("orderById", false, criterion);
-		//end delete by jesse at 2020-07-16
 
 		if(quChenOption!=null){
 			return quChenOption.getOrderById();
@@ -79,15 +73,11 @@ public class QuChenOptionManagerImpl extends BaseServiceImpl<QuChenOption, Strin
 	public QuChenOption upOptionName(String quId, String quItemId, String optionName) {
 		if(quItemId!=null && !"".equals(quItemId)){
 			QuChenOption quChenOption = quChenOptionMapper.selectByPrimaryKey(quItemId);
-			//begin delete  by jesse at 2020-07-16  for 优化
 			//			QuChenOption quChenOption=quChenOptionDao.get(quItemId);
-			//end delete by jesse at 2020-07-16
 
 			quChenOption.setOptionName(optionName);
 			quChenOptionMapper.updateByPrimaryKeySelective(quChenOption);
-			//begin delete  by jesse at 2020-07-16  for 优化
 			//			quChenOptionDao.save(quChenOption);
-			//end delete by jesse at 2020-07-16
 
 			return quChenOption;
 		}else{
@@ -100,9 +90,7 @@ public class QuChenOptionManagerImpl extends BaseServiceImpl<QuChenOption, Strin
 			//title
 			quChenOption.setOrderById(++orderById);
 			quChenOptionMapper.insertSelective(quChenOption);
-			//begin delete  by jesse at 2020-07-16  for 优化
 			//			quChenOptionDao.save(quChenOption);
-			//end delete by jesse at 2020-07-16
 			return quChenOption;
 		}
 	}

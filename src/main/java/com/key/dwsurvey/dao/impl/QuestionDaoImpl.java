@@ -18,10 +18,7 @@ import java.util.List;
 
 /**
  * 题基础 dao
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
+
  */
 
 //@Repository("questionDao")
@@ -89,9 +86,7 @@ public class QuestionDaoImpl extends BaseDaoImpl<Question, String> implements Qu
 		}else{
 			questionMapper.updateByPrimaryKeySelective(entity);
 		}
-		//begin delete  by jesse at 2020-07-15  for 优化
 		//session.saveOrUpdate(entity);
-		//end delete by jesse at 2020-07-15
 
 		//判断题目类型
 		QuType quType=entity.getQuType();
@@ -220,9 +215,7 @@ public class QuestionDaoImpl extends BaseDaoImpl<Question, String> implements Qu
 			}else{
 				quChenOptionMapper.updateByPrimaryKeySelective(quChenOption);
 			}
-			//begin delete  by jesse at 2020-07-15  for 优化
 			//session.saveOrUpdate(quChenOption);
-			//end delete by jesse at 2020-07-15
 
 		}
 	}
@@ -236,9 +229,7 @@ public class QuestionDaoImpl extends BaseDaoImpl<Question, String> implements Qu
 			}else{
 				quChenColumnMapper.updateByPrimaryKeySelective(quChenColumn);
 			}
-			//begin delete  by jesse at 2020-07-15  for 优化
 			//session.saveOrUpdate(quChenColumn);
-			//end delete by jesse at 2020-07-15
 
 		}
 	}
@@ -252,9 +243,7 @@ public class QuestionDaoImpl extends BaseDaoImpl<Question, String> implements Qu
 			}else{
 				quChenRowMapper.updateByPrimaryKeySelective(quChenRow);
 			}
-			//begin delete  by jesse at 2020-07-15  for 优化
 			//session.saveOrUpdate(quChenRow);
-			//end delete by jesse at 2020-07-15
 
 		}
 	}
@@ -272,9 +261,7 @@ public class QuestionDaoImpl extends BaseDaoImpl<Question, String> implements Qu
 			}else{
 				quScoreMapper.updateByPrimaryKeySelective(quScore);
 			}
-			//begin delete  by jesse at 2020-07-15  for 优化
 //			session.saveOrUpdate(quScore);
-			//end delete by jesse at 2020-07-15
 
 		}
 	}
@@ -293,9 +280,7 @@ public class QuestionDaoImpl extends BaseDaoImpl<Question, String> implements Qu
 			}else{
 				quOrderbyMapper.updateByPrimaryKeySelective(quOrderby);
 			}
-			//begin delete  by jesse at 2020-07-15  for 优化
 			//session.saveOrUpdate(quOrderby);
-			//end delete by jesse at 2020-07-15
 
 		}
 	}
@@ -337,9 +322,7 @@ public class QuestionDaoImpl extends BaseDaoImpl<Question, String> implements Qu
 			}else{
 				quRadioMapper.updateByPrimaryKeySelective(quRadio);
 			}
-			//begin delete  by jesse at 2020-07-15  for 优化
 			//session.saveOrUpdate(quRadio);
-			//end delete by jesse at 2020-07-15
 
 		}
 	}
@@ -363,9 +346,7 @@ public class QuestionDaoImpl extends BaseDaoImpl<Question, String> implements Qu
 			}else{
 				quCheckboxMapper.updateByPrimaryKeySelective(quCheckbox);
 			}
-			//begin delete  by jesse at 2020-07-15  for 优化
 //			session.saveOrUpdate(quCheckbox);
-			//end delete by jesse at 2020-07-15
 
 		}
 		
@@ -386,9 +367,7 @@ public class QuestionDaoImpl extends BaseDaoImpl<Question, String> implements Qu
 			}else{
 				quMultiFillblankMapper.updateByPrimaryKeySelective(quMultiFillblank);
 			}
-			//begin delete  by jesse at 2020-07-15  for 优化
 			//session.saveOrUpdate(quMultiFillblank);
-			//end delete by jesse at 2020-07-15
 
 		}
 		// 执行要删除的选项
@@ -400,9 +379,7 @@ public class QuestionDaoImpl extends BaseDaoImpl<Question, String> implements Qu
 					quMultiFillblank.setId(optionUuId);
 
 					quMultiFillblankMapper.deleteByPrimaryKey(optionUuId);
-					//begin delete  by jesse at 2020-07-15  for 优化
 					//	session.delete(quMultiFillblank);//删除
-					//end delete by jesse at 2020-07-15
 
 					
 				}

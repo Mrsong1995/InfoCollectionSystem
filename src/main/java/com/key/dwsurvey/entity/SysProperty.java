@@ -1,10 +1,6 @@
 package com.key.dwsurvey.entity;
 /**
  * 配置
- * @author keyuan
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 public class SysProperty {
 	

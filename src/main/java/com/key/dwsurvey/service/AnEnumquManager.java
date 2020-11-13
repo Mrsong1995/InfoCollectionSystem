@@ -8,10 +8,7 @@ import java.util.List;
 
 /**
  * 枚举题
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
+
  */
 public interface AnEnumquManager extends BaseService<AnEnumqu, String> {
 	public  List<AnEnumqu> findAnswer(String belongAnswerId, String quId);

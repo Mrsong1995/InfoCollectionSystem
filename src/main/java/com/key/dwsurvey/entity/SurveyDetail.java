@@ -9,10 +9,6 @@ import java.util.Date;
 
 /**
  * 具体的一次调查
- * @author keyuan
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Entity
 @Table(name="t_survey_detail")

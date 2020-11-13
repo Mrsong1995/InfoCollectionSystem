@@ -14,11 +14,6 @@ import java.util.List;
 
 /**
  * 系统邮件集成 controller
- * @author KeYuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
- *
  */
 @Controller
 @RequestMapping(value = {"/sy/system/sys-email","/sy/system/nosm/sys-email"})

@@ -13,8 +13,7 @@ import javax.jms.MessageListener;
  * 消息的异步被动接收者.
  * 
  * 使用Spring的MessageListenerContainer侦听消息并调用本Listener进行处理.
- * 
- * @author KeYuan
+ *
  *
  */
 public class NotifyMessageListener implements MessageListener {

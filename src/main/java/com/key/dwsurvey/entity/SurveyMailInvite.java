@@ -8,8 +8,6 @@ import java.util.Date;
 
 /**
  *  邮件服务
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Entity
 @Table(name="t_survey_mail_invite")

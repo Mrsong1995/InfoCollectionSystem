@@ -9,10 +9,7 @@ import java.util.List;
 
 /**
  * 是非题
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
+
  */
 public interface AnYesnoManager extends BaseService<AnYesno, String> {
 	public AnYesno findAnswer(String belongAnswerId, String quId);

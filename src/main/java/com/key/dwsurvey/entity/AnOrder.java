@@ -8,11 +8,6 @@ import javax.persistence.Table;
 
 /**
  * 评分题
- * @author KeYuan
- * @date 2013下午8:48:24
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Entity
 @Table(name="t_an_order")

@@ -9,11 +9,7 @@ import java.util.List;
 
 /**
  * 单选题 interface
- * @author KeYuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
- *
+
  */
 public interface AnRadioDao extends BaseDao<AnRadio, String> {
 

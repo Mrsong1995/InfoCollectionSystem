@@ -7,10 +7,7 @@ import java.util.List;
 
 /**
  * 复合矩陈单选题
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
+
  */
 
 public interface AnCompChenRadioManager extends BaseService<AnCompChenRadio, String> {

@@ -16,11 +16,7 @@ import java.util.List;
 
 /**
  * 单选题 dao
- *
- * @author keyuan(keyuan258 @ gmail.com)
- * <p>
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
+
  */
 
 @Repository

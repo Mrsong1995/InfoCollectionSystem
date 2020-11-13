@@ -8,11 +8,6 @@ import javax.persistence.Table;
 
 /**
  * 复合矩阵单选题
- * @author KeYuan
- * @date 2013下午8:49:38
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Entity
 @Table(name="t_an_comp_chen_radio")

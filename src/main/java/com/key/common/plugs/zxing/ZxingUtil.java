@@ -11,9 +11,6 @@ import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import java.awt.image.BufferedImage;
 import java.util.Hashtable;
 
-/**
- * Created by keyuan on 2018/9/8.
- */
 public class ZxingUtil {
 
     public static BufferedImage qRCodeCommon(String content, String imgType, int size){

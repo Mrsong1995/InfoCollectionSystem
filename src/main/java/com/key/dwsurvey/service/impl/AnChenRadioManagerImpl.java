@@ -17,10 +17,6 @@ import java.util.List;
 
 /**
  * 矩陈单选题
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Service
 public class AnChenRadioManagerImpl extends BaseServiceImpl<AnChenRadio, String> implements AnChenRadioManager {
@@ -41,11 +37,9 @@ public class AnChenRadioManagerImpl extends BaseServiceImpl<AnChenRadio, String>
 		queryWrapper.eq("belong_answer_id", belongAnswerId);
 		queryWrapper.eq("qu_id", quId);
 		return anChenRadioMapper.selectList(queryWrapper);
-		//begin delete  by jesse at 2020-07-15  for 优化
 		//		Criterion criterion1=Restrictions.eq("belongAnswerId", belongAnswerId);
 		//		Criterion criterion2=Restrictions.eq("quId", quId);
 		//		return anChenRadioDao.find(criterion1,criterion2);
-		//end delete by jesse at 2020-07-15
 	}
 
 	@Override

@@ -25,10 +25,6 @@ import java.util.*;
 
 /**
  * 问卷回答记录
- * @author keyuan(keyuan258@gmail.com)
- *
- * https://github.com/wkeyuan/DWSurvey
- * http://dwsurvey.net
  */
 @Service
 public class SurveyAnswerManagerImpl extends
