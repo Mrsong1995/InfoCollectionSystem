@@ -48,7 +48,7 @@
 </div>
 <div id="header_right">
 <div style="line-height: 22px;">
-	<a href="${ctx }/design/my-survey/list">问卷</a>&nbsp;&nbsp;<a href="${ctx }/ic/user/myaccount">账号</a>
+	<a href="${ctx }/design/my-survey/list">模板</a>&nbsp;&nbsp;<a href="${ctx }/ic/user/myaccount">账号</a>
 </div>
 </div>
 </div>
