@@ -34,13 +34,13 @@
 	<div class="creatgeSurveyStepBody">
 		<div class="creatgeSurveyStepContent bodyCenter">
 			<ul class="createSsUl">
-				<li><a href=""  class="clickHideMenu csscStep csscStep4"><span class="csscStepLeft">&nbsp;</span><span class="csscStepCenter">设计问卷</span><span class="csscStepRight">&nbsp;</span></a>
+				<li><a href=""  class="clickHideMenu csscStep csscStep4"><span class="csscStepLeft">&nbsp;</span><span class="csscStepCenter">设计模板</span><span class="csscStepRight">&nbsp;</span></a>
 					<div class="a-w-sel">
 		            	<div class="w-sel" style="margin-top: 4px;">
 		                	<div class="selc">
 		                    	<div class="selcc tbtag">
 		                            <div class="seli"><a id="sur_collectSet" class="nx-1 sur_collectSet" >收集规则</a></div>
-		                            <div class="seli"><a class="nx-6 sur_edit" href="${ctx }/design/my-survey-design/execute?surveyId=${surveyId}">问卷编辑</a></div>
+		                            <div class="seli"><a class="nx-6 sur_edit" href="${ctx }/design/my-survey-design/execute?surveyId=${surveyId}">模板编辑</a></div>
 		                        </div>
 		                    </div>
 		                </div>
@@ -69,10 +69,10 @@
 			<div class="tab-content">
 				<div class="tab-content-collectTab">
 					<a href="${ctx }/design/my-collect/execute?surveyId=${surveyId }" class="collectTab tabItem_1"><span class="collectTabItemLeft">&nbsp;</span><span>答卷地址</span></a>
-					<a href="${ctx }/design/my-collect/execute?surveyId=${surveyId }&tabId=share" class="collectTab tabItem_4" ><span class="collectTabItemLeft">&nbsp;</span><span>社交分享</span></a>
+					<!--<a href="${ctx }/design/my-collect/execute?surveyId=${surveyId }&tabId=share" class="collectTab tabItem_4" ><span class="collectTabItemLeft">&nbsp;</span><span>社交分享</span></a>
 					<a href="${ctx }/design/my-collect/execute?surveyId=${surveyId }&tabId=sitecomp" class="collectTab tabItem_5 active"><span class="collectTabItemLeft">&nbsp;</span><span>网站组件</span></a>
 					<%-- <a href="${ctx }/design/my-collect/execute?surveyId=${surveyId}&tabId=iframe" class="collectTab tabItem_6"><span class="collectTabItemLeft">&nbsp;</span><span>IFrame嵌入</span></a> --%>
-					<a href="${ctx }/design/my-collect/execute?surveyId=${surveyId }&tabId=weixin" class="collectTab tabItem_2"><span class="collectTabItemLeft">&nbsp;</span><span>微信收集</span></a>
+					<a href="${ctx }/design/my-collect/execute?surveyId=${surveyId }&tabId=weixin" class="collectTab tabItem_2"><span class="collectTabItemLeft">&nbsp;</span><span>微信收集</span></a>-->
 				</div>
 			</div>
 		</div>

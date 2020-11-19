@@ -63,7 +63,7 @@
 	
 	<div class="creatgeSurveyStepBody">
 		<div class="creatgeSurveyStepContent bodyCenter">
-				<a href=""  class="csscStep csscStep4"><span class="csscStepLeft">&nbsp;</span><span class="csscStepCenter">设计问卷</span><span class="csscStepRight">&nbsp;</span></a>
+				<a href=""  class="csscStep csscStep4"><span class="csscStepLeft">&nbsp;</span><span class="csscStepCenter">设计模板</span><span class="csscStepRight">&nbsp;</span></a>
 				<span class="csscStep csscStepLine"><span class="csscStepLeft">&nbsp;</span><span class="csscStepRight">&nbsp;</span></span>
 				<a href=""  class="csscStep csscStep5 active"><span class="csscStepLeft">&nbsp;</span><span class="csscStepCenter">数据收集</span><span class="csscStepRight" >&nbsp;</span></a>
 				<span class="csscStep csscStepLine"><span class="csscStepLeft">&nbsp;</span><span class="csscStepRight">&nbsp;</span></span>

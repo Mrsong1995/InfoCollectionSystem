@@ -16,13 +16,13 @@
 	<div class="creatgeSurveyStepBody">
 		<div class="creatgeSurveyStepContent bodyCenter">
 			<ul class="createSsUl">
-				<li><a href=""  class="clickHideMenu csscStep csscStep4"><span class="csscStepLeft">&nbsp;</span><span class="csscStepCenter">设计问卷</span><span class="csscStepRight">&nbsp;</span></a>
+				<li><a href=""  class="clickHideMenu csscStep csscStep4"><span class="csscStepLeft">&nbsp;</span><span class="csscStepCenter">设计模板</span><span class="csscStepRight">&nbsp;</span></a>
 					<div class="a-w-sel">
 		            	<div class="w-sel" style="margin-top: 4px;">
 		                	<div class="selc">
 		                    	<div class="selcc tbtag">
 		                            <div class="seli"><a id="sur_collectSet" class="nx-1 sur_collectSet" >收集规则</a></div>
-		                            <div class="seli"><a id="sur_collectSet" class="nx-6 sur_edit" href="${ctx }/design/my-survey-design/execute?surveyId=${surveyId}">问卷编辑</a></div>
+		                            <div class="seli"><a id="sur_collectSet" class="nx-6 sur_edit" href="${ctx }/design/my-survey-design/execute?surveyId=${surveyId}">模板编辑</a></div>
 		                        </div>
 		                    </div>
 		                </div>
@@ -51,9 +51,9 @@
 			<div class="tab-content">
 				<div class="tab-content-collectTab">
 					<a href="${ctx }/design/my-collect/execute?surveyId=${surveyId}" class="collectTab tabItem_1"><span class="collectTabItemLeft">&nbsp;</span><span>答卷地址</span></a>
-					<a href="${ctx }/design/my-collect/execute?surveyId=${surveyId}&tabId=share" class="collectTab tabItem_4" ><span class="collectTabItemLeft">&nbsp;</span><span>社交分享</span></a>
+					<!--<a href="${ctx }/design/my-collect/execute?surveyId=${surveyId}&tabId=share" class="collectTab tabItem_4" ><span class="collectTabItemLeft">&nbsp;</span><span>社交分享</span></a>
 					<a href="${ctx }/design/my-collect/execute?surveyId=${surveyId}&tabId=sitecomp" class="collectTab tabItem_5"><span class="collectTabItemLeft">&nbsp;</span><span>网站组件</span></a>
-					<a href="${ctx }/design/my-collect/execute?surveyId=${surveyId}&tabId=weixin" class="collectTab tabItem_2 active"><span class="collectTabItemLeft">&nbsp;</span><span>微信收集</span></a>
+					<a href="${ctx }/design/my-collect/execute?surveyId=${surveyId}&tabId=weixin" class="collectTab tabItem_2 active"><span class="collectTabItemLeft">&nbsp;</span><span>微信收集</span></a>-->
 				</div>
 			</div>
 		</div>
@@ -109,7 +109,7 @@
 								<div class="scmcSurveyTdCode"><img alt="" src="${ctx }/survey/answerTD?surveyId=${survey.id}" height="130" ></div>
 								<div class="scmcRightTopRight" style="float: left ;padding-left: 30px;">
 									<a href="${ctx }/survey/answerTD?surveyId=${survey.id}&down" class="sbtn25 sbtn25_1">下载二维码</a>
-									<div class="scmcRightTopLeftNote" style="padding-top: 25px;">复制下面的问卷链接到QQ，Email等工具中直接发给被用户</div>
+									<div class="scmcRightTopLeftNote" style="padding-top: 25px;">复制下面的信息收集链接到QQ，微信、Email等工具中直接发给被收集用户</div>
 								</div>
 								</div>
 							</div>
@@ -132,7 +132,7 @@
 							<div class="scmcRightTop" >
 								<div class="scmcRightTopLeft">
 									<div class="scmcRightTopLeftTitle">通过微信公众账号
-										<span style="font-size:14px;color: #9B9A9A;margin-left: 15px;">复制下面的问卷链接到QQ，Email等工具中直接发给被用户</span>
+										<span style="font-size:14px;color: #9B9A9A;margin-left: 15px;">复制下面的信息收集链接到QQ，微信，Email等工具中直接发给被收集用户</span>
 									</div>
 									<!-- <div class="scmcRightTopLeftNote">复制下面的问卷链接到QQ，Email等工具中直接发给被用户</div> -->
 								</div>

@@ -19,14 +19,14 @@
     <div class="creatgeSurveyStepContent bodyCenter">
         <ul class="createSsUl">
             <li><a href="" class="clickHideMenu csscStep csscStep4"><span class="csscStepLeft">&nbsp;</span><span
-                    class="csscStepCenter">设计问卷</span><span class="csscStepRight">&nbsp;</span></a>
+                    class="csscStepCenter">设计模板</span><span class="csscStepRight">&nbsp;</span></a>
                 <div class="a-w-sel">
                     <div class="w-sel" style="margin-top: 4px;">
                         <div class="selc">
                             <div class="selcc tbtag">
                                 <div class="seli"><a id="sur_collectSet" class="nx-1 sur_collectSet" >收集规则</a></div>
                                 <div class="seli"><a class="nx-6 sur_edit"
-                                                     href="${ctx }/design/my-survey-design/execute?surveyId=${surveyId}">问卷编辑</a>
+                                                     href="${ctx }/design/my-survey-design/execute?surveyId=${surveyId}">模板编辑</a>
                                 </div>
                             </div>
                         </div>
@@ -67,13 +67,13 @@
                 <a href="${ctx }/design/my-collect/execute?surveyId=${surveyId}"
                    class="collectTab tabItem_1 active"><span
                         class="collectTabItemLeft">&nbsp;</span><span>答卷地址</span></a>
-                <a href="${ctx }/design/my-collect/execute?surveyId=${surveyId}&tabId=share"
+                <!--<a href="${ctx }/design/my-collect/execute?surveyId=${surveyId}&tabId=share"
                    class="collectTab tabItem_4"><span class="collectTabItemLeft">&nbsp;</span><span>社交分享</span></a>
                 <a href="${ctx }/design/my-collect/execute?surveyId=${surveyId}&tabId=sitecomp"
                    class="collectTab tabItem_5"><span class="collectTabItemLeft">&nbsp;</span><span>网站组件</span></a>
                 <%-- <a href="${ctx }/design/my-collect.controller?surveyId=${surveyId}&tabId=iframe" class="collectTab tabItem_6"><span class="collectTabItemLeft">&nbsp;</span><span>IFrame嵌入</span></a> --%>
                 <a href="${ctx }/design/my-collect/execute?surveyId=${surveyId}&tabId=weixin"
-                   class="collectTab tabItem_2"><span class="collectTabItemLeft">&nbsp;</span><span>微信收集</span></a>
+                   class="collectTab tabItem_2"><span class="collectTabItemLeft">&nbsp;</span><span>微信收集</span></a>-->
             </div>
         </div>
     </div>
@@ -141,8 +141,8 @@
                                         <div class="scmcRightTopLeftTitle">答卷地址
                                             <!-- <span  id="clipLinkSpan"   style="display: none;font-size:16px;color:#80AA00;">复制成功</span> -->
                                         </div>
-                                        <div class="scmcRightTopLeftNote">复制下面的问卷链接到QQ，Email等工具中直接发给被用户</div>
-                                        <div><span style="color: #d15985;line-height: 36px;">找不到人填问卷？加QQ群：457647860 互填互助快速完成调研</span>
+                                        <div class="scmcRightTopLeftNote">复制下面的信息收集链接到QQ，微信，Email等工具中直接发给被收集用户</div>
+                                        <!--<div><span style="color: #d15985;line-height: 36px;">找不到人填问卷？加QQ群：457647860 互填互助快速完成调研</span>-->
                                         </div>
                                     </div>
                                 </div>
@@ -181,7 +181,7 @@
                                             <a href="${ctx }/survey/answerTD?surveyId=${survey.id}&down"
                                                class="sbtn25 sbtn25_1">下载二维码</a>
                                             <div class="scmcRightTopLeftNote" style="width: 100px;padding-top: 25px;">
-                                                复制下面的问卷链接到QQ，Email等工具中直接发给被用户
+                                                微信扫描二维码直接答题
                                             </div>
                                         </div>
                                     </div>
