@@ -84,4 +84,6 @@ public interface UserMapper extends BaseMapper<User> {
     List<User> findUsersByEmail(@Param("email") String email);
 
     List<User> findList(@Param("map")Map map);
+
+    int updateByUserId(User user);
 }

@@ -35,6 +35,7 @@ public class UserAdminController {
 			}else{
 				entity.setStatus(Integer.parseInt(surveyState));
 			}
+			entity.setLoginName(request.getParameter("loginName"));
 			String pageNo = request.getParameter("page.pageNo");
 			if (pageNo != null && !"".equals(pageNo)){
 				page.setPageNo(Integer.parseInt(pageNo));
@@ -51,6 +52,11 @@ public class UserAdminController {
 	@RequestMapping("/input")
 	public String input(HttpServletRequest request) throws Exception {
 		return "/content/diaowen-useradmin/input";
+	}
+
+	@RequestMapping("/add")
+	public String add(HttpServletRequest request) throws Exception {
+		return "/content/diaowen-useradmin/addUser";
 	}
 
 	@RequestMapping("/save")
@@ -122,12 +128,41 @@ public class UserAdminController {
 	@RequestMapping("/checkEmailUn")
 	public void checkEmailUn(HttpServletRequest request,HttpServletResponse response) throws Exception{
 		String email=request.getParameter("email");
+		String id = request.getParameter("id");
 		User user=userManager.findEmailUn((String) id,email);
 		String result="true";
 		if(user!=null){
 			result="false";
 		}
+		if (user!=null&&user.getId().equals(id)) {
+			result="true";
+		}
 		response.getWriter().write(result);
+	}
+
+	@RequestMapping("/updateUser1")
+	public void updateUser(HttpServletResponse response) throws Exception{
+		//String id=request.getParameter("userId");
+		User user = new User();
+		user.setId("30cc73f324da11eb979d0242ac110002");
+		user.setEmail("123@qq.com");
+		user.setName("hahaha");
+		user.setShaPassword("0000");
+		user.setLoginName("xiaoming");
+		int result = userManager.updateByUserId(user);
+		response.getWriter().write(result);
+	}
+
+	@RequestMapping("/updateUser")
+	public String update(HttpServletRequest request,String loginName,String name,String email, String pwd,String id) throws Exception {
+		User user = new User();
+		user.setLoginName(loginName);
+		user.setName(name);
+		user.setEmail(email);
+		user.setPwd(pwd);
+		user.setId(id);
+		userManager.adminUpdate(user,null);
+		return "redirect:/sy/user/user-admin/list";
 	}
 	
 }

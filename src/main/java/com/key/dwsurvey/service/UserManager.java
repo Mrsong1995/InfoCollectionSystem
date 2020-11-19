@@ -12,6 +12,8 @@ public interface UserManager{//extends BaseService<User, String> {
 
 	public void adminSave1(User entity, String[] userRoleIds);
 
+	public void adminUpdate(User entity, String[] userRoleIds);
+
 //	public Page<User> findPage(Page<User> page, User entity);
 
 	public Page<User> findPage(IPageToPage<User> page, User entity);
@@ -29,6 +31,8 @@ public interface UserManager{//extends BaseService<User, String> {
 	public User findByActivationCode(String code);
 
 	public User findById(String id);
+
+	public int updateByUserId(User user);
 //	public void resetUserGroup(String groupId);
 
 }

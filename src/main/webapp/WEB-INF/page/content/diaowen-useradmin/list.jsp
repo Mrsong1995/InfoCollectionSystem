@@ -79,18 +79,18 @@ $(document).ready(function(){
 							<div class="contacts_search" style="padding: 5px;color:#666565;margin-top: 15px;" >
 								<form action="${ctx }/sy/user/user-admin/list" method="post">
 								<div style="padding-left: 30px;padding-top: 8px;padding-bottom: 8px;">
-										<span style="font-size: 14px;vertical-align: middle;">状态&nbsp;</span>
-										<select name="status" style="vertical-align: middle;">
-											<option value="">不限</option>
-											<option value="1">可用</option>
-											<option value="0">禁用</option>
-										</select>&nbsp;&nbsp;
+<%--										<span style="font-size: 14px;vertical-align: middle;">状态&nbsp;</span>--%>
+<%--										<select name="status" style="vertical-align: middle;">--%>
+<%--											<option value="">不限</option>--%>
+<%--											<option value="1">可用</option>--%>
+<%--											<option value="0">禁用</option>--%>
+<%--										</select>&nbsp;&nbsp;--%>
 									<span style="font-size: 14px;vertical-align: middle;">用户名&nbsp;</span>
 									<input type="text"  name="loginName" value="${loginName }" class="inputS1"/>&nbsp;&nbsp;
 									<input type="submit" value="查询" class="sbtn25 sbtn25_1" style="font-size: 16px;"/>
 									
 									<div style="padding: 5px;color: #666565;text-align: right;float: right;margin-right: 20px;">
-										<a href="${ctx }/sy/user/user-admin/input" class="user-plus active"><i class="fa fa-plus " aria-hidden="true"></i>&nbsp;添加账号</a>
+										<a href="${ctx }/sy/user/user-admin/add" class="user-plus active"><i class="fa fa-plus " aria-hidden="true"></i>&nbsp;添加账号</a>
 									</div>
 								</div>
 								</form>
@@ -108,7 +108,7 @@ $(document).ready(function(){
 										<!-- <th align="left" >邮箱</th> -->
 										<th align="left" width="200">创建时间</th>
 										<th align="left" width="200">最后登录时间</th>
-										<th align="left"  width="80">状态</th>
+										<!--<th align="left"  width="80">状态</th>-->
 										<th align="center" style="text-align: center;" width="160">操作</th>
 									</tr>
 
@@ -122,9 +122,9 @@ $(document).ready(function(){
 														<%--<td align="left">${en.email }</td>--%>
 														<td align="left"><fmt:formatDate value="${en.createTime }" pattern="yyyy年MM月dd日 HH:mm"/></td>
 														<td align="left"><fmt:formatDate value="${en.createTime }" pattern="yyyy年MM月dd日 HH:mm"/></td>
-														<td align="left">${en.status eq 0 ? '不可用':'可用' }</td>
+														<!--<td align="left">${en.status eq 0 ? '不可用':'可用' }</td>-->
 														<td align="center">
-															<a class="btn btn-default" href="${ctx }/sy/user/nosm/user-admin/input?id=${en.id}" title="编辑"data-toggle="tooltip" data-placement="top" ><i class="fa fa-pencil-square-o"></i></a>
+															<a class="btn btn-default" href="${ctx }/sy/user/nosm/user-admin/input?id=${en.id}&loginname=${en.loginName}&name=${en.name}&email=${en.email}" title="编辑"data-toggle="tooltip" data-placement="top" ><i class="fa fa-pencil-square-o"></i></a>
 															<a class="btn btn-default disUser_a" href="${ctx }/sy/user/nosm/user-admin/delete?id=${en.id}" title="禁用"data-toggle="tooltip" data-placement="top" ><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 														</td>
 													</tr>

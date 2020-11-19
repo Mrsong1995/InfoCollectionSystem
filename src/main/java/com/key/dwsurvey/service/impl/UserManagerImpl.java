@@ -78,6 +78,24 @@ public class UserManagerImpl  implements UserManager {
 		}
 	}
 
+	public void adminUpdate(User entity, String[] userRoleIds){
+		if (entity != null){
+
+			String pwd = entity.getPwd();
+			if(pwd!=null && !"".equals(pwd)){
+				String shaPassword = DigestUtils.sha1Hex(pwd);
+				entity.setShaPassword(shaPassword);
+			}
+//			if (entity.getId()== null) {
+//				entity.setId(UUID.randomUUID().toString());
+////				entity.setId( new IdUtils().getId());
+//			}
+//			userMapper.
+//			userMapper.insertSelective(entity);
+			userMapper.updateByUserId(entity);
+		}
+	}
+
 //	@Override
 //	public Page<User> findPage(Page<User> page, User entity) {
 //
@@ -221,6 +239,11 @@ public class UserManagerImpl  implements UserManager {
 		}else{
 			return new User();
 		}
+	}
+
+	@Override
+	public int updateByUserId(User user) {
+		return userMapper.updateByUserId(user);
 	}
 //
 //	@Override

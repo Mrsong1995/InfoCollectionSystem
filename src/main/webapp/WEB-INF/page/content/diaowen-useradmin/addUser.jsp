@@ -81,7 +81,7 @@ $(document).ready(function(){
 		<div id="dwBodyUser">
 			<div class="surveyCollectMiddle">
 				
-				<form id="inputForm" action="${ctx }/sy/user/nosm/user-admin/updateUser" method="post" >
+				<form id="inputForm" action="${ctx }/sy/user/nosm/user-admin/save" method="post" >
 <%--				<input type="hidden" name="id" value="${id }" >--%>
 				<div class="surveyCollectMiddleContent">
 					<div style="padding: 25px 45px;overflow: auto;padding-top: 35px;">
@@ -144,7 +144,7 @@ $(document).ready(function(){
 										</td>
 									</tr> -->
 									<tr>
-										<td height="50"><input type="submit" value="保存" class="sbtn25 sbtn25_1" style="margin-left: 125px;"> </td>
+										<td height="50"><input type="submit" value="添加" class="sbtn25 sbtn25_1" style="margin-left: 125px;"> </td>
 										<td class="ac-input-td"> </td>
 									</tr>
 								</table>
