@@ -79,7 +79,7 @@ button {
 							<div class="contacts_search" style="padding: 5px;color:#666565;" >
 								<div style="padding-left: 20px;padding-top: 8px;padding-bottom: 8px;">
 									<span style="font-size: 14px;vertical-align: middle;">状态&nbsp;</span>
-									<select name="surveyState" style="vertical-align: middle;">  <option value="">不限</option><option value="0">设计</option><option value="1">发布</option><option value="2">结束</option> </select>
+									<select name="surveyState" style="vertical-align: middle;">  <option value="">不限</option><option value="0">设计</option><option value="1">发布</option><option value="2">收集完成</option> </select>
 									&nbsp;&nbsp;
 									<span style="font-size: 14px;vertical-align: middle;">名称&nbsp;</span>
 									<input type="text" class="inputS1" name="surveyName" value="${surveyName}">
