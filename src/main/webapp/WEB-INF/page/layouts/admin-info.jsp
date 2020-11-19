@@ -1,1 +1,1 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %><div style="color: gray;">    <h1 style="line-height: 40px;">大家加油</h1>    <img alt="" src="${ctx }/images/别慌小场面.jpg" align="middle" height="200" ></div>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %><div style="color: gray;">    <h1 style="line-height: 40px;color: green;font-family:楷体;font-weight:strong;">进步 与您同步!</h1>    <img alt="" src="${ctx }/images/123.jpg" align="middle" height="200" ></div>
