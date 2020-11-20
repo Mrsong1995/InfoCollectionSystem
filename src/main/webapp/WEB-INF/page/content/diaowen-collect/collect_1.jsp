@@ -141,7 +141,7 @@
                                         <div class="scmcRightTopLeftTitle">答卷地址
                                             <!-- <span  id="clipLinkSpan"   style="display: none;font-size:16px;color:#80AA00;">复制成功</span> -->
                                         </div>
-                                        <div class="scmcRightTopLeftNote">复制下面的信息收集链接到QQ，微信，Email等工具中直接发给被收集用户</div>
+<%--                                        <div class="scmcRightTopLeftNote">复制下面的信息收集链接到QQ，微信，Email等工具中直接发给被收集用户</div>--%>
                                         <!--<div><span style="color: #d15985;line-height: 36px;">找不到人填问卷？加QQ群：457647860 互填互助快速完成调研</span>-->
                                         </div>
                                     </div>
