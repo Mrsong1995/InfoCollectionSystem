@@ -166,26 +166,29 @@
                                 </div>
                             </div>
                             <div style="clear: both;"></div>
-                            <div style="padding-top: 25px;">
-                                <div class="scmcRightTop">
-                                    <div class="scmcRightTopLeft">
-                                        <div class="scmcRightTopLeftTitle">二维码手机答题</div>
-                                    </div>
-                                    <div style="padding-top: 15px;overflow: auto;clear: both;">
-                                        <div class="scmcSurveyTdCode">
-                                            <%-- <img alt="" src="${ctx }/images/style-model/secode.png" height="130" > --%>
-                                            <img alt="" src="${ctx }/survey/answerTD?surveyId=${survey.id}"
-                                                 height="130">
-                                        </div>
-                                        <div class="scmcRightTopRight" style="float: left ;padding-left: 30px;">
-                                            <a href="${ctx }/survey/answerTD?surveyId=${survey.id}&down"
-                                               class="sbtn25 sbtn25_1">下载二维码</a>
-                                            <div class="scmcRightTopLeftNote" style="width: 100px;padding-top: 25px;">
-                                                微信扫描二维码直接答题
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
+
+
+<%--                            <div style="padding-top: 25px;">--%>
+<%--                                <div class="scmcRightTop">--%>
+<%--                                    <div class="scmcRightTopLeft">--%>
+<%--                                        <div class="scmcRightTopLeftTitle">二维码手机答题</div>--%>
+<%--                                    </div>--%>
+<%--                                    <div style="padding-top: 15px;overflow: auto;clear: both;">--%>
+<%--                                        <div class="scmcSurveyTdCode">--%>
+<%--                                            &lt;%&ndash; <img alt="" src="${ctx }/images/style-model/secode.png" height="130" > &ndash;%&gt;--%>
+<%--                                            <img alt="" src="${ctx }/survey/answerTD?surveyId=${survey.id}"--%>
+<%--                                                 height="130">--%>
+<%--                                        </div>--%>
+<%--                                        <div class="scmcRightTopRight" style="float: left ;padding-left: 30px;">--%>
+<%--                                            <a href="${ctx }/survey/answerTD?surveyId=${survey.id}&down"--%>
+<%--                                               class="sbtn25 sbtn25_1">下载二维码</a>--%>
+<%--                                            <div class="scmcRightTopLeftNote" style="width: 100px;padding-top: 25px;">--%>
+<%--                                                微信扫描二维码直接答题--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
                             </div>
                         </div>
                     </div>
@@ -197,7 +200,7 @@
         </div>
     </div>
 </div>
-<%--测试--%>
+
 <script type="text/javascript">
 
     /*var client = new ZeroClipboard( document.getElementById("clipLink") );
