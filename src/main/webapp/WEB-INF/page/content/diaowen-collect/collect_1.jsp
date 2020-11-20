@@ -197,7 +197,7 @@
         </div>
     </div>
 </div>
-
+<%--测试--%>
 <script type="text/javascript">
 
     /*var client = new ZeroClipboard( document.getElementById("clipLink") );
