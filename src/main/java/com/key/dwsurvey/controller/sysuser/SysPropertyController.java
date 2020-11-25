@@ -80,22 +80,22 @@ public class SysPropertyController {
 		writeData(request,siteFilePath, props);
 
 		//写LOGO DATA文件
-		String headerData="<a href=\"${ctx }\"><img alt=\"\" src=\"${ctx }/images/logo/LOGO.png\" align=\"middle\" height=\"46\" ><span class=\"titleTempSpan\">OSS</span></a> ";
+		String headerData="<a href=\"${ctx }\"><img alt=\"\" src=\"${ctx }/images/logo/LOGO.jpeg\" align=\"middle\" height=\"46\" ></a> ";
 		String headerDataPath="/WEB-INF/page/layouts/logo-img.jsp".replace("/", File.separator);
 		writeData(request,headerDataPath, headerData);
 		
-		if(adminTelephone!=null && adminEmail!=null){
-			//写footer文件
-			String footer1="<div class=\"dw_footcopy\" style=\"font-size: 16px;color: gray;\"><p style=\"margin-bottom: 6px;\">"
-	    	+"邮箱："+adminEmail+"&nbsp;&nbsp;&nbsp;电话："+adminTelephone+"&nbsp;&nbsp;&nbsp;"
-	    	+"<a href=\"/\" style=\"color: gray;font-size: 16px;\">"+icpCode+"</a></p></div>";
-			String footerPath="/WEB-INF/page/layouts/footer-1.jsp".replace("/", File.separator);
-			writeData(request,footerPath, footer1);
-			
-			String adminInfo="<div style=\"color: gray;\"><h3 style=\"line-height: 40px;\">联系信息</h3><p style=\"line-height: 40px;\">邮箱："+adminEmail+"</p><p style=\"line-height: 40px;\">电话："+adminTelephone+"</p><p style=\"line-height: 40px;\">"+icpCode+"</p></div>";
-			String adminInfoPath="/WEB-INF/page/layouts/admin-info.jsp".replace("/", File.separator);
-			writeData(request,adminInfoPath, adminInfo);
-		}
+//		if(adminTelephone!=null && adminEmail!=null){
+//			//写footer文件
+//			String footer1="<div class=\"dw_footcopy\" style=\"font-size: 16px;color: gray;\"><p style=\"margin-bottom: 6px;\">"
+//	    	+"邮箱："+adminEmail+"&nbsp;&nbsp;&nbsp;电话："+adminTelephone+"&nbsp;&nbsp;&nbsp;"
+//	    	+"<a href=\"/\" style=\"color: gray;font-size: 16px;\">"+icpCode+"</a></p></div>";
+//			String footerPath="/WEB-INF/page/layouts/footer-1.jsp".replace("/", File.separator);
+//			writeData(request,footerPath, footer1);
+//			
+//			String adminInfo="<div style=\"color: gray;\"><h3 style=\"line-height: 40px;\">联系信息</h3><p style=\"line-height: 40px;\">邮箱："+adminEmail+"</p><p style=\"line-height: 40px;\">电话："+adminTelephone+"</p><p style=\"line-height: 40px;\">"+icpCode+"</p></div>";
+//			String adminInfoPath="/WEB-INF/page/layouts/admin-info.jsp".replace("/", File.separator);
+//			writeData(request,adminInfoPath, adminInfo);
+//		}
 		
 		if(loginBgImg!=null){
 			String loginbgimg="<div class=\"m-logbg\"><img src=\"${ctx }"+loginBgImg+"\" style=\"margin-top:0px; margin-left: 0px; opacity: 1;\" width=\"100%\" ></div>";

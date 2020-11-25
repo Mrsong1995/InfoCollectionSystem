@@ -116,15 +116,15 @@ $(document).ready(function(){
 										<td valign="top" align="left" >
 											<table class="ac-form-table">
 												<tr>
-												<td width="80" align="right" valign="top">登录背景图</td>
+												<td width="90" align="right" valign="top">登录背景图</td>
 													<td class="ac-input-td">
-														<div class="upResImg">
-					                                	<%-- <input type="hidden" name="loginBgImgPath" value="${fileImgPath }" /> --%>
+<%-- 														<div class="upResImg">
+					                                	<input type="hidden" name="loginBgImgPath" value="${fileImgPath }" />
 					                                	<span id="loginBgimgfilename"></span>
 					                                	<input type="file" id="loginBgfile" name="loginBgfile" />
 					                                	<span class="uploadifySpan" style="line-height:26px;"><br/>请上传超清1024*968图片！</span>
 					                                	<div id="loginBgfileQueueid" ></div>
-														</div>
+														</div> --%>
 														<div>点击选择背景图或上传自定义的背景图</div>
 														<div id="login_bg_div">
 															<img class="active_img" src="${ctx }/images/style-model/login_bg/1.jpg" style="opacity: 1;" width="60" >
